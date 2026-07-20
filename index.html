@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karen Kisha Sabaiton | Property Management VA Systems</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7BWK2THXY6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7BWK2THXY6');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2b22;
+    --ink-soft:#3c4d40;
+    --ledger:#e6ede1;
+    --ledger-deep:#d7e2cf;
+    --paper:#f6f4ec;
+    --rule:#b7c7ac;
+    --brass:#b07f2e;
+    --brass-deep:#8f6522;
+    --rust:#b5502c;
+    --teal:#3e7d5a;
+    --amber:#c08829;
+    --max:1040px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+
+  /* ---------- HERO / LEDGER HEADER ---------- */
+  header.hero{
+    background:
+      repeating-linear-gradient(to bottom, transparent, transparent 43px, var(--rule) 44px),
+      var(--ledger);
+    border-bottom:2px solid var(--ink);
+    padding:64px 0 48px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-skyline{
+    position:absolute;
+    right:-20px;
+    bottom:-10px;
+    width:340px;
+    max-width:38vw;
+    opacity:.16;
+    pointer-events:none;
+  }
+  .section-divider{
+    display:flex;
+    justify-content:center;
+    padding:6px 0;
+    opacity:.5;
+  }
+  .section-divider svg{width:64px;height:auto;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--brass-deep);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:8px;height:8px;
+    background:var(--brass);
+    display:inline-block;
+    transform:rotate(45deg);
+  }
+  h1.name{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(38px,6vw,64px);
+    line-height:1.03;
+    margin:0 0 14px;
+    letter-spacing:-0.01em;
+  }
+  .role{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:15px;
+    color:var(--ink-soft);
+    margin:0 0 40px;
+  }
+  .role b{color:var(--brass-deep);font-weight:500;}
+
+  /* live tracker strip -- signature element */
+  .tracker{
+    background:var(--paper);
+    border:1px solid var(--ink);
+    padding:20px 24px 26px;
+    max-width:640px;
+  }
+  .tracker-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:14px;
+  }
+  .rail{
+    position:relative;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:34px;
+  }
+  .rail::before{
+    content:"";
+    position:absolute;
+    left:0;right:0;top:50%;
+    height:2px;
+    background:var(--rule);
+    transform:translateY(-50%);
+  }
+  .rail-fill{
+    position:absolute;left:0;top:50%;height:2px;background:var(--brass);
+    transform:translateY(-50%);
+    width:0%;
+    animation:fillrail 7s ease-in-out infinite;
+  }
+  @keyframes fillrail{
+    0%{width:0%;}
+    12%{width:0%;}
+    28%{width:33%;}
+    44%{width:33%;}
+    60%{width:66%;}
+    76%{width:66%;}
+    92%{width:100%;}
+    100%{width:100%;}
+  }
+  .stage{
+    position:relative;
+    z-index:1;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    text-align:center;
+    color:var(--ink-soft);
+    width:60px;
+  }
+  .stage .dot{
+    width:9px;height:9px;border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--rule);
+    margin:0 auto 8px;
+  }
+  .stage.lit .dot{border-color:var(--brass);background:var(--brass);}
+  .stage:nth-child(1) .dot{animation:lit1 7s infinite;}
+  .stage:nth-child(2) .dot{animation:lit2 7s infinite;}
+  .stage:nth-child(3) .dot{animation:lit3 7s infinite;}
+  .stage:nth-child(4) .dot{animation:lit4 7s infinite;}
+  @keyframes lit1{0%,100%{border-color:var(--brass);background:var(--brass);}}
+  @keyframes lit2{0%,26%{border-color:var(--rule);background:var(--paper);}28%,100%{border-color:var(--brass);background:var(--brass);}}
+  @keyframes lit3{0%,58%{border-color:var(--rule);background:var(--paper);}60%,100%{border-color:var(--brass);background:var(--brass);}}
+  @keyframes lit4{0%,90%{border-color:var(--rule);background:var(--paper);}92%,100%{border-color:var(--brass);background:var(--brass);}}
+  .tracker-status{
+    margin-top:16px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+  .tracker-status .status-word{color:var(--teal);font-weight:500;}
+
+  /* ---------- POSITIONING ---------- */
+  section.lede{padding:56px 0 8px;}
+  .lede p{
+    font-family:'Fraunces',serif;
+    font-weight:400;
+    font-size:clamp(19px,2.4vw,24px);
+    line-height:1.5;
+    color:var(--ink);
+    max-width:760px;
+  }
+  .lede .note{
+    margin-top:22px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    border-left:2px solid var(--brass);
+    padding-left:14px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  section.about{padding:8px 0 40px;}
+  .about-card{
+    display:grid;
+    grid-template-columns:120px 1fr;
+    gap:32px;
+    align-items:start;
+    background:var(--ledger);
+    border:1px solid var(--ink);
+    padding:28px;
+  }
+  .about-photo{
+    width:120px;height:120px;
+    object-fit:cover;
+    border:2px solid var(--ink);
+    display:block;
+  }
+  .about-body p{
+    font-size:15px;
+    line-height:1.65;
+    color:var(--ink);
+    margin:0 0 14px;
+    max-width:620px;
+  }
+  .about-facts{
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+    margin-top:18px;
+    padding-top:16px;
+    border-top:1px dashed var(--rule);
+    font-size:13.5px;
+  }
+  .about-facts .k{
+    display:block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--brass-deep);
+    margin-bottom:3px;
+  }
+  @media (max-width:560px){
+    .about-card{grid-template-columns:1fr;}
+    .about-photo{width:72px;height:72px;font-size:20px;}
+  }
+
+  /* ---------- OFFER ---------- */
+  section.offer{padding:16px 0 40px;}
+  .offer-intro{
+    font-size:15px;
+    line-height:1.6;
+    color:var(--ink-soft);
+    max-width:640px;
+    margin:14px 0 28px;
+  }
+  .offer-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:0;
+    border:1px solid var(--ink);
+  }
+  .offer-col{padding:26px;}
+  .offer-col:first-child{border-right:1px solid var(--rule);}
+  .offer-pricing{background:var(--ledger);}
+  .offer-list{
+    margin:12px 0 0;
+    padding:0 0 0 18px;
+    list-style:none;
+  }
+  .offer-list li{
+    position:relative;
+    font-size:14.5px;
+    line-height:1.55;
+    color:var(--ink);
+    padding-left:4px;
+    margin-bottom:14px;
+  }
+  .offer-list li::before{
+    content:"•";
+    position:absolute;
+    left:-18px;
+    color:var(--brass);
+  }
+  .price-line{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    margin:4px 0 4px;
+  }
+  .price{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:34px;
+    color:var(--ink);
+  }
+  .price-unit{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .price-note{
+    font-size:12.5px;
+    line-height:1.5;
+    color:var(--ink-soft);
+    max-width:260px;
+  }
+  @media (max-width:640px){
+    .offer-grid{grid-template-columns:1fr;}
+    .offer-col:first-child{border-right:none;border-bottom:1px solid var(--rule);}
+  }
+
+  /* ---------- SYSTEMS LOG ---------- */
+  section.log{padding:56px 0 40px;}
+  .log-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:12px;
+    margin-bottom:6px;
+  }
+  .log-head h2{
+    font-family:'Fraunces',serif;
+    font-size:26px;
+    font-weight:600;
+    margin:0;
+  }
+  .log-head span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+  }
+
+  .entry{
+    border-bottom:1px solid var(--rule);
+    padding:32px 0;
+    display:grid;
+    grid-template-columns:70px 1fr;
+    gap:24px;
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .entry.show{opacity:1;transform:translateY(0);}
+  .entry-id{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--brass-deep);
+    padding-top:4px;
+  }
+  .entry-id .n{
+    display:block;
+    font-family:'Fraunces',serif;
+    font-size:34px;
+    font-weight:500;
+    color:var(--ledger-deep);
+    -webkit-text-stroke:1px var(--ink-soft);
+    line-height:1;
+    margin-bottom:6px;
+  }
+  .entry h3{
+    font-family:'Fraunces',serif;
+    font-size:22px;
+    font-weight:600;
+    margin:0 0 14px;
+  }
+  .field{
+    display:grid;
+    grid-template-columns:110px 1fr;
+    gap:14px;
+    font-size:14.5px;
+    line-height:1.55;
+    padding:7px 0;
+    border-top:1px dashed var(--rule);
+  }
+  .field:first-of-type{border-top:none;}
+  .field .k{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    padding-top:2px;
+  }
+  .field .v{color:var(--ink);}
+  .proves{
+    margin-top:14px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--teal);
+    border:1px solid var(--teal);
+    padding:5px 10px;
+  }
+  .proves::before{content:"✓";}
+
+  /* ---------- ACCORDION (details/summary) ---------- */
+  details.more{margin-top:14px;}
+  details.more summary{
+    list-style:none;
+    cursor:pointer;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--brass-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 0;
+  }
+  details.more summary::-webkit-details-marker{display:none;}
+  details.more summary::before{
+    content:"+";
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:15px;
+    width:18px;height:18px;
+    border:1px solid var(--brass-deep);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    flex:none;
+  }
+  details.more[open] summary::before{content:"–";}
+  details.more[open] summary{margin-bottom:10px;}
+
+  /* ---------- FAQ ---------- */
+  section.faq{padding:16px 0 8px;}
+  .qa{
+    border-bottom:1px solid var(--rule);
+    padding:20px 0;
+  }
+  .qa summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+  }
+  .qa summary::-webkit-details-marker{display:none;}
+  .q{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:17.5px;
+    color:var(--ink);
+    display:flex;
+    gap:10px;
+    flex:1;
+  }
+  .q::before{
+    content:"Q";
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--paper);
+    background:var(--ink);
+    width:20px;height:20px;
+    flex:none;
+    display:flex;align-items:center;justify-content:center;
+    margin-top:3px;
+  }
+  .qa .toggle{
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size:16px;
+    color:var(--brass-deep);
+    width:22px;height:22px;
+    border:1px solid var(--brass-deep);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    flex:none;
+  }
+  .qa[open] .toggle{transform:rotate(45deg);}
+  .a{
+    font-size:14.5px;
+    line-height:1.65;
+    color:var(--ink-soft);
+    padding-left:30px;
+    border-left:2px solid var(--teal);
+    margin-top:12px;
+  }
+
+  /* ---------- FOOTER / CTA ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--paper);
+    padding:64px 0 48px;
+    margin-top:24px;
+  }
+  footer h2{
+    font-family:'Fraunces',serif;
+    font-size:clamp(26px,4vw,38px);
+    font-weight:600;
+    margin:0 0 16px;
+    max-width:600px;
+  }
+  footer p{
+    font-size:15.5px;
+    line-height:1.6;
+    color:#c9d3c8;
+    max-width:520px;
+    margin:0 0 30px;
+  }
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.04em;
+    text-decoration:none;
+    padding:13px 22px;
+    border:1px solid var(--paper);
+    color:var(--paper);
+    transition:background .2s ease, color .2s ease;
+  }
+  .btn.solid{background:var(--brass);border-color:var(--brass);color:var(--ink);}
+  .btn.solid:hover{background:#c99947;}
+  .btn:not(.solid):hover{background:var(--paper);color:var(--ink);}
+  .foot-note{
+    margin-top:40px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:#7c8a7a;
+  }
+
+  @media (max-width:620px){
+    .entry{grid-template-columns:1fr;}
+    .entry-id{display:flex;align-items:center;gap:10px;}
+    .entry-id .n{margin-bottom:0;}
+    .field{grid-template-columns:1fr;gap:4px;}
+    .rail{height:26px;}
+    .stage{width:auto;font-size:8.5px;flex:1;}
+    .stage .dot{width:7px;height:7px;margin:0 auto 6px;}
+    .tracker-status{margin-top:6px;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ---------- TRACE FRAMEWORK ---------- */
+  /* ---------- QUICK VALUE HOOK ---------- */
+  .quick-value{
+    padding:6px 0 36px;
+  }
+  .qv-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px 28px;
+  }
+  .qv-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--ink);
+  }
+  .qv-item::before{
+    content:"✓";
+    color:var(--teal);
+    font-weight:600;
+  }
+  @media (max-width:560px){
+    .qv-list{flex-direction:column;gap:10px;}
+  }
+
+  .trace{
+    background:var(--ledger);
+    border-top:2px solid var(--ink);
+    border-bottom:2px solid var(--ink);
+    padding:56px 0;
+  }
+  .trace h2{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:clamp(26px,3.4vw,34px);
+    margin:0 0 10px;
+  }
+  .trace-sub{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0 0 32px;
+  }
+  .trace-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
+  }
+  .trace-item{
+    background:var(--paper);
+    border:1px solid var(--ink);
+    padding:20px 16px 22px;
+  }
+  .trace-letter{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:34px;
+    color:var(--brass-deep);
+    line-height:1;
+    margin-bottom:10px;
+  }
+  .trace-item h3{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    margin:0 0 8px;
+    color:var(--ink);
+  }
+  .trace-item p{
+    font-size:13.5px;
+    line-height:1.5;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  @media (max-width:820px){
+    .trace-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:480px){
+    .trace-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- ALSO HANDLES ---------- */
+  .also{
+    padding:8px 0 40px;
+  }
+  .also h3{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0 0 16px;
+  }
+  .also-line{
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+  .also-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .also-item{
+    border-left:2px solid var(--rule);
+    padding-left:14px;
+  }
+  .also-item b{display:block;margin-bottom:4px;color:var(--ink);}
+  .also-item span{font-size:13.5px;color:var(--ink-soft);}
+  @media (max-width:560px){
+    .also-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="hero-skyline" viewBox="0 0 340 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="10" y="70" width="46" height="90" stroke="#1c2b22" stroke-width="2"/>
+    <rect x="22" y="84" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="38" y="84" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="22" y="100" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="38" y="100" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="22" y="116" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="38" y="116" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+
+    <rect x="66" y="40" width="60" height="120" stroke="#1c2b22" stroke-width="2"/>
+    <rect x="80" y="56" width="9" height="9" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="98" y="56" width="9" height="9" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="80" y="74" width="9" height="9" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="98" y="74" width="9" height="9" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="80" y="92" width="9" height="9" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="98" y="92" width="9" height="9" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="80" y="110" width="9" height="9" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="98" y="110" width="9" height="9" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="80" y="128" width="9" height="9" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="98" y="128" width="9" height="9" stroke="#1c2b22" stroke-width="1.5"/>
+
+    <rect x="136" y="18" width="50" height="142" stroke="#b07f2e" stroke-width="2"/>
+    <line x1="136" y1="34" x2="186" y2="34" stroke="#b07f2e" stroke-width="1.2"/>
+    <line x1="136" y1="50" x2="186" y2="50" stroke="#b07f2e" stroke-width="1.2"/>
+    <line x1="136" y1="66" x2="186" y2="66" stroke="#b07f2e" stroke-width="1.2"/>
+    <line x1="136" y1="82" x2="186" y2="82" stroke="#b07f2e" stroke-width="1.2"/>
+    <line x1="136" y1="98" x2="186" y2="98" stroke="#b07f2e" stroke-width="1.2"/>
+    <line x1="136" y1="114" x2="186" y2="114" stroke="#b07f2e" stroke-width="1.2"/>
+    <line x1="136" y1="130" x2="186" y2="130" stroke="#b07f2e" stroke-width="1.2"/>
+    <rect x="152" y="140" width="18" height="20" stroke="#b07f2e" stroke-width="1.5"/>
+
+    <rect x="196" y="58" width="52" height="102" stroke="#1c2b22" stroke-width="2"/>
+    <rect x="208" y="72" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="224" y="72" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="208" y="88" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="224" y="88" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="208" y="104" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="224" y="104" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="208" y="120" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="224" y="120" width="8" height="8" stroke="#1c2b22" stroke-width="1.5"/>
+
+    <rect x="258" y="94" width="42" height="66" stroke="#1c2b22" stroke-width="2"/>
+    <rect x="268" y="106" width="7" height="7" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="284" y="106" width="7" height="7" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="268" y="120" width="7" height="7" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="284" y="120" width="7" height="7" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="268" y="134" width="7" height="7" stroke="#1c2b22" stroke-width="1.5"/>
+    <rect x="284" y="134" width="7" height="7" stroke="#1c2b22" stroke-width="1.5"/>
+
+    <line x1="0" y1="160" x2="340" y2="160" stroke="#1c2b22" stroke-width="2"/>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow">Property Management VA | Systems Portfolio</div>
+    <h1 class="name">Karen Kisha Sabaiton</h1>
+    <p class="role">Hospitality operations background, <b>hotel front desk / cashier</b>, translated into documented property management systems.</p>
+
+    <div class="cta-row" style="margin-bottom:24px;">
+      <a class="btn solid" href="https://calendly.com/karenkisha-work/intro-call" target="_blank" rel="noopener">Book a trial call</a>
+      <a class="btn" href="mailto:karenkisha.work@gmail.com?subject=Property%20Management%20VA%20-%20Portfolio%20Request">Email me instead</a>
+    </div>
+
+    <div class="tracker">
+      <div class="tracker-label">Sample record: Maintenance Coordination System</div>
+      <div class="rail">
+        <div class="rail-fill"></div>
+        <div class="stage"><div class="dot"></div>REPORT</div>
+        <div class="stage"><div class="dot"></div>LOG</div>
+        <div class="stage"><div class="dot"></div>ASSIGN</div>
+        <div class="stage"><div class="dot"></div>VERIFY</div>
+      </div>
+      <div class="tracker-status">Unit 204, active leak · escalated to plumbing vendor · <span class="status-word">Verified</span> by tenant confirmation</div>
+    </div>
+  </div>
+</header>
+
+<section class="lede">
+  <div class="wrap">
+    <p>I build structured systems out of operational problems: the kind you only notice by living inside a busy shift. These five were designed from real hotel operations pain points and adapted for property management: tenant communication, maintenance, encoding accuracy, shift handovers, and rent follow-up.</p>
+    <div class="note">Every system below is fully documented and ready to run. I haven't yet operated them on a live property. I'm looking for a trial task or entry-level role to prove them in practice, not just on paper.</div>
+  </div>
+</section>
+
+<section class="quick-value">
+  <div class="wrap">
+    <div class="qv-list">
+      <div class="qv-item">Faster tenant responses, fewer missed messages</div>
+      <div class="qv-item">Maintenance requests tracked to close, not lost</div>
+      <div class="qv-item">Weekly report: no guessing what's still open</div>
+    </div>
+  </div>
+</section>
+
+<section class="trace">
+  <div class="wrap">
+    <h2>The TRACE Framework</h2>
+    <p class="trace-sub">How every request moves through the system: five systems, one framework.</p>
+    <div class="trace-grid">
+      <div class="trace-item">
+        <div class="trace-letter">T</div>
+        <h3>Tenant Communication</h3>
+        <p>Every message tracked, answered, and closed. Nothing sits unread.</p>
+      </div>
+      <div class="trace-item">
+        <div class="trace-letter">R</div>
+        <h3>Rent Follow-Up</h3>
+        <p>Late payments caught early and followed through, not left inconsistent.</p>
+      </div>
+      <div class="trace-item">
+        <div class="trace-letter">A</div>
+        <h3>Accuracy</h3>
+        <p>Records verified at the point of entry, so errors get caught before they cost you.</p>
+      </div>
+      <div class="trace-item">
+        <div class="trace-letter">C</div>
+        <h3>Coordination</h3>
+        <p>Maintenance requests triaged, escalated, and confirmed fixed with the tenant.</p>
+      </div>
+      <div class="trace-item">
+        <div class="trace-letter">E</div>
+        <h3>Encoding Accuracy</h3>
+        <p>Records cross-checked at entry. No skipped fields, no mismatched amounts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="about-card">
+      <img class="about-photo" src="images/karen-photo.jpg" alt="Karen Kisha Sabaiton">
+      <div class="about-body">
+        <div class="tracker-label" style="margin-bottom:10px;">About</div>
+        <p>Over five years in hospitality and administrative operations, including four years as Hotel In-Charge coordinating 25+ staff across four properties, 600+ daily guest transactions, and payroll-accurate timekeeping. That same discipline, tracking every request and verifying every close-out, is what I bring to property management coordination. Currently learning PM VA work specifically and open to a trial task now.</p>
+        <div class="about-facts">
+          <div><span class="k">Based</span>Naic, Cavite, Philippines · GMT+8</div>
+          <div><span class="k">Experience</span>5+ yrs · multi-property hotel operations</div>
+          <div><span class="k">Availability</span>Open now, actively looking</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offer">
+  <div class="wrap">
+    <div class="log-head">
+      <h2>The Offer</h2>
+      <span>Tenant &amp; Maintenance Coordination Support</span>
+    </div>
+    <p class="offer-intro">A done-for-you coordination service, run on the systems documented below: not just advice, but the actual day-to-day handling of tenant messages and maintenance requests.</p>
+
+    <div class="offer-grid">
+      <div class="offer-col">
+        <div class="tracker-label">What's included</div>
+        <ul class="offer-list">
+          <li>Every tenant message logged and answered within a committed response window</li>
+          <li>Maintenance requests triaged by urgency and tracked to verified close-out</li>
+          <li>Weekly status report: what's open, what's resolved, what needs your decision</li>
+          <li>Rent follow-up tracking on request</li>
+        </ul>
+      </div>
+      <div class="offer-col offer-pricing">
+        <div class="tracker-label">Trial</div>
+        <div class="price-line"><span class="price">$40</span><span class="price-unit">flat · 2 weeks</span></div>
+        <div class="price-note">Up to 10 units · tenant messaging + maintenance logging</div>
+        <div class="tracker-label" style="margin-top:22px;">After trial</div>
+        <div class="price-line"><span class="price">$200</span><span class="price-unit">/ week</span></div>
+        <div class="price-note">Part-time, ~15–20 hrs/week · introductory rate while I build a property management track record</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="log" id="log">
+  <div class="wrap">
+    <div class="log-head">
+      <h2>The Log</h2>
+      <span>5 entries</span>
+    </div>
+
+    <div class="entry">
+      <div class="entry-id"><span class="n">01</span>ASSET</div>
+      <div>
+        <h3>Tenant Communication Operations System</h3>
+        <div class="proves">Full-cycle communication management with defined SLAs</div>
+        <details class="more">
+          <summary>See how it works</summary>
+          <div class="field"><div class="k">Problem</div><div class="v">Tenant and prospect messages get scattered across channels, with no record of what's been handled or by whom.</div></div>
+          <div class="field"><div class="k">System</div><div class="v">Capture → Respond → Follow Up → Escalate → Close. A single tracker gives every message an owner, a deadline, and a documented outcome, backed by a named escalation matrix.</div></div>
+        </details>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-id"><span class="n">02</span>ASSET</div>
+      <div>
+        <h3>Maintenance Coordination Solution</h3>
+        <div class="proves">Strongest asset: priority triage + vendor accountability</div>
+        <details class="more">
+          <summary>See how it works</summary>
+          <div class="field"><div class="k">Problem</div><div class="v">Verbal hand-offs (guest → operator → supervisor → maintenance) lose or delay details; urgency depends on who's free, not on how serious the issue is.</div></div>
+          <div class="field"><div class="k">System</div><div class="v">A seven-stage intake-to-verified-close workflow with a priority matrix, fixed escalation timing, a vendor follow-up chain, and a confirmation step that checks the fix with the tenant directly.</div></div>
+        </details>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-id"><span class="n">03</span>ASSET</div>
+      <div>
+        <h3>Encoding &amp; Record-Keeping Accuracy System</h3>
+        <div class="proves">Verification design under a real operational constraint</div>
+        <details class="more">
+          <summary>See how it works</summary>
+          <div class="field"><div class="k">Problem</div><div class="v">Manual transcription of room numbers and amounts during busy shifts caused mismatches, with no reliable field to cross-check since guest names aren't required.</div></div>
+          <div class="field"><div class="k">System</div><div class="v">A Room–Amount–Time verification anchor, a pre-numbered logbook to stop skipped entries, and an AI quick-check that flags duplicates or gaps in seconds.</div></div>
+        </details>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-id"><span class="n">04</span>ASSET</div>
+      <div>
+        <h3>Operations Toolkit: Guest Request Handover Log</h3>
+        <div class="proves">Purpose-built for shift-change risk, not general logging</div>
+        <details class="more">
+          <summary>See how it works</summary>
+          <div class="field"><div class="k">Problem</div><div class="v">Requests on one shared sheet had no way to show, at a glance, what was still pending. Items could go undelivered simply because shifts changed.</div></div>
+          <div class="field"><div class="k">System</div><div class="v">A Type and Status field added to the existing shared log, a visual pending marker, and a mandatory handover checkpoint reviewing only what's still open.</div></div>
+        </details>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-id"><span class="n">05</span>ASSET</div>
+      <div>
+        <h3>Rent / Delinquency Follow-Up System</h3>
+        <div class="proves">Cash-flow protection grounded in real lease terms</div>
+        <details class="more">
+          <summary>See how it works</summary>
+          <div class="field"><div class="k">Problem</div><div class="v">Late rent tracked inconsistently erodes cash flow; treating every late tenant the same way ignores what their actual lease allows.</div></div>
+          <div class="field"><div class="k">System</div><div class="v">A fixed follow-up cadence from flag to resolution, with a Lease Reference field that routes every escalation through the tenant's specific grace period and default clauses.</div></div>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="also">
+  <div class="wrap">
+    <h3>Also comfortable with</h3>
+    <p class="also-line">Email management · Calendar scheduling · Document organization · Lease renewals &amp; move-in/move-out coordination</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <div class="log-head">
+      <h2>Questions You'd Ask Me</h2>
+      <span>2 entries</span>
+    </div>
+
+    <details class="qa">
+      <summary><span class="q">You haven't managed a live property. Why should I trust untested systems?</span><span class="toggle">+</span></summary>
+      <div class="a">Fair, and I'm upfront about it. I'm currently learning property management VA work specifically, building on years inside real operational chaos: multiple properties, high transaction volume, staff turnover, tight deadlines. I used that to design systems for specific, real failure points, not generic templates. What I'm asking for is a small trial task where you can watch the system work on something real, at low risk to you, before committing to anything bigger.</div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="q">Are these systems built in real software, or just spreadsheets?</span><span class="toggle">+</span></summary>
+      <div class="a">Spreadsheet-based right now, that's intentional, since it means no new software or cost on your end to start. If you're already using something like AppFolio or Buildium, I can adapt the same structure into that system instead.</div>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h2>A missed tenant message costs you more than a bad review: it costs you the tenant.</h2>
+    <p>I build the systems that make sure that never happens: every message tracked, every maintenance request escalated on time, every dollar of rent followed up. Give me one real problem from your property, and I'll map the exact system I'd run for you. No cost, no obligation.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="https://calendly.com/karenkisha-work/intro-call" target="_blank" rel="noopener">Book a trial call</a>
+      <a class="btn" href="mailto:karenkisha.work@gmail.com?subject=Property%20Management%20VA%20-%20Portfolio%20Request">Email me instead</a>
+    </div>
+    <div class="foot-note">v1.0 · 5 documented systems · fictional demonstration scenarios, real operational problems</div>
+  </div>
+</footer>
+
+<script>
+  const entries = document.querySelectorAll('.entry');
+  const io = new IntersectionObserver((items)=>{
+    items.forEach(item=>{
+      if(item.isIntersecting){
+        item.target.classList.add('show');
+        io.unobserve(item.target);
+      }
+    });
+  }, {threshold:0.15});
+  entries.forEach(e=>io.observe(e));
+</script>
+
+</body>
+</html>
