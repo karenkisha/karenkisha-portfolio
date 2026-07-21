@@ -230,6 +230,20 @@
   }
   .tracker-status .status-word{color:var(--teal);font-weight:500;}
 
+  /* ---------- MOBILE HERO COMPACTION (fit tracker above the fold) ---------- */
+  .role .role-short{display:none;}
+  @media (max-width:640px){
+    header.hero{padding:36px 0 28px;}
+    .eyebrow{margin-bottom:14px;font-size:11px;}
+    h1.name{margin-bottom:8px;}
+    .role{margin-bottom:22px;font-size:13.5px;}
+    .role .role-full{display:none;}
+    .role .role-short{display:inline;}
+    .cta-row{margin-bottom:16px !important;}
+    .tracker{padding:14px 16px 18px;}
+    .tracker-label{margin-bottom:10px;}
+  }
+
   /* ---------- POSITIONING ---------- */
   section.lede{padding:56px 0 8px;}
   .lede p{
@@ -871,7 +885,7 @@
   <div class="wrap">
     <div class="eyebrow">Property Management VA | Systems Portfolio</div>
     <h1 class="name">Karen Kisha Sabaiton</h1>
-    <p class="role">Hospitality operations background, <b>hotel front desk / cashier</b>, translated into documented property management systems.</p>
+    <p class="role"><span class="role-full">Hospitality operations background, <b>hotel front desk / cashier</b>, translated into documented property management systems.</span><span class="role-short">Hospitality ops background, translated into documented <b>PM systems</b>.</span></p>
 
     <div class="cta-row" style="margin-bottom:24px;">
       <a class="btn solid btn-lg" href="https://calendly.com/karenkisha-work/intro-call" target="_blank" rel="noopener">Book a trial call</a>
