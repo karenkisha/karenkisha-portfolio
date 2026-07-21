@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Karen Kisha Sabaiton | Property Management VA Systems</title>
+<link rel="icon" type="image/png" href="images/favicon-32.png">
+<link rel="apple-touch-icon" href="images/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -32,6 +34,63 @@
   }
   a{color:inherit;}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+
+  /* ---------- TOP NAV ---------- */
+  nav.topnav{
+    position:sticky;top:0;z-index:50;
+    background:var(--paper);
+    border-bottom:1px solid var(--rule);
+  }
+  nav.topnav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-top:12px;
+    padding-bottom:12px;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .brand img{height:38px;width:auto;display:block;}
+  .brand-word{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:16px;
+    color:var(--ink);
+    line-height:1.1;
+  }
+  .brand-word small{
+    display:block;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:400;
+    font-size:9.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--brass-deep);
+    margin-top:2px;
+  }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    list-style:none;
+    margin:0;padding:0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:.04em;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    padding:6px 0;
+    border-bottom:1px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav-links a:hover{color:var(--brass-deep);border-color:var(--brass);}
+  @media (max-width:640px){
+    .nav-links{gap:16px;font-size:11.5px;}
+    .brand-word{font-size:14px;}
+  }
 
   /* ---------- HERO / LEDGER HEADER ---------- */
   header.hero{
@@ -389,6 +448,81 @@
   }
   .proves::before{content:"✓";}
 
+  /* ---------- FLOW PREVIEW (visual system diagram) ---------- */
+  .flow{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px;
+    margin:16px 0 6px;
+    padding:16px 18px;
+    background:var(--ledger);
+    border:1px solid var(--rule);
+  }
+  .flow-step{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.02em;
+    color:var(--ink);
+    background:var(--paper);
+    border:1px solid var(--ink);
+    padding:7px 11px;
+    white-space:nowrap;
+  }
+  .flow-arrow{
+    color:var(--brass);
+    font-weight:600;
+    font-size:14px;
+    flex:none;
+  }
+
+  /* ---------- CONTACT ---------- */
+  section.contact{
+    padding:48px 0;
+    background:var(--ledger);
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+  }
+  .contact-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-top:20px;
+  }
+  .contact-card{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:var(--paper);
+    border:1px solid var(--ink);
+    padding:18px 22px;
+    text-decoration:none;
+    color:var(--ink);
+    flex:1;
+    min-width:240px;
+    transition:background .15s ease;
+  }
+  .contact-card:hover{background:var(--ledger-deep);}
+  .contact-icon{
+    width:36px;height:36px;
+    border:1px solid var(--brass-deep);
+    display:flex;align-items:center;justify-content:center;
+    flex:none;
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--brass-deep);
+    font-size:14px;
+  }
+  .contact-card .ct-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    display:block;
+    margin-bottom:3px;
+  }
+  .contact-card .ct-value{font-size:14.5px;font-weight:500;}
+
   /* ---------- ACCORDION (details/summary) ---------- */
   details.more{margin-top:14px;}
   details.more summary{
@@ -509,6 +643,16 @@
   .btn:not(.solid):hover{background:var(--paper);color:var(--ink);}
   .btn.outline-dark{border-color:var(--ink);color:var(--ink);}
   .btn.outline-dark:hover{background:var(--ink);color:var(--paper);}
+  .btn.btn-lg{
+    padding:18px 34px;
+    font-size:14.5px;
+    font-weight:600;
+    box-shadow:0 4px 0 var(--brass-deep);
+    transform:translateY(0);
+    transition:background .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .btn.btn-lg:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--brass-deep);}
+  header.hero .btn.btn-lg{border-width:2px;}
   .foot-note{
     margin-top:40px;
     font-family:'IBM Plex Mono',monospace;
@@ -657,6 +801,21 @@
 </head>
 <body>
 
+<nav class="topnav">
+  <div class="wrap">
+    <a href="#" class="brand">
+      <img src="images/logo.png" alt="Karen Kisha Sabaiton logo">
+      <span class="brand-word">Karen Kisha Sabaiton<small>Property Management VA</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#log">Systems</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#offer">Offer</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
 <header class="hero">
   <svg class="hero-skyline" viewBox="0 0 340 160" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect x="10" y="70" width="46" height="90" stroke="#1c2b22" stroke-width="2"/>
@@ -715,7 +874,7 @@
     <p class="role">Hospitality operations background, <b>hotel front desk / cashier</b>, translated into documented property management systems.</p>
 
     <div class="cta-row" style="margin-bottom:24px;">
-      <a class="btn solid" href="https://calendly.com/karenkisha-work/intro-call" target="_blank" rel="noopener">Book a trial call</a>
+      <a class="btn solid btn-lg" href="https://calendly.com/karenkisha-work/intro-call" target="_blank" rel="noopener">Book a trial call</a>
       <a class="btn outline-dark" href="mailto:karenkisha.work@gmail.com?subject=Property%20Management%20VA%20-%20Portfolio%20Request">Email me instead</a>
     </div>
 
@@ -784,7 +943,7 @@
   </div>
 </section>
 
-<section class="about">
+<section class="about" id="about">
   <div class="wrap">
     <div class="about-card">
       <img class="about-photo" src="images/karen-photo.jpg" alt="Karen Kisha Sabaiton">
@@ -801,7 +960,7 @@
   </div>
 </section>
 
-<section class="offer">
+<section class="offer" id="offer">
   <div class="wrap">
     <div class="log-head">
       <h2>The Offer</h2>
@@ -843,6 +1002,13 @@
       <div>
         <h3>Tenant Communication Operations System</h3>
         <div class="proves">Full-cycle communication management with defined SLAs</div>
+        <div class="flow">
+          <div class="flow-step">CAPTURE</div><div class="flow-arrow">→</div>
+          <div class="flow-step">RESPOND</div><div class="flow-arrow">→</div>
+          <div class="flow-step">FOLLOW UP</div><div class="flow-arrow">→</div>
+          <div class="flow-step">ESCALATE</div><div class="flow-arrow">→</div>
+          <div class="flow-step">CLOSE</div>
+        </div>
         <details class="more">
           <summary>See how it works</summary>
           <div class="field"><div class="k">Problem</div><div class="v">Tenant and prospect messages get scattered across channels, with no record of what's been handled or by whom.</div></div>
@@ -856,6 +1022,14 @@
       <div>
         <h3>Maintenance Coordination Solution</h3>
         <div class="proves">Strongest asset: priority triage + vendor accountability</div>
+        <div class="flow">
+          <div class="flow-step">NEW REQUEST</div><div class="flow-arrow">→</div>
+          <div class="flow-step">PRIORITY</div><div class="flow-arrow">→</div>
+          <div class="flow-step">VENDOR ASSIGNED</div><div class="flow-arrow">→</div>
+          <div class="flow-step">FOLLOW-UP</div><div class="flow-arrow">→</div>
+          <div class="flow-step">TENANT CONFIRMATION</div><div class="flow-arrow">→</div>
+          <div class="flow-step">CLOSED</div>
+        </div>
         <details class="more">
           <summary>See how it works</summary>
           <div class="field"><div class="k">Problem</div><div class="v">Verbal hand-offs (guest → operator → supervisor → maintenance) lose or delay details; urgency depends on who's free, not on how serious the issue is.</div></div>
@@ -869,6 +1043,13 @@
       <div>
         <h3>Encoding &amp; Record-Keeping Accuracy System</h3>
         <div class="proves">Verification design under a real operational constraint</div>
+        <div class="flow">
+          <div class="flow-step">ENTRY LOGGED</div><div class="flow-arrow">→</div>
+          <div class="flow-step">CROSS-CHECKED</div><div class="flow-arrow">→</div>
+          <div class="flow-step">FLAGGED IF MISMATCH</div><div class="flow-arrow">→</div>
+          <div class="flow-step">CORRECTED</div><div class="flow-arrow">→</div>
+          <div class="flow-step">VERIFIED</div>
+        </div>
         <details class="more">
           <summary>See how it works</summary>
           <div class="field"><div class="k">Problem</div><div class="v">Manual transcription of room numbers and amounts during busy shifts caused mismatches, with no reliable field to cross-check since guest names aren't required.</div></div>
@@ -882,6 +1063,12 @@
       <div>
         <h3>Operations Toolkit: Guest Request Handover Log</h3>
         <div class="proves">Purpose-built for shift-change risk, not general logging</div>
+        <div class="flow">
+          <div class="flow-step">REQUEST LOGGED</div><div class="flow-arrow">→</div>
+          <div class="flow-step">STATUS TAGGED</div><div class="flow-arrow">→</div>
+          <div class="flow-step">SHIFT HANDOVER</div><div class="flow-arrow">→</div>
+          <div class="flow-step">CONFIRMED RECEIVED</div>
+        </div>
         <details class="more">
           <summary>See how it works</summary>
           <div class="field"><div class="k">Problem</div><div class="v">Requests on one shared sheet had no way to show, at a glance, what was still pending. Items could go undelivered simply because shifts changed.</div></div>
@@ -895,6 +1082,13 @@
       <div>
         <h3>Rent / Delinquency Follow-Up System</h3>
         <div class="proves">Cash-flow protection grounded in real lease terms</div>
+        <div class="flow">
+          <div class="flow-step">DUE DATE FLAGGED</div><div class="flow-arrow">→</div>
+          <div class="flow-step">GRACE PERIOD CHECK</div><div class="flow-arrow">→</div>
+          <div class="flow-step">FOLLOW-UP SENT</div><div class="flow-arrow">→</div>
+          <div class="flow-step">ESCALATED IF NEEDED</div><div class="flow-arrow">→</div>
+          <div class="flow-step">RESOLVED</div>
+        </div>
         <details class="more">
           <summary>See how it works</summary>
           <div class="field"><div class="k">Problem</div><div class="v">Late rent tracked inconsistently erodes cash flow; treating every late tenant the same way ignores what their actual lease allows.</div></div>
@@ -910,6 +1104,26 @@
   <div class="wrap">
     <h3>Also comfortable with</h3>
     <p class="also-line">Email management · Calendar scheduling · Document organization · Lease renewals &amp; move-in/move-out coordination</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="log-head">
+      <h2>Contact</h2>
+      <span>Let's talk</span>
+    </div>
+    <p class="offer-intro">Reach out directly, or book a trial call above — whichever's easier for you.</p>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:karenkisha.work@gmail.com?subject=Property%20Management%20VA%20-%20Portfolio%20Request">
+        <div class="contact-icon">@</div>
+        <div><span class="ct-label">Email</span><span class="ct-value">karenkisha.work@gmail.com</span></div>
+      </a>
+      <a class="contact-card" href="https://www.linkedin.com/in/karen-kisha-sabaiton-8b537840b/" target="_blank" rel="noopener">
+        <div class="contact-icon">in</div>
+        <div><span class="ct-label">LinkedIn</span><span class="ct-value">Karen Kisha Sabaiton</span></div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -937,7 +1151,7 @@
     <h2>A missed tenant message costs you more than a bad review: it costs you the tenant.</h2>
     <p>I build the systems that make sure that never happens: every message tracked, every maintenance request escalated on time, every dollar of rent followed up. Give me one real problem from your property, and I'll map the exact system I'd run for you. No cost, no obligation.</p>
     <div class="cta-row">
-      <a class="btn solid" href="https://calendly.com/karenkisha-work/intro-call" target="_blank" rel="noopener">Book a trial call</a>
+      <a class="btn solid btn-lg" href="https://calendly.com/karenkisha-work/intro-call" target="_blank" rel="noopener">Book a trial call</a>
       <a class="btn" href="mailto:karenkisha.work@gmail.com?subject=Property%20Management%20VA%20-%20Portfolio%20Request">Email me instead</a>
     </div>
     <div class="foot-note">v1.0 · 5 documented systems · fictional demonstration scenarios, real operational problems</div>
