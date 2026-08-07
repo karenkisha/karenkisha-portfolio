@@ -176,7 +176,17 @@
   .tag.done{background:rgba(79,156,124,.18);color:var(--good);}
   .tag.progress{background:rgba(217,164,65,.18);color:var(--gold);}
   .tag.new{background:rgba(193,105,79,.18);color:#e08a71;}
+  .tag.pending{background:rgba(169,188,203,.25);color:var(--ink-soft);}
   @keyframes tick{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+  /* ---------- TRAINING LOG ---------- */
+  .train-list{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .train-item{
+    display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--linen-deep);
+    border-radius:12px;padding:14px 16px;font-size:13.5px;font-weight:500;color:var(--ink);
+  }
+  .train-item .tag{font-size:10.5px;padding:3px 9px;border-radius:6px;font-weight:600;letter-spacing:.03em;flex:none;}
+  @media (max-width:640px){.train-list{grid-template-columns:1fr;}}
 
   /* ---------- QUICK VALUE ---------- */
   section.value{padding:84px 0 30px;}
@@ -355,6 +365,7 @@
       <span class="brand-word">Karen Kisha Sabaiton<small>Property Management VA</small></span>
     </a>
     <ul class="nav-links">
+      <li><a href="#training">Training</a></li>
       <li><a href="#cases">Case Studies</a></li>
       <li><a href="#tools">Tools</a></li>
       <li><a href="#offer">Offer</a></li>
@@ -368,9 +379,9 @@
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow">Property Management Virtual Assistant</div>
-        <h1 class="headline">The tenant message gets answered <em>before</em> it becomes a problem.</h1>
-        <p class="sub">I run daily tenant communication and maintenance coordination so units stay filled, requests don't fall through the cracks, and you're not the one glued to your phone at 9pm.</p>
+        <div class="eyebrow">Property Management Operations VA · AppFolio Training</div>
+        <h1 class="headline">Every lease, ticket, and tenant message tracked in <em>AppFolio</em>, not lost in the shuffle.</h1>
+        <p class="sub">I run leasing coordination, maintenance triage, and tenant communication inside AppFolio, so units stay filled, requests don't fall through the cracks, and you're not the one chasing status updates.</p>
         <div class="cta-row">
           <a class="btn solid" href="https://calendly.com/karenkisha-work/intro-call" target="_blank" rel="noopener">Book a free trial call →</a>
           <a class="btn ghost" href="#cases">See the systems</a>
@@ -418,12 +429,12 @@
       <div class="value-card">
         <div class="vnum mono">01</div>
         <h3>Faster responses</h3>
-        <p>Tenant messages logged and answered inside a committed response window — not whenever someone gets to it.</p>
+        <p>Tenant messages logged and answered inside a committed response window, not whenever someone gets to it.</p>
       </div>
       <div class="value-card">
         <div class="vnum mono">02</div>
         <h3>Nothing lost mid-fix</h3>
-        <p>Maintenance requests triaged by urgency and tracked to a verified close, confirmed with the tenant directly.</p>
+        <p>Maintenance requests triaged by urgency inside AppFolio and tracked to a verified close, confirmed with the tenant directly.</p>
       </div>
       <div class="value-card">
         <div class="vnum mono">03</div>
@@ -439,8 +450,8 @@
     <div class="tb-head">
       <div>
         <h2>The toolbelt</h2>
-        <p>The platforms I coordinate in daily — plug into whatever you already run, or I'll set up the free stack from scratch.</p>
-        <p style="margin-top:6px;">Already on AppFolio, Buildium, or TenantCloud? I adapt the same tracking system into it — no need to switch tools.</p>
+        <p>AppFolio is the platform I'm building deep, hands-on expertise in, day to day, plus the systems that support it.</p>
+        <p style="margin-top:6px;">Currently completing structured AppFolio training across leasing, maintenance, and occupancy workflows. See the training log below.</p>
       </div>
     </div>
   </div>
@@ -449,13 +460,33 @@
   </div>
 </section>
 
+<section class="cases" id="training">
+  <div class="wrap">
+    <div class="sect-head">
+      <span class="eyebrow-light">AppFolio Training</span>
+      <h2>Building proof of capability, one module at a time</h2>
+      <p>Currently completing hands-on AppFolio training on a sample 12-unit portfolio, Maple Grove Apartments, covering the full leasing and operations workflow a property manager runs day to day. Progress logged here as each module wraps.</p>
+    </div>
+    <ul class="train-list">
+      <li class="train-item"><span class="tag progress">In Progress</span> Property & Unit Setup</li>
+      <li class="train-item"><span class="tag pending">Pending</span> Rent Roll & Occupancy Review</li>
+      <li class="train-item"><span class="tag pending">Pending</span> Listings & Marketing</li>
+      <li class="train-item"><span class="tag pending">Pending</span> Applications & Tenant Screening</li>
+      <li class="train-item"><span class="tag pending">Pending</span> Guest Cards & Leasing CRM</li>
+      <li class="train-item"><span class="tag pending">Pending</span> Lease Generation & Move-In Charges</li>
+      <li class="train-item"><span class="tag pending">Pending</span> Leasing Communication Scripts</li>
+      <li class="train-item"><span class="tag pending">Pending</span> Daily Property Management Workflow</li>
+    </ul>
+  </div>
+</section>
+
 <section class="cases" id="cases">
   <div class="wrap">
     <div class="sect-head">
       <span class="eyebrow-light">Case Studies</span>
       <h2>Systems built from real operational chaos</h2>
-      <p>Each one below was designed around a specific failure point I saw firsthand running hotel operations — then adapted for property management.</p>
-      <div class="disclosure">These are demonstration case studies: the systems are fully documented and ready to run, but not yet operated on a live property. I'm looking for a trial task to prove them in practice — that's what the founding-client offer below is for.</div>
+      <p>Each one below was designed around a specific failure point I saw firsthand running hotel operations, then adapted for property management. AppFolio-run versions of these same systems are in progress, see the Training log above.</p>
+      <div class="disclosure">These are demonstration case studies: the systems are fully documented and ready to run, but not yet operated on a live property. I'm looking for a trial task to prove them in practice. That's what the founding-client offer below is for.</div>
     </div>
 
     <div class="case-grid">
@@ -534,9 +565,9 @@
         <div class="eyebrow">Founding Client Offer</div>
         <h2>Tenant & maintenance coordination, done for you</h2>
         <ul class="offer-list">
-          <li>No tenant message left waiting — logged and answered within a committed response window</li>
-          <li>No maintenance issue lost in the shuffle — triaged by urgency, tracked to a verified close-out</li>
-          <li>No guessing what's outstanding — a weekly status report on what's open, resolved, and needs a decision</li>
+          <li>No tenant message left waiting: logged and answered within a committed response window</li>
+          <li>No maintenance issue lost in the shuffle: triaged by urgency, tracked to a verified close-out</li>
+          <li>No guessing what's outstanding: a weekly status report on what's open, resolved, and needs a decision</li>
           <li>Late rent follow-up tracking available on request</li>
         </ul>
       </div>
@@ -558,13 +589,14 @@
       <div class="about-portrait"><img src="images/karen-about.jpg" alt="Karen Kisha Sabaiton" style="width:100%;height:100%;object-fit:cover;"></div>
       <div>
         <div class="eyebrow-light" style="color:var(--clay-deep);">About</div>
-        <h2 style="font-size:26px;margin-bottom:14px;">From four-property hotel operations to property management coordination</h2>
-        <p>Over five years in hospitality and administrative operations, including front office and Hotel In-Charge roles — coordinating 25+ staff and 600+ daily guest transactions across four properties, plus payroll-accurate documentation. That same discipline — tracking every request, verifying every close-out — is what I bring to property management coordination.</p>
-        <p>I'm currently learning PM VA work specifically, and open to a trial task now.</p>
+        <h2 style="font-size:26px;margin-bottom:14px;">From four-property hotel operations to Property Management Operations, in AppFolio</h2>
+        <p>Over five years in hospitality and administrative operations, including front office and Hotel In-Charge roles, coordinating 25+ staff and 600+ daily guest transactions across four properties, plus payroll-accurate documentation. Alongside that, accounting and administrative support work built the habit that shapes everything I do now: nothing gets logged without a verification step, and nothing gets closed without confirmation.</p>
+        <p>That discipline is exactly what leasing, maintenance, and tenant coordination run on. I'm currently deepening my transition into property management through hands-on AppFolio training, building leasing, maintenance, and occupancy workflows in the actual software property managers use, not just on paper. Open to a trial task now.</p>
         <div class="about-facts">
           <div class="fact-chip">📍 Naic, Cavite, PH · GMT+8</div>
           <div class="fact-chip">🎓 BS Computer Science</div>
           <div class="fact-chip">✅ TESDA NC II certified</div>
+          <div class="fact-chip">🏢 AppFolio Trainee</div>
           <div class="fact-chip">🟢 Available now</div>
         </div>
       </div>
@@ -574,7 +606,7 @@
 
 <footer id="contact">
   <div class="wrap">
-    <h2>A missed tenant message costs you more than a bad review — it costs you the tenant.</h2>
+    <h2>A missed tenant message costs you more than a bad review. It costs you the tenant.</h2>
     <p>Give me one real problem from your property, and I'll map the exact system I'd run for you. No cost, no obligation.</p>
     <div class="cta-row">
       <a class="btn solid" href="https://calendly.com/karenkisha-work/intro-call" target="_blank" rel="noopener">Book a trial call →</a>
@@ -590,13 +622,14 @@
         <div><span class="ct-label">LinkedIn</span><span class="ct-value">Karen Kisha Sabaiton</span></div>
       </a>
     </div>
-    <div class="foot-note">v1.0 · Demonstration case studies — systems documented, ready to prove on a live property</div>
+    <div class="foot-note">v1.0 · Demonstration case studies, systems documented and ready to prove on a live property</div>
   </div>
 </footer>
 
 <script>
   // Build toolbelt marquee with inline SVG icon chips (no external logos)
   const tools = [
+    {name:"AppFolio", icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 8h.01M9 12h.01M9 16h.01M15 8h.01M15 12h.01M15 16h.01"/></svg>'},
     {name:"Notion", icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h5l3 8V8"/></svg>'},
     {name:"Gmail", icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6l9 7 9-7"/></svg>'},
     {name:"Google Workspace", icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>'},
