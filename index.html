@@ -53,12 +53,11 @@
   .brand-mark{
     width:36px;height:36px;border-radius:11px;
     background:linear-gradient(155deg,#243a4d,var(--navy));
-    color:var(--linen);
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:700;font-size:13px;
+    color:var(--gold);
     display:flex;align-items:center;justify-content:center;
     flex:none;
   }
+  .brand-mark svg{width:18px;height:18px;}
   .brand-word{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;line-height:1.2;}
   .brand-word small{display:block;font-family:'JetBrains Mono',monospace;font-weight:400;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-top:2px;}
   .nav-links{display:flex;align-items:center;gap:26px;list-style:none;margin:0;padding:0;font-size:13.5px;font-weight:500;}
@@ -137,12 +136,6 @@
   }
   .portrait-caption b{display:block;font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--linen);}
   .portrait-caption span{font-size:12px;color:var(--mist);font-family:'JetBrains Mono',monospace;}
-  .photo-note{
-    position:absolute;top:14px;right:14px;
-    background:rgba(217,164,65,.15);border:1px dashed var(--gold);color:var(--gold);
-    font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;
-    padding:5px 8px;border-radius:6px;z-index:2;
-  }
   .float-chip{
     position:absolute;left:-18px;bottom:82px;
     background:rgba(244,242,236,.9);color:var(--ink);border-radius:12px;
@@ -352,7 +345,13 @@
 <nav class="topnav">
   <div class="wrap">
     <a href="#" class="brand">
-      <div class="brand-mark">KS</div>
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 11l9-7 9 7"/>
+          <path d="M5 10v9a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1v-9"/>
+          <circle cx="12" cy="14" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
       <span class="brand-word">Karen Kisha Sabaiton<small>Property Management VA</small></span>
     </a>
     <ul class="nav-links">
