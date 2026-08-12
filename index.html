@@ -161,6 +161,10 @@
     overflow:hidden;
     padding:15px 0;
   }
+  .ticker-label{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:#7f92a2;max-width:var(--max);margin:0 auto;padding:0 32px 10px;
+  }
   .ticker-track{
     display:flex;gap:0;white-space:nowrap;
     animation:tick 26s linear infinite;
@@ -405,6 +409,7 @@
     </div>
   </div>
   <div class="ticker-band">
+    <div class="ticker-label">Sample workflow · what a typical day looks like</div>
     <div class="ticker-track">
       <div class="ticker-item"><span class="tag done">Closed</span> Unit 204 · leak repaired, tenant confirmed</div>
       <div class="ticker-item"><span class="tag progress">Follow-up</span> Rent reminder sent · 2 days past due</div>
