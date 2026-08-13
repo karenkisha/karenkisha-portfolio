@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karen Kisha Sabaiton | Property Management VA — Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16232f;
+    --navy-soft:#20323f;
+    --navy-line:#324656;
+    --linen:#f4f2ec;
+    --linen-deep:#e8e4d9;
+    --ink:#182229;
+    --ink-soft:#5a6670;
+    --mist:#a9bccb;
+    --clay:#c1694f;
+    --clay-deep:#a34f39;
+    --gold:#d9a441;
+    --good:#4f9c7c;
+    --max:880px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--linen);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+
+  /* NAV */
+  nav.topnav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 28px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .brand-mark{
+    width:32px;height:32px;border-radius:10px;
+    background:linear-gradient(155deg,#243a4d,var(--navy));
+    color:var(--gold);
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .brand-mark svg{width:16px;height:16px;}
+  .brand-word{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;}
+  nav.topnav a.back{
+    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);text-decoration:none;
+    border-bottom:1px solid var(--linen-deep);
+  }
+
+  /* HERO */
+  header.hero{
+    background:linear-gradient(165deg,#1c2e3d 0%,#131f29 60%,#0f1922 100%);
+    color:var(--linen);
+    padding:56px 0 48px;
+  }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold);display:flex;align-items:center;gap:9px;margin-bottom:20px;
+  }
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);}
+  h1.headline{
+    font-size:clamp(28px,4.4vw,42px);font-weight:600;line-height:1.15;letter-spacing:-.01em;
+    margin-bottom:18px;max-width:20ch;
+  }
+  h1.headline em{font-style:normal;color:var(--gold);}
+  .sub{font-size:15.5px;line-height:1.65;color:var(--mist);max-width:52ch;margin-bottom:30px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;
+    padding:15px 26px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn.solid{background:linear-gradient(135deg,#cd7657,var(--clay));color:#fff;}
+  .btn.solid:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(193,105,79,.35);}
+  .cta-note{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mist);}
+
+  /* BENEFITS */
+  section.value{padding:56px 0 12px;}
+  .value-head{margin-bottom:26px;}
+  .value-head span.eyebrow-light{
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--clay-deep);
+  }
+  .value-head h2{font-size:24px;margin-top:8px;}
+  .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .value-card{
+    background:#fff;border:1px solid var(--linen-deep);border-radius:18px;padding:26px 22px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .value-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -18px rgba(22,35,47,.25);}
+  .value-card .vnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--clay);margin-bottom:10px;}
+  .value-card h3{font-size:15.5px;font-weight:600;margin-bottom:8px;line-height:1.3;}
+  .value-card p{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;}
+  @media (max-width:700px){.value-grid{grid-template-columns:1fr;}}
+
+  /* CLOSING CTA */
+  section.closing{padding:52px 0 80px;}
+  .closing-panel{
+    background:linear-gradient(155deg,#1c2e3d,#101b25);color:var(--linen);border-radius:24px;
+    padding:38px 36px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+    box-shadow:0 26px 54px -26px rgba(22,35,47,.4);
+  }
+  .closing-panel h2{font-size:21px;color:var(--linen);max-width:28ch;line-height:1.3;}
+  .closing-panel .btn.solid{flex:none;}
+  .foot-note{
+    margin-top:22px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-soft);
+    text-align:center;
+  }
+  .foot-note a{color:var(--clay-deep);text-decoration:none;border-bottom:1px solid var(--linen-deep);}
+
+  @media (max-width:600px){
+    .closing-panel{flex-direction:column;align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <a href="#" class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 11l9-7 9 7"/>
+          <path d="M5 10v9a1 1 0 001 1h4v-6h4v6h4a1 1 0 001-1v-9"/>
+          <circle cx="12" cy="14" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+      </div>
+      <span class="brand-word">Karen Kisha Sabaiton</span>
+    </a>
+    <a class="back" href="index.html">Full portfolio →</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Property Management Operations VA</div>
+    <h1 class="headline">Your rent follow-ups, tenant replies, and maintenance tickets — <em>handled</em>, not piling up.</h1>
+    <p class="sub">I run the day-to-day operations behind your units: tenant communication, rent tracking, and maintenance coordination, kept on schedule and documented, so nothing slips through.</p>
+    <div class="cta-row">
+      <a class="btn solid" href="https://calendly.com/karenkisha-work/intro-call" target="_blank" rel="noopener">Book a free 15-min call →</a>
+      <span class="cta-note">No pressure, just a fit check.</span>
+    </div>
+  </div>
+</header>
+
+<section class="value">
+  <div class="wrap">
+    <div class="value-head">
+      <span class="eyebrow-light">What you get</span>
+      <h2>Three things that stop slipping</h2>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="vnum mono">01</div>
+        <h3>Faster tenant responses</h3>
+        <p>Inquiries and requests get acknowledged the same day, with clear next steps, so tenants aren't left guessing and issues don't escalate.</p>
+      </div>
+      <div class="value-card">
+        <div class="vnum mono">02</div>
+        <h3>Rent tracking that doesn't slip</h3>
+        <p>Due dates, late payments, and follow-ups are monitored on a system, not memory, so nothing gets missed at month-end.</p>
+      </div>
+      <div class="value-card">
+        <div class="vnum mono">03</div>
+        <h3>Maintenance without the back-and-forth</h3>
+        <p>Requests get logged, routed to the right person, and followed through to resolution, with a paper trail you can check anytime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <div class="closing-panel">
+      <h2>Give me one real problem from your property. I'll map the system for it, free.</h2>
+      <a class="btn solid" href="https://calendly.com/karenkisha-work/intro-call" target="_blank" rel="noopener">Book a free 15-min call →</a>
+    </div>
+    <p class="foot-note">Prefer email? <a href="mailto:karenkisha.sabaiton@gmail.com?subject=Property%20Management%20VA%20-%20Quick%20Question">karenkisha.sabaiton@gmail.com</a></p>
+  </div>
+</section>
+
+</body>
+</html>
