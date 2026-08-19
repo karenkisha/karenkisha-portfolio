@@ -4,167 +4,174 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Karen Kisha Sabaiton | Property Management VA · Services</title>
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png.png">
-<link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180.png.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32-v2.png">
+<link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#16232f;
-    --navy-soft:#20323f;
-    --navy-line:#324656;
-    --linen:#f4f2ec;
-    --linen-deep:#e8e4d9;
-    --ink:#182229;
-    --ink-soft:#5a6670;
-    --mist:#a9bccb;
-    --clay:#c1694f;
-    --clay-deep:#a34f39;
-    --gold:#d9a441;
-    --good:#4f9c7c;
+    --ivory:#F6F2EA;
+    --ivory-deep:#EFE9DC;
+    --charcoal:#2B2A26;
+    --charcoal-soft:#514E46;
+    --taupe:#B7A48C;
+    --beige:#E7DECB;
+    --sage:#7C8863;
+    --sage-deep:#5F6B4B;
+    --clay:#B26B4E;
+    --clay-deep:#9c5a41;
+    --line:#DCD3C0;
     --max:880px;
   }
   *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
   body{
-    margin:0;
-    background:var(--linen);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
+    margin:0;background:var(--ivory);color:var(--charcoal);
+    font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
   a{color:inherit;}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
-  h1,h2,h3{font-family:'Space Grotesk',sans-serif;margin:0;}
-  .mono{font-family:'JetBrains Mono',monospace;}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;margin:0;letter-spacing:-.01em;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
 
   /* NAV */
+  nav.topnav{
+    position:sticky;top:0;z-index:60;background:rgba(246,242,234,.92);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
   nav.topnav .wrap{
     display:flex;align-items:center;justify-content:space-between;
-    padding:22px 28px;
+    padding:20px 28px;
   }
   .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
   .brand-mark{
-    width:32px;height:32px;border-radius:10px;
-    background:linear-gradient(155deg,#243a4d,var(--navy));
-    color:var(--gold);
+    width:32px;height:32px;border-radius:9px;
+    background:var(--charcoal);color:var(--beige);
     display:flex;align-items:center;justify-content:center;flex:none;
   }
   .brand-mark svg{width:16px;height:16px;}
-  .brand-word{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;}
+  .brand-word{font-family:'Fraunces',serif;font-weight:600;font-size:15px;}
   nav.topnav a.back{
-    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);text-decoration:none;
-    border-bottom:1px solid var(--linen-deep);
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--charcoal-soft);text-decoration:none;
+    border-bottom:1px solid var(--line);padding-bottom:2px;transition:.15s;
   }
+  nav.topnav a.back:hover{color:var(--charcoal);border-color:var(--taupe);}
 
   /* HERO */
   header.hero{
-    background:linear-gradient(165deg,#1c2e3d 0%,#131f29 60%,#0f1922 100%);
-    color:var(--linen);
-    padding:56px 0 48px;
+    background:var(--charcoal);
+    color:var(--ivory);
+    padding:64px 0 52px;
   }
   .eyebrow{
-    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--gold);display:flex;align-items:center;gap:9px;margin-bottom:20px;
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--taupe);display:flex;align-items:center;gap:9px;margin-bottom:22px;
   }
-  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold);}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--clay);}
   h1.headline{
-    font-size:clamp(28px,4.4vw,42px);font-weight:600;line-height:1.15;letter-spacing:-.01em;
-    margin-bottom:18px;max-width:20ch;
+    font-size:clamp(28px,4.4vw,42px);font-weight:500;line-height:1.15;letter-spacing:-.01em;
+    margin-bottom:20px;max-width:20ch;
   }
-  h1.headline em{font-style:normal;color:var(--gold);}
-  .sub{font-size:15.5px;line-height:1.65;color:var(--mist);max-width:52ch;margin-bottom:16px;}
+  h1.headline em{font-style:normal;color:var(--taupe);}
+  .sub{font-size:15.5px;line-height:1.65;color:#C9C3B4;max-width:52ch;margin-bottom:16px;}
   .credibility{
-    font-size:13.5px;line-height:1.6;color:var(--gold);max-width:52ch;margin-bottom:30px;
-    font-style:normal;border-left:2px solid var(--gold);padding-left:14px;
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.6;color:var(--taupe);max-width:52ch;margin-bottom:32px;
+    border-left:2px solid var(--sage);padding-left:14px;
   }
-  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
   .btn{
-    font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;
-    padding:15px 26px;border-radius:11px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;
+    padding:16px 28px;border-radius:9px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
     transition:transform .15s ease, box-shadow .15s ease;
   }
-  .btn.solid{background:linear-gradient(135deg,#cd7657,var(--clay));color:#fff;}
-  .btn.solid:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(193,105,79,.35);}
-  .cta-note{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mist);}
+  .btn.solid{background:var(--clay);color:#fff;}
+  .btn.solid:hover{transform:translateY(-2px);box-shadow:0 12px 24px -8px rgba(178,107,78,.4);}
+  .cta-note{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#A9A395;}
 
   /* BENEFITS */
   section.value{padding:56px 0 12px;}
-  .value-head{margin-bottom:26px;}
+  .value-head{margin-bottom:30px;max-width:640px;}
   .value-head span.eyebrow-light{
-    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--clay-deep);
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--sage-deep);
   }
-  .value-head h2{font-size:24px;margin-top:8px;}
+  .value-head h2{font-size:26px;margin-top:10px;}
   .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
   .value-card{
-    background:#fff;border:1px solid var(--linen-deep);border-radius:18px;padding:26px 22px;
+    background:var(--ivory-deep);border:1px solid var(--line);border-radius:16px;padding:26px 22px;
     transition:transform .18s ease, box-shadow .18s ease;
   }
-  .value-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -18px rgba(22,35,47,.25);}
-  .value-card .vnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--clay);margin-bottom:10px;}
-  .value-card h3{font-size:15.5px;font-weight:600;margin-bottom:8px;line-height:1.3;}
-  .value-card p{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;}
+  .value-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -18px rgba(43,42,38,.22);}
+  .value-card .vnum{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--clay);margin-bottom:10px;}
+  .value-card h3{font-size:16.5px;font-weight:500;margin-bottom:8px;line-height:1.3;}
+  .value-card p{font-size:13.5px;color:var(--charcoal-soft);line-height:1.6;margin:0;}
   @media (max-width:700px){.value-grid{grid-template-columns:1fr;}}
 
   /* TRIAL / BRIDGE SECTION */
-  section.trial{padding:12px 0 12px;}
+  section.trial{padding:44px 0 12px;}
   .trial-panel{
-    background:#fff;border:1px solid var(--linen-deep);border-radius:22px;
-    padding:34px 32px;
+    background:var(--ivory-deep);border:1px solid var(--line);border-radius:20px;
+    padding:38px 34px;
   }
   .trial-top{
     display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;
-    margin-bottom:22px;
+    margin-bottom:24px;
   }
   .trial-eyebrow{
-    font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--clay-deep);margin-bottom:8px;
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--sage-deep);margin-bottom:8px;
   }
-  .trial-panel h2{font-size:22px;line-height:1.3;max-width:36ch;}
+  .trial-panel h2{font-size:23px;line-height:1.3;max-width:36ch;}
   .trial-price{
     text-align:right;flex:none;
   }
-  .trial-price .amount{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:30px;color:var(--navy);}
-  .trial-price .period{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft);}
+  .trial-price .amount{font-family:'Fraunces',serif;font-weight:600;font-size:32px;color:var(--charcoal);}
+  .trial-price .period{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--charcoal-soft);}
   .trial-value{
-    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--good);margin-top:4px;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--sage-deep);margin-top:4px;
   }
   .trial-list{
-    list-style:none;margin:0 0 24px;padding:0;
+    list-style:none;margin:0 0 26px;padding:0;
     display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;
   }
   .trial-list li{
-    font-size:13.5px;color:var(--ink-soft);line-height:1.5;padding-left:22px;position:relative;
+    font-size:13.5px;color:var(--charcoal-soft);line-height:1.5;padding-left:22px;position:relative;
   }
   .trial-list li::before{
     content:"✓";position:absolute;left:0;top:0;color:var(--clay);font-weight:600;
   }
   @media (max-width:600px){.trial-list{grid-template-columns:1fr;}}
   .trial-bridge{
-    font-size:13px;color:var(--ink-soft);line-height:1.6;margin-bottom:0;
-    border-top:1px solid var(--linen-deep);padding-top:18px;
+    font-size:13px;color:var(--charcoal-soft);line-height:1.6;margin-bottom:0;
+    border-top:1px solid var(--line);padding-top:18px;
   }
 
   /* CLOSING CTA */
   section.closing{padding:52px 0 80px;}
   .closing-panel{
-    background:linear-gradient(155deg,#1c2e3d,#101b25);color:var(--linen);border-radius:24px;
-    padding:38px 36px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
-    box-shadow:0 26px 54px -26px rgba(22,35,47,.4);
+    background:var(--charcoal);color:var(--ivory);border-radius:20px;
+    padding:40px 36px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
   }
-  .closing-panel h2{font-size:21px;color:var(--linen);max-width:28ch;line-height:1.3;}
+  .closing-panel h2{font-size:22px;color:var(--ivory);max-width:28ch;line-height:1.3;}
   .closing-panel .btn.solid{flex:none;}
   .foot-note{
-    margin-top:22px;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-soft);
+    margin-top:24px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--charcoal-soft);
     text-align:center;
   }
-  .foot-note a{color:var(--clay-deep);text-decoration:none;border-bottom:1px solid var(--linen-deep);}
+  .foot-note a{color:var(--clay-deep);text-decoration:none;border-bottom:1px solid var(--line);}
 
   @media (max-width:600px){
     .closing-panel{flex-direction:column;align-items:flex-start;}
     .trial-top{flex-direction:column;}
     .trial-price{text-align:left;}
   }
+
+  /* scroll reveal (matches main portfolio) */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.show{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;}}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BWK2THXY6"></script>
@@ -208,22 +215,22 @@
 
 <section class="value">
   <div class="wrap">
-    <div class="value-head">
+    <div class="value-head reveal">
       <span class="eyebrow-light">What you get</span>
       <h2>Three things that stop slipping</h2>
     </div>
     <div class="value-grid">
-      <div class="value-card">
+      <div class="value-card reveal">
         <div class="vnum mono">01</div>
         <h3>Faster tenant responses</h3>
         <p>Inquiries and requests get acknowledged the same day, with clear next steps, so tenants aren't left guessing and issues don't escalate.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card reveal">
         <div class="vnum mono">02</div>
         <h3>Rent tracking that doesn't slip</h3>
         <p>Due dates, late payments, and follow-ups are monitored on a system, not memory, so nothing gets missed at month-end.</p>
       </div>
-      <div class="value-card">
+      <div class="value-card reveal">
         <div class="vnum mono">03</div>
         <h3>Maintenance without the back-and-forth</h3>
         <p>Requests get logged, routed to the right person, and followed through to resolution, with a paper trail you can check anytime.</p>
@@ -234,7 +241,7 @@
 
 <section class="trial">
   <div class="wrap">
-    <div class="trial-panel">
+    <div class="trial-panel reveal">
       <div class="trial-top">
         <div>
           <div class="trial-eyebrow">Founding Client Offer · limited slots</div>
@@ -260,13 +267,21 @@
 
 <section class="closing">
   <div class="wrap">
-    <div class="closing-panel">
+    <div class="closing-panel reveal">
       <h2>Give me one real problem from your property. I'll map the system for it, free.</h2>
       <a class="btn solid" href="https://cal.com/karenkisha/intro-call" target="_blank" rel="noopener">Book a free 15-min call →</a>
     </div>
     <p class="foot-note">Prefer email? <a href="mailto:karenkisha.sabaiton@gmail.com?subject=Property%20Management%20VA%20-%20Quick%20Question">karenkisha.sabaiton@gmail.com</a></p>
   </div>
 </section>
+
+<script>
+  const items = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+  }, {threshold:0.12});
+  items.forEach(i=>io.observe(i));
+</script>
 
 </body>
 </html>
