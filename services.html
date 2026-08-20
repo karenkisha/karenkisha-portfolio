@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Karen Kisha | Property Management VA · Services</title>
+<title>Karen Kisha, Services</title>
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32-v2.png">
 <link rel="icon" type="image/png" sizes="180x180" href="images/favicon-180-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,6 @@
     --sage:#7C8863;
     --sage-deep:#5F6B4B;
     --clay:#B26B4E;
-    --clay-deep:#9c5a41;
     --line:#DCD3C0;
     --max:880px;
   }
@@ -31,56 +30,62 @@
     -webkit-font-smoothing:antialiased;
   }
   a{color:inherit;}
+  img{max-width:100%;display:block;}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
   h1,h2,h3{font-family:'Fraunces',serif;font-weight:500;margin:0;letter-spacing:-.01em;}
-  .mono{font-family:'IBM Plex Mono',monospace;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--sage-deep);
+  }
+  .tag{
+    display:inline-flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;
+    color:var(--charcoal-soft);border:1px solid var(--line);border-radius:20px;
+    padding:5px 13px;
+  }
 
-  /* NAV */
+  /* ---------- key-tag signature element (simplified) ---------- */
+  .keytag{display:inline-flex;align-items:center;flex:none;}
+  .keytag .fob{
+    width:32px;height:42px;border-radius:8px;
+    background:var(--charcoal);color:var(--ivory);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;
+  }
+  .keytag .fob b{font-size:13px;line-height:1;font-weight:500;}
+  .keytag.sage .fob{background:var(--sage-deep);}
+  .keytag.clay .fob{background:var(--clay);}
+
+  /* ---------- NAV ---------- */
   nav.topnav{
     position:sticky;top:0;z-index:60;background:rgba(246,242,234,.92);
     backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
-  nav.topnav .wrap{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:20px 28px;
-  }
-  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  nav.topnav .wrap{display:flex;align-items:center;justify-content:space-between;padding:20px 28px;gap:16px;}
+  .brand{font-family:'Fraunces',serif;font-size:18px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:10px;}
   .brand-mark{
-    width:32px;height:32px;border-radius:9px;
-    background:var(--charcoal);color:var(--beige);
-    display:flex;align-items:center;justify-content:center;flex:none;
-    overflow:hidden;
+    width:30px;height:30px;border-radius:8px;background:var(--charcoal);color:var(--beige);
+    display:flex;align-items:center;justify-content:center;flex:none;overflow:hidden;
   }
-  .brand-mark svg{width:16px;height:16px;}
   .brand-mark img{width:100%;height:100%;object-fit:cover;}
-  .brand-word{font-family:'Fraunces',serif;font-weight:600;font-size:15px;}
   nav.topnav a.back{
     font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--charcoal-soft);text-decoration:none;
-    border-bottom:1px solid var(--line);padding-bottom:2px;transition:.15s;
+    border-bottom:1px solid var(--line);padding-bottom:1px;
   }
   nav.topnav a.back:hover{color:var(--charcoal);border-color:var(--taupe);}
 
-  /* HERO */
-  header.hero{
-    background:var(--charcoal);
-    color:var(--ivory);
-    padding:64px 0 52px;
-  }
-  .eyebrow{
-    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--taupe);display:flex;align-items:center;gap:9px;margin-bottom:22px;
-  }
-  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--clay);}
+  /* ---------- HERO ---------- */
+  header.hero{padding:64px 0 52px;}
+  .eyebrow-hero{margin-bottom:20px;}
   h1.headline{
-    font-size:clamp(28px,4.4vw,42px);font-weight:500;line-height:1.15;letter-spacing:-.01em;
-    margin-bottom:20px;max-width:20ch;
+    font-size:clamp(30px,4.4vw,44px);line-height:1.16;letter-spacing:-.01em;
+    margin-bottom:18px;max-width:19ch;
   }
-  h1.headline em{font-style:normal;color:var(--taupe);}
-  .sub{font-size:15.5px;line-height:1.65;color:#C9C3B4;max-width:52ch;margin-bottom:16px;}
-  .credibility{
-    font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.6;color:var(--taupe);max-width:52ch;margin-bottom:32px;
-    border-left:2px solid var(--sage);padding-left:14px;
+  .sub{font-size:16px;line-height:1.7;color:var(--charcoal-soft);max-width:54ch;margin-bottom:14px;}
+  .credibility-line{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--sage-deep);
+    border-left:2px solid var(--sage);padding-left:14px;margin-bottom:32px;line-height:1.6;max-width:52ch;
   }
   .cta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
   .btn{
@@ -90,109 +95,97 @@
   }
   .btn.solid{background:var(--clay);color:#fff;}
   .btn.solid:hover{transform:translateY(-2px);box-shadow:0 12px 24px -8px rgba(178,107,78,.4);}
-  .cta-note{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#A9A395;}
+  .btn.line{border:1px solid var(--charcoal);color:var(--charcoal);}
+  .btn.line:hover{background:var(--charcoal);color:var(--ivory);}
+  .cta-note{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--charcoal-soft);}
 
-  /* BENEFITS */
-  section.value{padding:56px 0 12px;}
-  .value-head{margin-bottom:30px;max-width:640px;}
-  .value-head span.eyebrow-light{
-    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--sage-deep);
+  /* ---------- WHAT YOU GET ---------- */
+  section.value{padding:12px 0 20px;}
+  .value-head{margin-bottom:26px;}
+  .value-head h2{font-size:24px;margin-top:8px;}
+  .svc-row{
+    display:grid;grid-template-columns:.9fr 1.6fr;gap:24px;padding:26px 0;border-top:1px solid var(--line);
+    align-items:baseline;
   }
-  .value-head h2{font-size:26px;margin-top:10px;}
-  .value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-  .value-card{
-    background:var(--ivory-deep);border:1px solid var(--line);border-radius:16px;padding:26px 22px;
-    transition:transform .18s ease, box-shadow .18s ease;
-  }
-  .value-card:hover{transform:translateY(-3px);box-shadow:0 16px 32px -18px rgba(43,42,38,.22);}
-  .value-card .vnum{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--clay);margin-bottom:10px;}
-  .value-card h3{font-size:16.5px;font-weight:500;margin-bottom:8px;line-height:1.3;}
-  .value-card p{font-size:13.5px;color:var(--charcoal-soft);line-height:1.6;margin:0;}
-  @media (max-width:700px){.value-grid{grid-template-columns:1fr;}}
+  .svc-row:last-child{border-bottom:1px solid var(--line);}
+  .svc-row .svc-name{font-family:'Fraunces',serif;font-size:19px;}
+  .svc-row .svc-desc{font-size:14px;color:var(--charcoal-soft);line-height:1.65;max-width:52ch;}
+  @media (max-width:620px){.svc-row{grid-template-columns:1fr;gap:8px;}}
 
-  /* TRIAL / BRIDGE SECTION */
-  section.trial{padding:44px 0 12px;}
+  /* ---------- HOW I WORK strip ---------- */
+  section.how{padding:20px 0 20px;}
+  .how-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:20px;}
+  .how-card{display:flex;flex-direction:column;gap:12px;}
+  .how-card p{font-size:12px;color:var(--charcoal-soft);line-height:1.55;margin:0;}
+  .how-card h3{font-size:14px;}
+  @media (max-width:900px){.how-grid{grid-template-columns:1fr 1fr 1fr;}}
+  @media (max-width:600px){.how-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:380px){.how-grid{grid-template-columns:1fr;}}
+
+  /* ---------- PILOT / TRIAL SECTION ---------- */
+  section.trial{padding:20px 0 20px;}
   .trial-panel{
-    background:var(--ivory-deep);border:1px solid var(--line);border-radius:20px;
-    padding:38px 34px;
+    background:var(--ivory-deep);border:1px solid var(--line);border-radius:20px;padding:36px 34px;
   }
   .trial-top{
     display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;
-    margin-bottom:24px;
+    margin-bottom:22px;
   }
-  .trial-eyebrow{
-    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--sage-deep);margin-bottom:8px;
-  }
-  .trial-panel h2{font-size:23px;line-height:1.3;max-width:36ch;}
-  .trial-price{
-    text-align:right;flex:none;
-  }
+  .trial-panel h2{font-size:22px;line-height:1.3;max-width:34ch;}
+  .trial-price{text-align:right;flex:none;}
   .trial-price .amount{font-family:'Fraunces',serif;font-weight:600;font-size:32px;color:var(--charcoal);}
   .trial-price .period{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--charcoal-soft);}
-  .trial-value{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--sage-deep);margin-top:4px;
-  }
   .trial-list{
-    list-style:none;margin:0 0 26px;padding:0;
-    display:grid;grid-template-columns:1fr 1fr;gap:12px 24px;
+    list-style:none;margin:0 0 22px;padding:0;
+    display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;
   }
-  .trial-list li{
-    font-size:13.5px;color:var(--charcoal-soft);line-height:1.5;padding-left:22px;position:relative;
-  }
-  .trial-list li::before{
-    content:"✓";position:absolute;left:0;top:0;color:var(--clay);font-weight:600;
-  }
+  .trial-list li{font-size:13.5px;color:var(--charcoal-soft);line-height:1.55;padding-left:20px;position:relative;}
+  .trial-list li::before{content:"•";position:absolute;left:0;top:0;color:var(--clay);}
   @media (max-width:600px){.trial-list{grid-template-columns:1fr;}}
   .trial-bridge{
-    font-size:13px;color:var(--charcoal-soft);line-height:1.6;margin-bottom:0;
-    border-top:1px solid var(--line);padding-top:18px;
+    font-size:13px;color:var(--charcoal-soft);line-height:1.65;margin:0;
+    border-top:1px solid var(--line);padding-top:16px;
   }
+  .trial-bridge + .trial-bridge{border-top:none;padding-top:10px;}
+  @media (max-width:600px){.trial-top{flex-direction:column;}.trial-price{text-align:left;}}
 
-  /* CLOSING CTA */
-  section.closing{padding:52px 0 80px;}
+  /* ---------- GOOD FIT mini ---------- */
+  section.fit{padding:20px 0 20px;}
+  .fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:22px;}
+  .fit-col .fit-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;display:block;}
+  .fit-col.good .fit-label{color:var(--sage-deep);}
+  .fit-col.notfit .fit-label{color:var(--taupe);}
+  .fit-col ul{list-style:none;margin:0;padding:0;}
+  .fit-col li{font-size:13px;line-height:1.55;color:var(--charcoal-soft);padding:7px 0;border-top:1px solid var(--line);}
+  .fit-col li:first-child{border-top:none;}
+  @media (max-width:600px){.fit-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CLOSING CTA ---------- */
+  section.closing{padding:44px 0 72px;}
   .closing-panel{
     background:var(--charcoal);color:var(--ivory);border-radius:20px;
-    padding:40px 36px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+    padding:36px 34px;display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap;
   }
-  .closing-panel h2{font-size:22px;color:var(--ivory);max-width:28ch;line-height:1.3;}
-  .closing-panel .btn.solid{flex:none;}
+  .closing-panel h2{font-size:20px;color:var(--ivory);max-width:26ch;line-height:1.3;}
   .foot-note{
-    margin-top:24px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--charcoal-soft);
+    margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--charcoal-soft);
     text-align:center;
   }
-  .foot-note a{color:var(--clay-deep);text-decoration:none;border-bottom:1px solid var(--line);}
+  .foot-note a{color:var(--sage-deep);text-decoration:none;border-bottom:1px solid var(--line);}
+  @media (max-width:600px){.closing-panel{flex-direction:column;align-items:flex-start;}}
 
-  @media (max-width:600px){
-    .closing-panel{flex-direction:column;align-items:flex-start;}
-    .trial-top{flex-direction:column;}
-    .trial-price{text-align:left;}
-  }
-
-  /* scroll reveal (matches main portfolio) */
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
   .reveal.show{opacity:1;transform:translateY(0);}
   @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important;}}
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7BWK2THXY6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-7BWK2THXY6');
-</script>
 </head>
 <body>
 
 <nav class="topnav">
   <div class="wrap">
-    <a href="#" class="brand">
-      <div class="brand-mark">
-        <img src="images/favicon-180-v2.png" alt="Karen Kisha logo mark">
-      </div>
-      <span class="brand-word">Karen Kisha</span>
+    <a href="index.html" class="brand">
+      <div class="brand-mark"><img src="images/favicon-180-v2.png" alt="Karen Kisha logo mark"></div>
+      Karen Kisha
     </a>
     <a class="back" href="index.html">Full portfolio →</a>
   </div>
@@ -200,13 +193,13 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">Property Management Operations VA</div>
-    <h1 class="headline">Your rent follow-ups, tenant replies, and maintenance tickets, <em>handled</em>, not piling up.</h1>
-    <p class="sub">I run the day-to-day operations behind your units: tenant communication, rent tracking, and maintenance coordination, kept on schedule and documented, so nothing slips through.</p>
-    <p class="credibility">Background in hotel operations and accounting: I've handled guest escalations and financial reconciliation under pressure, long before I handled tenants.</p>
+    <div class="eyebrow eyebrow-hero">Property Management Operations</div>
+    <h1 class="headline">Consider it handled.</h1>
+    <p class="sub">A tenant message gets tracked and answered. A vendor gets followed up on until the job is done. A weekly report tells you what's resolved and what still needs your call, so you have fewer things to chase and fewer things to worry about.</p>
+    <p class="credibility-line">You shouldn't have to manage the person you hired to help manage the details. New to live property management, not new to operations.</p>
     <div class="cta-row">
-      <a class="btn solid" href="https://cal.com/karenkisha/intro-call" target="_blank" rel="noopener">Book a free 15-min call →</a>
-      <span class="cta-note">No pressure, just a fit check.</span>
+      <a class="btn solid" href="https://cal.com/karenkisha/intro-call" target="_blank" rel="noopener">Start with the $75 Founding Pilot</a>
+      <span class="cta-note">Free 15-min fit call first, no pressure.</span>
     </div>
   </div>
 </header>
@@ -214,24 +207,60 @@
 <section class="value">
   <div class="wrap">
     <div class="value-head reveal">
-      <span class="eyebrow-light">What you get</span>
+      <span class="eyebrow">What You Get</span>
       <h2>Three things that stop slipping</h2>
     </div>
-    <div class="value-grid">
-      <div class="value-card reveal">
-        <div class="vnum mono">01</div>
-        <h3>Faster tenant responses</h3>
-        <p>Inquiries and requests get acknowledged the same day, with clear next steps, so tenants aren't left guessing and issues don't escalate.</p>
+    <div class="svc-row reveal">
+      <div class="svc-name">Tenant Communication</div>
+      <div class="svc-desc">Every message gets a response inside a committed window, a clear next step, and a record of who handled it. Tenants aren't left wondering what's happening.</div>
+    </div>
+    <div class="svc-row reveal">
+      <div class="svc-name">Maintenance Coordination</div>
+      <div class="svc-desc">Requests get triaged by real urgency, assigned, followed up on, and confirmed closed, not just marked "done" and forgotten.</div>
+    </div>
+    <div class="svc-row reveal">
+      <div class="svc-name">Operations Support</div>
+      <div class="svc-desc">Rent follow-up tracking and weekly status reporting, so you always know what's open, what's pending, and what needs your call.</div>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="wrap">
+    <div class="value-head reveal">
+      <span class="eyebrow">How I Work</span>
+      <h2>I don't wait for a problem to become an emergency.</h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-card reveal">
+        <div class="keytag"><div class="fob"><b>U</b></div></div>
+        <h3>Understand</h3>
+        <p>Learn your workflow, priorities, and boundaries.</p>
       </div>
-      <div class="value-card reveal">
-        <div class="vnum mono">02</div>
-        <h3>Rent tracking that doesn't slip</h3>
-        <p>Due dates, late payments, and follow-ups are monitored on a system, not memory, so nothing gets missed at month-end.</p>
+      <div class="how-card reveal">
+        <div class="keytag sage"><div class="fob"><b>A</b></div></div>
+        <h3>Anticipate</h3>
+        <p>Notice what may need attention next, before it's urgent.</p>
       </div>
-      <div class="value-card reveal">
-        <div class="vnum mono">03</div>
-        <h3>Maintenance without the back-and-forth</h3>
-        <p>Requests get logged, routed to the right person, and followed through to resolution, with a paper trail you can check anytime.</p>
+      <div class="how-card reveal">
+        <div class="keytag"><div class="fob"><b>A</b></div></div>
+        <h3>Act</h3>
+        <p>Handle what's within scope, ask before going outside it.</p>
+      </div>
+      <div class="how-card reveal">
+        <div class="keytag clay"><div class="fob"><b>C</b></div></div>
+        <h3>Communicate</h3>
+        <p>Updates before you have to ask what's happening.</p>
+      </div>
+      <div class="how-card reveal">
+        <div class="keytag"><div class="fob"><b>M</b></div></div>
+        <h3>Manage Up</h3>
+        <p>Summarize what matters, recommend the next step.</p>
+      </div>
+      <div class="how-card reveal">
+        <div class="keytag sage"><div class="fob"><b>F</b></div></div>
+        <h3>Follow Through</h3>
+        <p>Keep open loops moving until they're actually closed.</p>
       </div>
     </div>
   </div>
@@ -242,23 +271,49 @@
     <div class="trial-panel reveal">
       <div class="trial-top">
         <div>
-          <div class="trial-eyebrow">Founding Client Offer · limited slots</div>
-          <h2>Tenant &amp; maintenance coordination, done for you</h2>
+          <div class="eyebrow" style="margin-bottom:8px;">Founding Client Pilot · limited slots</div>
+          <h2>Let's start small. Give me one real workflow.</h2>
         </div>
         <div class="trial-price">
           <div class="amount">$75</div>
           <div class="period">flat · up to 8 units · 2 weeks</div>
-          <div class="trial-value">Then $200/week ongoing</div>
         </div>
       </div>
       <ul class="trial-list">
-        <li>Tenant messaging logged &amp; answered within a committed response window</li>
+        <li>Tenant messaging logged and answered inside a committed response window</li>
         <li>Maintenance triaged by urgency, tracked to a verified close-out</li>
-        <li>Weekly status report: what's resolved, what's pending, what needs your call</li>
-        <li>Late rent follow-up tracking available on request</li>
+        <li>A weekly status report on what's resolved, pending, and needs your call</li>
+        <li>Rent follow-up tracking available on request</li>
       </ul>
-      <p class="trial-bridge">After the free call, if it's a fit, this is where we start: a 2-week founding run on your portfolio, priced to cover setup and testing. An honest testimonial is appreciated if you're satisfied. No long contract, no big commitment.</p>
-      <p class="trial-bridge" style="margin-top:12px;border-top:none;padding-top:0;">Outcome-based engagement · 50% deposit to start, balance on delivery · Mon–Fri, 8am–5pm PH time · scope changes confirmed in writing before work starts.</p>
+      <p class="trial-bridge">This is a low-risk way to test working together, not a discount rate. It's priced to cover setup and testing, and to prove how I actually operate. An honest testimonial is appreciated if you're satisfied. No long contract, no big commitment.</p>
+      <p class="trial-bridge">Outcome-based engagement · 50% deposit to start, balance on delivery · Mon–Fri, 8am–5pm PH time · scope changes confirmed in writing before work starts.</p>
+    </div>
+  </div>
+</section>
+
+<section class="fit">
+  <div class="wrap">
+    <div class="value-head reveal">
+      <span class="eyebrow">Who I Work Best With</span>
+      <h2 style="font-size:22px;">You provide the context. I'll take it from there.</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-col good reveal">
+        <span class="fit-label">Good fit</span>
+        <ul>
+          <li>Wants ownership handled, not tasks micromanaged</li>
+          <li>Communicates clearly and respects agreed boundaries</li>
+          <li>Values a long-term working relationship</li>
+        </ul>
+      </div>
+      <div class="fit-col notfit reveal">
+        <span class="fit-label">Not a fit</span>
+        <ul>
+          <li>Expects unlimited availability outside agreed hours</li>
+          <li>Wants someone to follow instructions without thinking</li>
+          <li>Chooses providers on lowest price alone</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -267,9 +322,9 @@
   <div class="wrap">
     <div class="closing-panel reveal">
       <h2>Give me one real problem from your property. I'll map the system for it, free.</h2>
-      <a class="btn solid" href="https://cal.com/karenkisha/intro-call" target="_blank" rel="noopener">Book a free 15-min call →</a>
+      <a class="btn solid" href="https://cal.com/karenkisha/intro-call" target="_blank" rel="noopener">Start with the $75 Founding Pilot</a>
     </div>
-    <p class="foot-note">Prefer email? <a href="mailto:karenkisha.sabaiton@gmail.com?subject=Property%20Management%20VA%20-%20Quick%20Question">karenkisha.sabaiton@gmail.com</a></p>
+    <p class="foot-note">Prefer email? <a href="mailto:karenkisha.sabaiton@gmail.com?subject=Property%20Management%20-%20Quick%20Question">karenkisha.sabaiton@gmail.com</a></p>
   </div>
 </section>
 
