@@ -65,7 +65,16 @@
     border-bottom:1px solid var(--line);
   }
   nav.topnav .wrap{display:flex;align-items:center;justify-content:space-between;padding:20px 32px;gap:20px;flex-wrap:wrap;}
-  .brand{font-family:'Fraunces',serif;font-size:19px;font-weight:600;text-decoration:none;}
+  .brand{font-family:'Fraunces',serif;font-size:19px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:11px;color:var(--charcoal);}
+  .brand-mark{
+    width:34px;height:34px;border-radius:10px;flex-shrink:0;
+    background:linear-gradient(155deg,var(--charcoal) 0%,#3c3a34 100%);
+    display:flex;align-items:center;justify-content:center;overflow:hidden;
+    padding:5px;box-sizing:border-box;
+    border:1px solid rgba(178,107,78,.55);
+    box-shadow:0 2px 6px rgba(43,42,38,.22),inset 0 0 0 1px rgba(246,242,234,.06);
+  }
+  .brand-mark img{width:100%;height:100%;object-fit:contain;}
   .nav-links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0;font-size:14px;}
   .nav-links a{text-decoration:none;color:var(--charcoal-soft);border-bottom:1px solid transparent;padding-bottom:2px;transition:.15s;}
   .nav-links a:hover{color:var(--charcoal);border-color:var(--taupe);}
@@ -476,8 +485,8 @@
 <nav class="topnav">
   <div class="wrap">
     <a href="#" class="brand">
-      <div class="brand-mark" style="width:30px;height:30px;border-radius:8px;background:var(--charcoal);display:flex;align-items:center;justify-content:center;overflow:hidden;">
-        <img src="images/favicon-180-v2.png" alt="Karen Kisha logo mark" style="width:100%;height:100%;object-fit:cover;">
+      <div class="brand-mark">
+        <img src="images/favicon-180-v2.png" alt="Karen Kisha logo mark">
       </div>
       Karen Kisha
     </a>
@@ -901,7 +910,24 @@
                 <div class="deck-comm-grid">
                   <div class="deck-comm">
                     <div class="to">To: Applicant</div>
-                    <div class="msg">"Your application has been reviewed against the property's stated screening criteria. We'll share next steps through the property's standard application-notification process."</div>
+                    <div class="msg mono">Subject: Update on Your Rental Application - Unit 104, Maple Grove Apartments
+
+Dear Carlos Ramirez,
+
+Thank you for applying for Unit 104 at Maple Grove Apartments. After reviewing your application against our screening criteria, we are unable to approve it at this time.
+
+Reason: Verified monthly income did not meet the required income-to-rent ratio for this unit (2.5x rent required).
+
+This decision was based solely on the information provided in your application and our standard screening criteria, applied consistently to all applicants.
+
+Your application fee is non-refundable per our screening policy. If your income situation changes, or if a unit with a lower rent becomes available, you're welcome to reapply.
+
+If you have any questions about this decision, please don't hesitate to contact us.
+
+Best regards,
+Maple Grove Property Management
+leasing@maplegrovepm.com
+(916) 555-0188</div>
                   </div>
                   <div class="deck-comm">
                     <div class="to">To: Property Manager</div>
