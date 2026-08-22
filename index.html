@@ -656,7 +656,7 @@
         <div class="case-cols">
           <div><b>Problem</b><p>An inconsistent leasing process leaves applicants unclear on where they stand.</p></div>
           <div><b>Approach</b><p>A structured leasing workflow practiced inside AppFolio, guest card to signed lease.</p></div>
-          <div><b>Workflow</b><p>Guest Card → Screening → Approval Decision → Lease Generation → Move-In Charges.</p></div>
+          <div><b>Workflow</b><p>Guest Card → Application → Screening → Decision (Approve or Deny) → Lease or Continued Marketing.</p></div>
           <div><b>Outcome</b><p>Every applicant moves through the same consistent, documented process.</p></div>
           <div><b>Value</b><p>You can see how I approach leasing workflows inside the software, not just how I talk about them.</p></div>
         </div>
@@ -1046,17 +1046,361 @@ Next: Notify applicant · continue leasing activity</div>
           <h3>Maintenance Coordination Study</h3>
           <span class="tag">Practice Project · Maintenance Workflow</span>
         </div>
-        <div class="case-visual">
-          <div class="ph">[ Screenshot: maintenance ticket triage and close-out inside AppFolio ]</div>
-        </div>
+
         <div class="case-cols">
           <div><b>Problem</b><p>Verbal hand-offs lost details, and urgency depended on who happened to be free.</p></div>
           <div><b>Approach</b><p>A priority-based intake-to-close workflow practiced and tracked inside AppFolio.</p></div>
-          <div><b>Workflow</b><p>Request → Review → Prioritization → Vendor Coordination → Follow-Up → Tenant Update → Resolution.</p></div>
+          <div><b>Workflow</b><p>Report → Log → Prioritize → Assign → Monitor → Escalate → Verify → Close.</p></div>
           <div><b>Outcome</b><p>Urgent issues surface first, and every fix is confirmed before it's marked closed.</p></div>
           <div><b>Value</b><p>The goal isn't just logging a request, it's keeping the issue moving and people informed.</p></div>
         </div>
-        <a class="walkthrough-link" href="#"><span class="dot"></span>Walkthrough video coming soon</a>
+
+        <div class="maintenance-deck" data-deck>
+          <div class="deck-shell">
+            <div class="deck-tabs" role="tablist" aria-label="Maintenance case study sections">
+              <button class="deck-tab" type="button" role="tab" data-slide-target="0">Cover</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="1">Goal</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="2">Context</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="3">Problem</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="4">Framework</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="5">Workflow</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="6">Evidence</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="7">Comms</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="8">Tracking</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="9">Impact</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="10">Insights</button>
+            </div>
+
+            <div class="deck-viewport">
+
+              <!-- 00 COVER -->
+              <div class="deck-slide" data-slide-index="0">
+                <span class="deck-stamp">Resolved<span>ticket status</span></span>
+                <div class="deck-eyebrow">Property Management Operations VA · Case File No. 002</div>
+                <h4 class="deck-title" style="font-size:clamp(28px,4vw,40px);">Unit 104</h4>
+                <p class="deck-lede" style="font-style:italic;">Maple Grove Apartments, Sacramento CA · a recurring maintenance issue triaged and closed out end to end in AppFolio.</p>
+                <div class="deck-meta-grid">
+                  <div><div class="label">Prepared by</div><div class="val">Karen Kisha Sabaiton</div></div>
+                  <div><div class="label">Platform</div><div class="val">AppFolio</div></div>
+                  <div><div class="label">Issue type</div><div class="val">Kitchen sink leak, recurring</div></div>
+                  <div><div class="label">Priority</div><div class="val">High</div></div>
+                  <div><div class="label">First reported</div><div class="val">Aug 3, 2026</div></div>
+                </div>
+              </div>
+
+              <!-- 01 GOAL -->
+              <div class="deck-slide" data-slide-index="1">
+                <div class="deck-eyebrow">01 · Business Goal</div>
+                <h4 class="deck-title">Why this ticket, before any vendor was called</h4>
+                <p class="deck-lede">What "done well" looks like, defined up front.</p>
+                <div class="deck-card">
+                  <h5>Primary goal</h5>
+                  <p>Resolve the recurring leak at its root cause, not just the visible symptom, and produce a maintenance record documented well enough to explain three visits and one final fix.</p>
+                  <h5>Secondary goal</h5>
+                  <p>Keep the tenant informed at every stage, keep AppFolio's ticket status accurate in real time, and confirm the fix before marking anything closed.</p>
+                  <h5>Business value</h5>
+                  <p>Catching a repeat pattern early prevents property damage, protects the tenant relationship, and avoids paying for the same visit three times without solving the actual problem.</p>
+                </div>
+              </div>
+
+              <!-- 02 CONTEXT -->
+              <div class="deck-slide" data-slide-index="2">
+                <div class="deck-eyebrow">02 · Business Context</div>
+                <h4 class="deck-title">The scenario snapshot</h4>
+                <p class="deck-lede">So the environment is clear before the decision is.</p>
+                <div class="deck-card">
+                  <table class="deck-table">
+                    <tr><td>Property</td><td>Maple Grove Apartments</td></tr>
+                    <tr><td>Location</td><td>Sacramento, CA</td></tr>
+                    <tr><td>Property type</td><td>Garden-style multifamily, 12 units</td></tr>
+                    <tr><td>Unit</td><td>104 · 2BD / 2BA</td></tr>
+                    <tr><td>Tenant</td><td>Allianna J. Rich</td></tr>
+                    <tr><td>Issue</td><td>Kitchen sink leak, under-cabinet</td></tr>
+                    <tr><td>Reports on file</td><td>3 within a 60-day window</td></tr>
+                    <tr><td>Prior repairs</td><td>2 symptom-only fixes, no root-cause diagnosis</td></tr>
+                    <tr><td>Vendor</td><td>Contracted plumbing vendor, standard SLA</td></tr>
+                    <tr><td>Platform / role</td><td>AppFolio · Property Management Operations VA</td></tr>
+                  </table>
+                </div>
+              </div>
+
+              <!-- 03 PROBLEM -->
+              <div class="deck-slide" data-slide-index="3">
+                <div class="deck-eyebrow">03 · Problem Analysis</div>
+                <h4 class="deck-title">What was actually being solved</h4>
+                <p class="deck-lede">A third report on the same issue needed more than another visit, it needed a review of the pattern, a priority call, and a fix that would actually hold, all inside AppFolio, the way a live client engagement would run it.</p>
+                <div class="deck-card">
+                  <h5>Root cause</h5>
+                  <p>The real challenge wasn't scheduling another vendor visit; it was recognizing that two prior symptom-only repairs meant the underlying cause had never been diagnosed, and treating this ticket the same way a third time would have repeated the same outcome.</p>
+                </div>
+                <p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,242,234,.5);margin-top:20px;">Risks if this process is managed poorly</p>
+                <ul class="deck-risks">
+                  <li>Undiagnosed root cause repeats again</li>
+                  <li>Water damage to cabinetry or flooring</li>
+                  <li>Mold risk from prolonged moisture</li>
+                  <li>Wasted vendor visits and cost</li>
+                  <li>Tenant frustration and complaints</li>
+                  <li>Inconsistent ticket status in AppFolio</li>
+                  <li>No documented trail if the issue escalates</li>
+                  <li>Can't explain the repeat visits to the PM or owner</li>
+                </ul>
+              </div>
+
+              <!-- 04 FRAMEWORK -->
+              <div class="deck-slide" data-slide-index="4">
+                <div class="deck-eyebrow">04 · Decision Framework</div>
+                <h4 class="deck-title">How the priority and escalation call got made</h4>
+                <p class="deck-lede">Not just what it landed on.</p>
+                <div class="deck-steps">
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 1</div>
+                    <div><h5>Log and categorize</h5><p>What's actually being reported, and what category does it fall under? Kitchen sink leak, under-cabinet, active water intrusion.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 2</div>
+                    <div><h5>Review ticket history</h5><p>Has this unit reported this issue before? Yes, twice in the last 60 days, both closed as symptom-only repairs.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 3</div>
+                    <div><h5>Calculate the repeat rate</h5><div class="deck-calc">3 reports ÷ 60 days = <span class="fail">recurring pattern</span></div></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 4</div>
+                    <div><h5>Compare against the escalation threshold</h5><div class="deck-calc">Threshold <span class="pass">2+ reports / 60 days</span> triggers mandatory inspection, actual <span class="fail">3 reports</span>, escalation required</div></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 5</div>
+                    <div><h5>Assign priority</h5><p>Active water intrusion with a confirmed repeat pattern is ranked high, ahead of cosmetic or convenience-level requests.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 6</div>
+                    <div><h5>Require root-cause confirmation before closing</h5><p>The ticket doesn't close on "leak stopped." It closes on a documented cause, a completed repair, and a tenant-confirmed dry area.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 7</div>
+                    <div><h5>Document and route the outcome</h5><p>Record what was found, what was repaired, notify the tenant, and update the ticket status so the record reflects what actually happened.</p></div>
+                  </div>
+                </div>
+                <div class="deck-card" style="margin-top:18px;padding:0;overflow:hidden;">
+                  <table class="deck-table" style="padding:20px 22px;">
+                    <thead><tr><th style="padding-left:22px;">Criterion</th><th>Requirement</th><th>Ticket result</th><th style="padding-right:22px;">Outcome</th></tr></thead>
+                    <tbody>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Repeat reports (60-day window)</td><td>&lt; 2</td><td>3 reports</td><td style="padding-right:22px;"><span class="badge fail">✕ Escalate</span></td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Initial response time</td><td>≤ 24 hrs</td><td>Contacted within 4 hrs</td><td style="padding-right:22px;"><span class="badge pass">✓ Passes</span></td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Root cause confirmed before close</td><td>Required</td><td>Confirmed on 4th visit</td><td style="padding-right:22px;"><span class="badge pass">✓ Passes</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- 05 WORKFLOW -->
+              <div class="deck-slide" data-slide-index="5">
+                <div class="deck-eyebrow">05 · Maintenance Workflow</div>
+                <h4 class="deck-title">The repeatable path this ticket followed</h4>
+                <p class="deck-lede">Built to run the same way on the next request.</p>
+                <div class="deck-flow">
+                  <div class="flow-node">Request submitted</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Logged in AppFolio</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Reviewed against ticket history</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Priority assigned</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Vendor coordinated &amp; scheduled</div><div class="flow-arrow"></div>
+                  <div class="flow-node branchpt">Root cause resolved on this visit?</div>
+                  <div class="flow-branch">
+                    <div class="branch-col">
+                      <span class="branch-label yes">YES</span><div class="flow-arrow"></div>
+                      <div class="flow-node">Tenant confirms fix</div><div class="flow-arrow"></div>
+                      <div class="flow-node">Ticket closed</div>
+                    </div>
+                    <div class="branch-col">
+                      <span class="branch-label no">NO · this case, twice</span><div class="flow-arrow"></div>
+                      <div class="flow-node">Escalate to full inspection</div><div class="flow-arrow"></div>
+                      <div class="flow-node">Follow-up scheduled &amp; resolved</div>
+                    </div>
+                  </div>
+                </div>
+                <p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,242,234,.5);margin-top:30px;">Accountability checkpoints</p>
+                <ul class="deck-checks">
+                  <li>Ticket logged with accurate details</li>
+                  <li>History reviewed for repeat pattern</li>
+                  <li>Priority assigned correctly</li>
+                  <li>Vendor scheduled within SLA</li>
+                  <li>Tenant updated at each stage</li>
+                  <li>Root cause confirmed before closing</li>
+                  <li>Resolution verified with tenant</li>
+                  <li>Ticket status updated in AppFolio</li>
+                </ul>
+              </div>
+
+              <!-- 06 EVIDENCE -->
+              <div class="deck-slide" data-slide-index="6">
+                <div class="deck-eyebrow">06 · AppFolio Evidence</div>
+                <h4 class="deck-title">Four pieces of evidence, one maintenance ticket</h4>
+                <p class="deck-lede">Each screenshot documents a different stage of the maintenance workflow, from intake to verified close-out. Tap any image to zoom in.</p>
+                <div class="deck-evidence">
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-maintenance-ticket-log.png" alt="Service Request #80 ticket log with full description and priority"></div>
+                    <span class="lbl">Maintenance Ticket Log</span>
+                    <p class="proves"><b>What this proves:</b> The request logged with accurate details, category, and priority the moment it came in.</p>
+                  </div>
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-maintenance-ticket-history.png" alt="Work Orders list showing three related tickets on Unit 104"></div>
+                    <span class="lbl">Ticket History &amp; Repeat Pattern</span>
+                    <p class="proves"><b>What this proves:</b> All three reports on this unit shown together, the pattern that triggered escalation.</p>
+                  </div>
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-maintenance-vendor-assignment.png" alt="Vendor assignment and scheduling section showing Starks Plumbing Company"></div>
+                    <span class="lbl">Vendor Assignment &amp; Scheduling</span>
+                    <p class="proves"><b>What this proves:</b> Vendor coordinated with scope notes requesting a full diagnostic, not another symptom-only fix.</p>
+                  </div>
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-maintenance-close-out.png" alt="Work order marked completed with close-out note"></div>
+                    <span class="lbl">Resolution &amp; Close-Out Notes</span>
+                    <p class="proves"><b>What this proves:</b> Root cause documented, repair confirmed, and the ticket only closed after tenant verification.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 07 COMMS -->
+              <div class="deck-slide" data-slide-index="7">
+                <div class="deck-eyebrow">07 · Communication Plan</div>
+                <h4 class="deck-title">Same ticket, three audiences</h4>
+                <p class="deck-lede">The tenant, the vendor, and the owner each need a different amount of detail.</p>
+                <div class="deck-comm-grid">
+                  <div class="deck-comm">
+                    <div class="to">To: Tenant</div>
+                    <div class="msg mono">Subject: Update on Your Maintenance Request - Unit 104
+
+Dear Allianna Rich,
+
+Thank you for reporting the leak under your kitchen sink, and for your patience through the repeat visits.
+
+We completed a full inspection and identified the root cause: a worn supply line connection, not just a surface issue. Our vendor replaced the line and tested the seal under pressure to confirm it holds.
+
+Your ticket is now closed. Please let us know within 3 days if you notice any further issues in the same area.
+
+Best regards,
+Maple Grove Property Management
+maintenance@maplegrovepm.com
+(916) 555-0188</div>
+                  </div>
+                  <div class="deck-comm">
+                    <div class="to">To: Vendor</div>
+                    <div class="msg mono">Work order: Unit 104, kitchen sink leak (recurring)
+Priority: High, 3rd report in 60 days
+History: 2 prior visits, symptom-only repairs
+Requested: Full diagnostic and root-cause repair, no temporary fix
+Access: Tenant available weekdays 9am-5pm
+Contact: Property Management Office</div>
+                  </div>
+                  <div class="deck-comm">
+                    <div class="to">To: Owner</div>
+                    <div class="msg">"Unit 104 had a recurring kitchen sink leak reported three times in 60 days. The root cause, a worn supply line, was identified and resolved on this visit. No damage beyond the immediate leak area. Vendor cost and full details are logged in the maintenance record."</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 08 TRACKING -->
+              <div class="deck-slide" data-slide-index="8">
+                <div class="deck-eyebrow">08 · Tracking &amp; KPIs</div>
+                <h4 class="deck-title">What a maintenance dashboard would watch</h4>
+                <p class="deck-lede">Across every unit, and where Unit 104's ticket sits on it today.</p>
+                <div class="deck-card">
+                  <table class="deck-table">
+                    <thead><tr><th>KPI</th><th>Why it matters</th></tr></thead>
+                    <tbody>
+                      <tr><td style="text-transform:none;width:auto;">Response time</td><td>Tenant experience</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Time to resolution</td><td>Efficiency / vendor performance</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Repeat requests per unit</td><td>Root-cause vs symptom fixes</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Vendor cost per ticket</td><td>Budget control</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Tickets by priority level</td><td>Resource allocation</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Overdue tickets</td><td>Follow-through</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Close-out confirmation rate</td><td>Quality control</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Current ticket status</td><td>Owner visibility</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="deck-status-grid">
+                  <div class="cell"><div class="label">Reported</div><div class="val">Aug 3, 2026</div></div>
+                  <div class="cell"><div class="label">Priority</div><div class="val">High</div></div>
+                  <div class="cell"><div class="label">Current stage</div><div class="val">Resolved &amp; closed</div></div>
+                  <div class="cell"><div class="label">Result</div><div class="val">Root cause repaired</div></div>
+                  <div class="cell"><div class="label">Next action</div><div class="val">Monitor 3-day follow-up window</div></div>
+                </div>
+              </div>
+
+              <!-- 09 IMPACT -->
+              <div class="deck-slide" data-slide-index="9">
+                <div class="deck-eyebrow">09 · Expected Impact</div>
+                <h4 class="deck-title">What this would deliver at portfolio scale</h4>
+                <p class="deck-lede">This is a training case, not a live client, so impact is framed as what the workflow would deliver if run consistently across a portfolio, not results already achieved.</p>
+                <div class="deck-card">
+                  <p>Run consistently across a portfolio, this workflow would give a property manager a standardized way to catch repeat maintenance patterns early, assign priority accurately, and close tickets only once the actual cause is resolved.</p>
+                </div>
+                <ul class="deck-impact">
+                  <li>Faster ticket response and triage</li>
+                  <li>Fewer repeat visits for the same issue</li>
+                  <li>Reduced property damage from unresolved leaks</li>
+                  <li>Clearer vendor accountability</li>
+                  <li>Better tenant communication and satisfaction</li>
+                  <li>More accurate maintenance records for owner reporting</li>
+                </ul>
+              </div>
+
+              <!-- 10 INSIGHTS -->
+              <div class="deck-slide" data-slide-index="10">
+                <div class="deck-eyebrow">10 · Operational Insights</div>
+                <h4 class="deck-title">What I'd build next</h4>
+                <p class="deck-lede">If this were a live portfolio, not a training exercise.</p>
+                <div class="deck-reflect-grid">
+                  <div class="deck-reflect-col">
+                    <h6>What I'd improve next</h6>
+                    <ul>
+                      <li>Standard triage checklist by issue type</li>
+                      <li>Escalation rule for repeat tickets on the same unit</li>
+                      <li>Templated tenant and vendor communication</li>
+                      <li>Track average resolution time by category</li>
+                      <li>Track repeat-ticket rate per unit</li>
+                      <li>Weekly maintenance status report</li>
+                      <li>Documented root-cause requirement before closing</li>
+                    </ul>
+                  </div>
+                  <div class="deck-reflect-col">
+                    <h6>What I'd automate</h6>
+                    <ul>
+                      <li>New ticket notifications by priority</li>
+                      <li>Overdue ticket alerts</li>
+                      <li>Tenant status update reminders</li>
+                      <li>Vendor follow-up reminders</li>
+                      <li>Weekly maintenance summary report</li>
+                      <li>Recurring-issue flagging, 2+ tickets same unit</li>
+                    </ul>
+                  </div>
+                  <div class="deck-reflect-col">
+                    <h6>Future risks to monitor</h6>
+                    <ul>
+                      <li>Rising repeat-ticket rate</li>
+                      <li>Vendor response delays</li>
+                      <li>Tickets closed without confirmed root cause</li>
+                      <li>Increasing average resolution time</li>
+                      <li>Missed tenant communication</li>
+                      <li>Preventable damage from delayed escalation</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="deck-foot">
+              <button class="deck-btn deck-prev" type="button">← Prev</button>
+              <div class="deck-progress-track"><div class="deck-progress-bar"></div></div>
+              <span class="deck-count">01 / 11</span>
+              <button class="deck-btn deck-next" type="button">Next →</button>
+            </div>
+          </div>
+        </div>
+
+        <a class="walkthrough-link" href="#" style="margin-top:20px;"><span class="dot"></span>Walkthrough video coming soon</a>
       </div>
 
       <div class="case-item reveal">
