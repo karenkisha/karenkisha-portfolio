@@ -174,6 +174,71 @@
   }
   .walkthrough-link .dot{width:6px;height:6px;border-radius:50%;background:var(--taupe);flex:none;}
 
+  /* ---------- PROOF GALLERY (evidence screenshots) ---------- */
+  .case-visual.gallery{
+    aspect-ratio:auto;border:1px solid var(--line);border-style:solid;background:var(--ivory-deep);
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px;
+  }
+  .case-visual.gallery .shot{
+    display:flex;flex-direction:column;gap:8px;text-decoration:none;
+  }
+  .case-visual.gallery .shot .frame{
+    aspect-ratio:4/3;border-radius:8px;overflow:hidden;border:1px solid var(--line);
+    background:var(--ivory);transition:border-color .15s ease, transform .15s ease;
+  }
+  .case-visual.gallery .shot:hover .frame{border-color:var(--taupe);transform:translateY(-2px);}
+  .case-visual.gallery .shot img{width:100%;height:100%;object-fit:cover;object-position:top;cursor:zoom-in;}
+  .case-visual.gallery .shot .lbl{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.03em;color:var(--charcoal-soft);
+    line-height:1.4;
+  }
+  @media (max-width:700px){.case-visual.gallery{grid-template-columns:1fr 1fr;}}
+  @media (max-width:420px){.case-visual.gallery{grid-template-columns:1fr;}}
+
+  /* ---------- FULL DOCUMENTATION (interactive expand) ---------- */
+  .doc-toggle{
+    margin-top:22px;display:inline-flex;align-items:center;gap:9px;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--charcoal);
+    background:none;border:1px solid var(--line);border-radius:20px;padding:10px 18px;
+    cursor:pointer;transition:border-color .15s ease, background .15s ease;
+  }
+  .doc-toggle:hover{border-color:var(--taupe);}
+  .doc-toggle .dot{width:6px;height:6px;border-radius:50%;background:var(--sage-deep);flex:none;}
+  .doc-toggle .chevron{transition:transform .25s ease;font-size:10px;}
+  .doc-toggle[aria-expanded="true"] .chevron{transform:rotate(180deg);}
+
+  .doc-panel{
+    overflow:hidden;max-height:0;opacity:0;
+    transition:max-height .5s ease, opacity .4s ease, margin-top .4s ease;
+  }
+  .doc-panel.open{max-height:6000px;opacity:1;margin-top:28px;}
+
+  .doc-intro{
+    font-size:13px;color:var(--charcoal-soft);line-height:1.6;max-width:64ch;margin-bottom:8px;
+  }
+  .doc-row{
+    display:grid;grid-template-columns:280px 1fr;gap:26px;padding:26px 0;border-top:1px solid var(--line);
+    align-items:start;
+  }
+  .doc-row:first-child{border-top:1px solid var(--line);margin-top:14px;}
+  .doc-shots{display:flex;flex-direction:column;gap:10px;}
+  .doc-shots img{width:100%;border-radius:8px;border:1px solid var(--line);cursor:zoom-in;transition:border-color .15s ease;}
+  .doc-shots img:hover{border-color:var(--taupe);}
+  .doc-text p{font-size:13.5px;color:var(--charcoal-soft);line-height:1.65;margin:10px 0 0;}
+  .doc-text p b{color:var(--charcoal);font-weight:600;font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.05em;display:block;margin-bottom:6px;}
+  @media (max-width:700px){.doc-row{grid-template-columns:1fr;}}
+
+  .lightbox{
+    position:fixed;inset:0;background:rgba(43,42,38,.94);z-index:200;
+    display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);}
+  .lightbox .lb-close{
+    position:absolute;top:24px;right:28px;color:var(--ivory);font-family:'IBM Plex Mono',monospace;
+    font-size:12px;border:1px solid #4A473F;border-radius:20px;padding:8px 16px;cursor:pointer;background:none;
+  }
+
   /* ---------- ABOUT ---------- */
   section.about{padding:20px 0 96px;}
   .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center;}
@@ -277,6 +342,132 @@
   /* scroll reveal */
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease;}
   .reveal.show{opacity:1;transform:translateY(0);}
+
+  /* ---------- LEASING CASE STUDY · INTERACTIVE SLIDE DECK ---------- */
+  .leasing-deck{margin-top:32px;}
+  .deck-shell{
+    background:var(--charcoal);color:var(--ivory);border-radius:18px;overflow:hidden;
+    box-shadow:0 30px 60px -30px rgba(43,42,38,.55);
+  }
+  .deck-tabs{
+    display:flex;gap:2px;overflow-x:auto;padding:16px 20px 0;scrollbar-width:none;
+  }
+  .deck-tabs::-webkit-scrollbar{display:none;}
+  .deck-tab{
+    flex:0 0 auto;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:rgba(246,242,234,.5);background:rgba(246,242,234,.06);
+    border:1px solid rgba(246,242,234,.1);border-bottom:none;padding:9px 14px 10px;
+    border-radius:8px 8px 0 0;cursor:pointer;white-space:nowrap;transition:.15s;
+  }
+  .deck-tab:hover{color:var(--ivory);}
+  .deck-tab.active{background:var(--ivory);color:var(--charcoal);border-color:var(--ivory);}
+  .deck-tab:focus-visible, .deck-btn:focus-visible{outline:2px solid var(--taupe);outline-offset:2px;}
+  .deck-viewport{
+    position:relative;border-top:1px solid rgba(246,242,234,.1);
+    padding:38px 40px 8px;min-height:420px;
+  }
+  .deck-slide{display:none;}
+  .deck-slide.active{display:block;animation:deckIn .35s ease;}
+  @keyframes deckIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  @media (prefers-reduced-motion: reduce){.deck-slide.active{animation:none;}}
+  .deck-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);}
+  .deck-title{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(21px,3vw,27px);color:var(--ivory);margin:8px 0 6px;}
+  .deck-lede{font-size:13.5px;color:rgba(246,242,234,.65);max-width:60ch;line-height:1.6;margin:0 0 22px;}
+  .deck-stamp{
+    display:inline-flex;flex-direction:column;align-items:center;font-family:'IBM Plex Mono',monospace;
+    font-weight:600;letter-spacing:.14em;color:var(--clay);border:2px solid var(--clay);border-radius:6px;
+    padding:7px 16px;transform:rotate(6deg);font-size:15px;text-transform:uppercase;
+    background:rgba(178,107,78,.06);float:right;margin:2px 0 16px 16px;
+  }
+  .deck-stamp span{font-size:8px;letter-spacing:.24em;margin-top:2px;font-weight:500;}
+  .deck-meta-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0;margin-top:8px;
+    border-top:1px solid rgba(246,242,234,.14);clear:both;
+  }
+  .deck-meta-grid div{padding:13px 16px 13px 0;border-bottom:1px solid rgba(246,242,234,.14);}
+  .deck-meta-grid div:not(:last-child){border-right:1px solid rgba(246,242,234,.1);}
+  .deck-meta-grid .label{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,242,234,.5);}
+  .deck-meta-grid .val{font-family:'IBM Plex Mono',monospace;font-size:13.5px;font-weight:600;margin-top:4px;}
+  .deck-card{background:var(--ivory);color:var(--charcoal);border-radius:12px;padding:22px 24px;margin-bottom:14px;}
+  .deck-card h5{font-family:'Fraunces',serif;font-size:15.5px;margin:0 0 8px;}
+  .deck-card p{font-size:13px;color:var(--charcoal-soft);line-height:1.6;margin:0 0 8px;}
+  .deck-card p:last-child{margin-bottom:0;}
+  .deck-table{width:100%;border-collapse:collapse;font-family:'IBM Plex Mono',monospace;font-size:12.5px;}
+  .deck-table td, .deck-table th{padding:10px 6px;border-bottom:1px solid var(--line);}
+  .deck-table td:first-child{color:var(--charcoal-soft);text-transform:uppercase;letter-spacing:.04em;font-size:10.5px;width:44%;}
+  .deck-table td:last-child{font-weight:600;}
+  .deck-table th{text-align:left;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--charcoal-soft);border-bottom:2px solid var(--line);}
+  .deck-risks{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin:18px 0 0;padding:0;}
+  .deck-risks li{font-size:12px;line-height:1.5;background:rgba(178,107,78,.14);border-left:3px solid var(--clay);padding:10px 14px;border-radius:0 8px 8px 0;color:#F2E2D8;}
+  .deck-steps{margin-top:6px;}
+  .deck-step{display:grid;grid-template-columns:48px 1fr;gap:16px;padding:16px 0;border-top:1px dashed rgba(246,242,234,.16);}
+  .deck-step:first-child{border-top:none;padding-top:0;}
+  .deck-step-num{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--taupe);padding-top:2px;}
+  .deck-step h5{font-family:'Fraunces',serif;font-size:14.5px;margin:0 0 4px;color:var(--ivory);}
+  .deck-step p{font-size:12.5px;color:rgba(246,242,234,.68);margin:0;line-height:1.55;}
+  .deck-calc{margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;background:rgba(246,242,234,.07);border:1px solid rgba(246,242,234,.15);border-radius:6px;padding:8px 14px;display:inline-block;}
+  .deck-calc .fail{color:#E08A78;}
+  .deck-calc .pass{color:#9CC08A;}
+  .badge{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:10.5px;padding:2px 8px;border-radius:3px;letter-spacing:.03em;}
+  .badge.pass{background:rgba(124,136,99,.18);color:var(--sage-deep);}
+  .badge.fail{background:rgba(178,107,78,.15);color:var(--clay);}
+  .deck-flow{display:flex;flex-direction:column;align-items:center;gap:0;margin:18px 0 4px;}
+  .deck-flow .flow-node{font-family:'IBM Plex Mono',monospace;font-size:11.5px;background:var(--ivory);color:var(--charcoal);padding:9px 16px;border-radius:20px;text-align:center;}
+  .deck-flow .flow-node.branchpt{background:rgba(246,242,234,.08);color:var(--ivory);border:1px solid rgba(246,242,234,.25);}
+  .deck-flow .flow-arrow{width:1px;height:16px;background:rgba(246,242,234,.28);}
+  .deck-flow .flow-branch{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:100%;max-width:520px;margin-top:6px;}
+  .deck-flow .branch-col{display:flex;flex-direction:column;align-items:center;gap:0;}
+  .deck-flow .branch-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;margin-bottom:8px;padding:3px 10px;border-radius:12px;}
+  .deck-flow .branch-label.yes{background:rgba(124,136,99,.2);color:#B7C99E;}
+  .deck-flow .branch-label.no{background:rgba(178,107,78,.2);color:#E8B49C;}
+  .deck-flow .branch-col .flow-node{font-size:10.5px;width:100%;}
+  .deck-checks{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:9px 18px;list-style:none;padding:0;}
+  .deck-checks li{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:rgba(246,242,234,.75);}
+  .deck-checks li::before{content:"✓";color:var(--sage);font-family:'IBM Plex Mono',monospace;font-weight:600;flex:none;}
+  .deck-evidence{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .deck-evidence .shot{display:flex;flex-direction:column;gap:7px;}
+  .deck-evidence .frame{aspect-ratio:4/3;border-radius:8px;overflow:hidden;border:1px solid rgba(246,242,234,.16);background:rgba(246,242,234,.04);}
+  .deck-evidence .frame img{width:100%;height:100%;object-fit:cover;object-position:top;cursor:zoom-in;}
+  .deck-evidence .lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.03em;color:var(--taupe);}
+  .deck-evidence .proves{font-size:11.5px;color:rgba(246,242,234,.65);line-height:1.5;}
+  .deck-evidence .proves b{color:var(--ivory);font-weight:600;}
+  @media (max-width:760px){.deck-evidence{grid-template-columns:1fr 1fr;}}
+  @media (max-width:480px){.deck-evidence{grid-template-columns:1fr;}}
+  .deck-comm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+  .deck-comm{background:var(--ivory);color:var(--charcoal);border-radius:10px;padding:20px 22px;}
+  .deck-comm .to{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--charcoal-soft);}
+  .deck-comm .msg{margin-top:9px;font-family:'Fraunces',serif;font-style:italic;font-size:13.5px;line-height:1.55;}
+  .deck-comm .msg.mono{font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:11px;white-space:pre-line;line-height:1.7;}
+  .deck-status-grid{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:10px;}
+  .deck-status-grid .cell{background:rgba(246,242,234,.06);border:1px solid rgba(246,242,234,.14);border-radius:8px;padding:12px 14px;}
+  .deck-status-grid .cell .label{font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:rgba(246,242,234,.5);}
+  .deck-status-grid .cell .val{font-family:'IBM Plex Mono',monospace;font-weight:600;margin-top:4px;font-size:12.5px;color:var(--ivory);}
+  .deck-impact{list-style:none;margin:14px 0 0;padding:0;}
+  .deck-impact li{padding:8px 0 8px 24px;position:relative;font-size:12.5px;color:rgba(246,242,234,.85);border-bottom:1px solid rgba(246,242,234,.09);}
+  .deck-impact li::before{content:"→";position:absolute;left:0;color:var(--taupe);font-family:'IBM Plex Mono',monospace;}
+  .deck-reflect-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:4px;}
+  .deck-reflect-col h6{font-family:'IBM Plex Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--taupe);margin:0 0 10px;}
+  .deck-reflect-col ul{margin:0;padding-left:16px;color:rgba(246,242,234,.78);font-size:12px;}
+  .deck-reflect-col li{margin-bottom:7px;line-height:1.5;}
+  @media (max-width:640px){.deck-reflect-grid{grid-template-columns:1fr;}}
+  .deck-foot{
+    display:flex;align-items:center;gap:16px;padding:18px 40px 26px;border-top:1px solid rgba(246,242,234,.1);
+  }
+  .deck-btn{
+    font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--ivory);background:none;
+    border:1px solid rgba(246,242,234,.28);border-radius:20px;padding:9px 16px;cursor:pointer;
+    transition:.15s;display:inline-flex;gap:6px;align-items:center;white-space:nowrap;
+  }
+  .deck-btn:hover:not(:disabled){border-color:var(--taupe);background:rgba(246,242,234,.06);}
+  .deck-btn:disabled{opacity:.3;cursor:default;}
+  .deck-progress-track{flex:1;height:3px;background:rgba(246,242,234,.14);border-radius:3px;position:relative;}
+  .deck-progress-bar{position:absolute;left:0;top:0;height:100%;background:var(--clay);border-radius:3px;transition:width .3s ease;}
+  .deck-count{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:rgba(246,242,234,.5);white-space:nowrap;}
+  @media (max-width:700px){
+    .deck-viewport{padding:30px 22px 6px;}
+    .deck-foot{padding:16px 22px 22px;flex-wrap:wrap;}
+    .deck-stamp{float:none;display:inline-flex;margin:0 0 16px;}
+  }
 </style>
 </head>
 <body>
@@ -464,9 +655,7 @@
           <h3>Leasing Workflow Case Study</h3>
           <span class="tag">Practice Project · Maple Grove Apartments</span>
         </div>
-        <div class="case-visual">
-          <div class="ph">[ Screenshot: leasing workflow inside AppFolio, coming once the leasing module is complete ]</div>
-        </div>
+
         <div class="case-cols">
           <div><b>Problem</b><p>An inconsistent leasing process leaves applicants unclear on where they stand.</p></div>
           <div><b>Approach</b><p>A structured leasing workflow practiced inside AppFolio, guest card to signed lease.</p></div>
@@ -474,7 +663,358 @@
           <div><b>Outcome</b><p>Every applicant moves through the same consistent, documented process.</p></div>
           <div><b>Value</b><p>You can see how I approach leasing workflows inside the software, not just how I talk about them.</p></div>
         </div>
-        <a class="walkthrough-link" href="#"><span class="dot"></span>Walkthrough video coming soon</a>
+
+        <div class="leasing-deck" data-deck>
+          <div class="deck-shell">
+            <div class="deck-tabs" role="tablist" aria-label="Leasing case study sections">
+              <button class="deck-tab" type="button" role="tab" data-slide-target="0">Cover</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="1">Goal</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="2">Context</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="3">Problem</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="4">Framework</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="5">Workflow</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="6">Evidence</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="7">Comms</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="8">Tracking</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="9">Impact</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="10">Insights</button>
+            </div>
+
+            <div class="deck-viewport">
+
+              <!-- 00 COVER -->
+              <div class="deck-slide" data-slide-index="0">
+                <span class="deck-stamp">Denied<span>application status</span></span>
+                <div class="deck-eyebrow">Property Management Operations VA · Case File No. 001</div>
+                <h4 class="deck-title" style="font-size:clamp(28px,4vw,40px);">Unit 104</h4>
+                <p class="deck-lede" style="font-style:italic;">Maple Grove Apartments, Sacramento CA · leasing decision worked end to end in AppFolio.</p>
+                <div class="deck-meta-grid">
+                  <div><div class="label">Prepared by</div><div class="val">Karen Kisha Sabaiton</div></div>
+                  <div><div class="label">Platform</div><div class="val">AppFolio</div></div>
+                  <div><div class="label">Unit type</div><div class="val">2BD / 2BA · 980 sqft</div></div>
+                  <div><div class="label">Monthly rent</div><div class="val">$2,195</div></div>
+                  <div><div class="label">Available</div><div class="val">Sep 1, 2026</div></div>
+                </div>
+              </div>
+
+              <!-- 01 GOAL -->
+              <div class="deck-slide" data-slide-index="1">
+                <div class="deck-eyebrow">01 · Business Goal</div>
+                <h4 class="deck-title">Why this unit, before any screen was touched</h4>
+                <p class="deck-lede">What "done well" looks like, defined up front.</p>
+                <div class="deck-card">
+                  <h5>Primary goal</h5>
+                  <p>Lease Unit 104 efficiently while applying the property's screening criteria consistently, and produce a leasing decision that's documented well enough to survive a question later.</p>
+                  <h5>Secondary goal</h5>
+                  <p>Keep AppFolio records accurate at every stage, reduce vacancy-related delays, and make sure the next action is obvious the moment the application decision lands.</p>
+                  <h5>Business value</h5>
+                  <p>A standardized leasing workflow shortens vacancy time, tightens operational consistency, and removes the risk of a decision nobody can explain six months from now.</p>
+                </div>
+              </div>
+
+              <!-- 02 CONTEXT -->
+              <div class="deck-slide" data-slide-index="2">
+                <div class="deck-eyebrow">02 · Business Context</div>
+                <h4 class="deck-title">The scenario snapshot</h4>
+                <p class="deck-lede">So the environment is clear before the decision is.</p>
+                <div class="deck-card">
+                  <table class="deck-table">
+                    <tr><td>Property</td><td>Maple Grove Apartments</td></tr>
+                    <tr><td>Location</td><td>Sacramento, CA</td></tr>
+                    <tr><td>Property type</td><td>Garden-style multifamily, 12 units</td></tr>
+                    <tr><td>Unit</td><td>104 · 2BD / 2BA, 980 sqft</td></tr>
+                    <tr><td>Monthly rent</td><td>$2,195</td></tr>
+                    <tr><td>Application fee</td><td>$50</td></tr>
+                    <tr><td>Utilities included</td><td>Water, heat, garbage disposal</td></tr>
+                    <tr><td>Appliances included</td><td>Stove, refrigerator</td></tr>
+                    <tr><td>Available date</td><td>September 1, 2026</td></tr>
+                    <tr><td>Platform / role</td><td>AppFolio · Property Management Operations VA</td></tr>
+                    <tr><td>Applicant</td><td>Carlos Ramirez, $4,800/mo income, Amazon Operations Associate (4 yrs)</td></tr>
+                  </table>
+                </div>
+              </div>
+
+              <!-- 03 PROBLEM -->
+              <div class="deck-slide" data-slide-index="3">
+                <div class="deck-eyebrow">03 · Problem Analysis</div>
+                <h4 class="deck-title">What was actually being solved</h4>
+                <p class="deck-lede">A vacant two-bedroom needed marketing, an applicant screened against a defined criteria set, and a decision that would hold up on review, all inside AppFolio, the way a live client engagement would run it.</p>
+                <div class="deck-card">
+                  <h5>Root cause</h5>
+                  <p>The real challenge wasn't filling the unit; it was keeping the prospect, application, screening criteria, decision, and supporting documentation connected in one system, so the decision could be understood and defended later, not just flagged.</p>
+                </div>
+                <p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,242,234,.5);margin-top:20px;">Risks if this process is managed poorly</p>
+                <ul class="deck-risks">
+                  <li>Inconsistent screening decisions</li>
+                  <li>Missing applicant documentation</li>
+                  <li>Incorrect application status</li>
+                  <li>Unnecessary lease generation</li>
+                  <li>Delayed follow-up</li>
+                  <li>Extended vacancy</li>
+                  <li>Poor applicant experience</li>
+                  <li>Can't explain the decision to the PM or owner</li>
+                </ul>
+              </div>
+
+              <!-- 04 FRAMEWORK -->
+              <div class="deck-slide" data-slide-index="4">
+                <div class="deck-eyebrow">04 · Decision Framework</div>
+                <h4 class="deck-title">How the status button got touched</h4>
+                <p class="deck-lede">Not just what it landed on.</p>
+                <div class="deck-steps">
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 1</div>
+                    <div><h5>Verify the requirement</h5><p>What does Maple Grove's written screening criteria actually require? Minimum 2.5x rent-to-income, no eviction history, no criminal history.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 2</div>
+                    <div><h5>Verify the applicant data</h5><p>What income and screening information is actually on file for Carlos Ramirez? $4,800/mo verified income, employer confirmed, background check clear.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 3</div>
+                    <div><h5>Calculate</h5><div class="deck-calc">$4,800 ÷ $2,195 = <span class="fail">2.19x</span></div></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 4</div>
+                    <div><h5>Compare against the bar</h5><div class="deck-calc">Required <span class="pass">2.5x</span> ($5,487.50/mo), Actual <span class="fail">2.19x</span> ($4,800/mo), short by $687.50/mo</div></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 5</div>
+                    <div><h5>Check the remaining criteria</h5><p>Eviction history and background screening both pass clean, so the decision comes down to the one criterion that didn't.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 6</div>
+                    <div><h5>Apply the policy consistently</h5><p>The income requirement is the least negotiable of the three. Two of three passing doesn't average out to a qualifying application; it fails.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 7</div>
+                    <div><h5>Document and route the outcome</h5><p>Record the objective reason, follow the applicant-notification process, and make sure no lease gets generated for an application that didn't qualify.</p></div>
+                  </div>
+                </div>
+                <div class="deck-card" style="margin-top:18px;padding:0;overflow:hidden;">
+                  <table class="deck-table" style="padding:20px 22px;">
+                    <thead><tr><th style="padding-left:22px;">Criterion</th><th>Requirement</th><th>Applicant result</th><th style="padding-right:22px;">Outcome</th></tr></thead>
+                    <tbody>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Rent-to-income ratio</td><td>≥ 2.5x</td><td>$4,800 ÷ $2,195 = 2.19x</td><td style="padding-right:22px;"><span class="badge fail">✕ Fails</span></td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Eviction history</td><td>None</td><td>None on record</td><td style="padding-right:22px;"><span class="badge pass">✓ Passes</span></td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Criminal history</td><td>None</td><td>None on record</td><td style="padding-right:22px;"><span class="badge pass">✓ Passes</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- 05 WORKFLOW -->
+              <div class="deck-slide" data-slide-index="5">
+                <div class="deck-eyebrow">05 · Leasing Workflow</div>
+                <h4 class="deck-title">The repeatable path this case followed</h4>
+                <p class="deck-lede">Built to run the same way on the next vacancy.</p>
+                <div class="deck-flow">
+                  <div class="flow-node">Vacancy identified</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Marketing info verified</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Unit advertised</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Prospect enters Guest Card</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Application submitted</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Application info verified</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Screening criteria applied</div><div class="flow-arrow"></div>
+                  <div class="flow-node branchpt">Meets all required criteria?</div>
+                  <div class="flow-branch">
+                    <div class="branch-col">
+                      <span class="branch-label yes">YES</span><div class="flow-arrow"></div>
+                      <div class="flow-node">Approval workflow</div><div class="flow-arrow"></div>
+                      <div class="flow-node">Lease preparation → move-in</div>
+                    </div>
+                    <div class="branch-col">
+                      <span class="branch-label no">NO · this case</span><div class="flow-arrow"></div>
+                      <div class="flow-node">Document reason</div><div class="flow-arrow"></div>
+                      <div class="flow-node">No lease · continue marketing</div>
+                    </div>
+                  </div>
+                </div>
+                <p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,242,234,.5);margin-top:30px;">Accountability checkpoints</p>
+                <ul class="deck-checks">
+                  <li>Listing information verified</li>
+                  <li>Prospect record complete</li>
+                  <li>Application complete</li>
+                  <li>Screening criteria checked</li>
+                  <li>Decision documented</li>
+                  <li>Application status updated</li>
+                  <li>Required communication completed</li>
+                  <li>Unit leasing status reviewed</li>
+                </ul>
+              </div>
+
+              <!-- 06 EVIDENCE -->
+              <div class="deck-slide" data-slide-index="6">
+                <div class="deck-eyebrow">06 · AppFolio Evidence</div>
+                <h4 class="deck-title">Six pieces of evidence, one applicant scenario</h4>
+                <p class="deck-lede">Each screenshot shows a different stage of the leasing decision, from listing to the documented outcome. Tap any image to zoom in.</p>
+                <div class="deck-evidence">
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-vacancy-status.png" alt="Vacancies page showing Unit 104 status and availability"></div>
+                    <span class="lbl">Vacancy &amp; Leasing Status</span>
+                    <p class="proves"><b>What this proves:</b> Unit 104 correctly listed as vacant with accurate rent and availability, and correctly returned to active marketing after the screening decision.</p>
+                  </div>
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-unit-marketing.png" alt="Unit 104 detail page with rent, fees, utilities, and appliances"></div>
+                    <span class="lbl">Unit &amp; Marketing Setup</span>
+                    <p class="proves"><b>What this proves:</b> Compliant listing setup, rent, fees, utilities, and appliances entered correctly.</p>
+                  </div>
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-guest-card.png" alt="Guest Card actions log for the applicant"></div>
+                    <span class="lbl">Guest Card</span>
+                    <p class="proves"><b>What this proves:</b> Prospect tracked from first interest into the leasing pipeline.</p>
+                  </div>
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-rental-application.png" alt="Rental Applications list showing the application and its status"></div>
+                    <span class="lbl">Rental Application</span>
+                    <p class="proves"><b>What this proves:</b> Applicant data captured completely before any decision was made.</p>
+                  </div>
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-screening-decision.png" alt="Application detail with the screening decision and documented reasoning"></div>
+                    <span class="lbl">Screening Decision &amp; Application Status</span>
+                    <p class="proves"><b>What this proves:</b> Applicant data reviewed against the property's predefined criteria, with the decision and reasoning documented and auditable, not just a status flag.</p>
+                  </div>
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-screening-calc.png" alt="Screening calculation showing the income-to-rent ratio against the requirement"></div>
+                    <span class="lbl">Screening Calculation</span>
+                    <p class="proves"><b>What this proves:</b> The decision rests on math, not a judgment call.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 07 COMMS -->
+              <div class="deck-slide" data-slide-index="7">
+                <div class="deck-eyebrow">07 · Communication Plan</div>
+                <h4 class="deck-title">Same decision, three audiences</h4>
+                <p class="deck-lede">The applicant, the property manager, and the owner each need a different amount of detail.</p>
+                <div class="deck-comm-grid">
+                  <div class="deck-comm">
+                    <div class="to">To: Applicant</div>
+                    <div class="msg">"Your application has been reviewed against the property's stated screening criteria. We'll share next steps through the property's standard application-notification process."</div>
+                  </div>
+                  <div class="deck-comm">
+                    <div class="to">To: Property Manager</div>
+                    <div class="msg mono">Unit 104: Application Decision
+Applicant: Carlos Ramirez
+Rent: $2,195
+Verified income: $4,800/mo
+Required ratio: 2.5x  ·  Calculated: 2.19x
+Other criteria: Met
+Status: Does not qualify, income requirement
+Next: Notify applicant · continue leasing activity</div>
+                  </div>
+                  <div class="deck-comm">
+                    <div class="to">To: Owner</div>
+                    <div class="msg">"Unit 104's application was reviewed against the property's established screening criteria. The applicant didn't meet the required income ratio, so no lease was generated. The unit remains in the leasing pipeline."</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 08 TRACKING -->
+              <div class="deck-slide" data-slide-index="8">
+                <div class="deck-eyebrow">08 · Tracking &amp; KPIs</div>
+                <h4 class="deck-title">What a leasing pipeline dashboard would watch</h4>
+                <p class="deck-lede">Across every unit, and where Unit 104 sits on it today.</p>
+                <div class="deck-card">
+                  <table class="deck-table">
+                    <thead><tr><th>KPI</th><th>Why it matters</th></tr></thead>
+                    <tbody>
+                      <tr><td style="text-transform:none;width:auto;">Days vacant</td><td>Revenue / occupancy</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Leads received</td><td>Marketing effectiveness</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Guest cards created</td><td>Leasing pipeline volume</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Applications submitted</td><td>Conversion</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Applications approved</td><td>Qualification rate</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Applications denied</td><td>Screening outcomes</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Application processing time</td><td>Efficiency</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Inquiry → decision (avg days)</td><td>Speed</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Current vacancy status</td><td>Revenue visibility</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="deck-status-grid">
+                  <div class="cell"><div class="label">Available</div><div class="val">Sep 1, 2026</div></div>
+                  <div class="cell"><div class="label">Rent</div><div class="val">$2,195</div></div>
+                  <div class="cell"><div class="label">Current stage</div><div class="val">Application reviewed</div></div>
+                  <div class="cell"><div class="label">Result</div><div class="val">Does not qualify</div></div>
+                  <div class="cell"><div class="label">Next action</div><div class="val">Continue leasing activity</div></div>
+                </div>
+              </div>
+
+              <!-- 09 IMPACT -->
+              <div class="deck-slide" data-slide-index="9">
+                <div class="deck-eyebrow">09 · Expected Impact</div>
+                <h4 class="deck-title">What this would deliver at portfolio scale</h4>
+                <p class="deck-lede">This is a training case, not a live client, so impact is framed as what the workflow would deliver if run consistently across a portfolio, not results already achieved.</p>
+                <div class="deck-card">
+                  <p>Run consistently across a portfolio, this workflow would give a property manager a standardized way to move prospects from first inquiry through application review, with clear documentation at every decision point.</p>
+                </div>
+                <ul class="deck-impact">
+                  <li>Faster application processing</li>
+                  <li>Fewer incomplete application records</li>
+                  <li>Fewer undocumented decisions</li>
+                  <li>Better visibility into the vacancy pipeline</li>
+                  <li>More consistent applicant handling</li>
+                  <li>Clearer, audience-specific owner reporting</li>
+                </ul>
+              </div>
+
+              <!-- 10 REFLECTION -->
+              <div class="deck-slide" data-slide-index="10">
+                <div class="deck-eyebrow">10 · Operational Insights</div>
+                <h4 class="deck-title">What I'd build next</h4>
+                <p class="deck-lede">If this were a live portfolio, not a training exercise.</p>
+                <div class="deck-reflect-grid">
+                  <div class="deck-reflect-col">
+                    <h6>What I'd improve next</h6>
+                    <ul>
+                      <li>Standardized leasing checklist for every vacancy</li>
+                      <li>An application-review checklist</li>
+                      <li>Standard communication templates</li>
+                      <li>Track application turnaround time</li>
+                      <li>Track lead-to-application conversion</li>
+                      <li>Track vacancy days</li>
+                      <li>Weekly leasing pipeline report</li>
+                      <li>Escalation rules for incomplete or unusual applications</li>
+                    </ul>
+                  </div>
+                  <div class="deck-reflect-col">
+                    <h6>What I'd automate</h6>
+                    <ul>
+                      <li>New lead notifications</li>
+                      <li>Application status reminders</li>
+                      <li>Follow-up reminders</li>
+                      <li>Missing-document alerts</li>
+                      <li>Leasing pipeline reports</li>
+                      <li>Vacancy-age alerts</li>
+                    </ul>
+                  </div>
+                  <div class="deck-reflect-col">
+                    <h6>Future risks to monitor</h6>
+                    <ul>
+                      <li>Increasing days-on-market</li>
+                      <li>Low lead volume</li>
+                      <li>High application drop-off</li>
+                      <li>Repeated incomplete applications</li>
+                      <li>Delays in application processing</li>
+                      <li>Inconsistent application handling</li>
+                      <li>Vacancy extending past target period</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="deck-foot">
+              <button class="deck-btn deck-prev" type="button">← Prev</button>
+              <div class="deck-progress-track"><div class="deck-progress-bar"></div></div>
+              <span class="deck-count">01 / 11</span>
+              <button class="deck-btn deck-next" type="button">Next →</button>
+            </div>
+          </div>
+        </div>
+
+        <a class="walkthrough-link" href="#" style="margin-top:20px;"><span class="dot"></span>Walkthrough video coming soon</a>
       </div>
 
       <div class="case-item reveal">
@@ -732,6 +1272,86 @@
     requestAnimationFrame(frame);
   }
   buildSmoothMarquee('marqueeTrackA', allTools, 'Tools and software I work in');
+
+  // Full-documentation expand/collapse
+  document.querySelectorAll('.doc-toggle').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const panel = btn.nextElementSibling;
+      const willOpen = !panel.classList.contains('open');
+      panel.classList.toggle('open', willOpen);
+      btn.setAttribute('aria-expanded', willOpen);
+      btn.querySelector('.label').textContent = willOpen ? 'Hide full documentation' : 'View full documentation';
+    });
+  });
+
+  // Lightbox for proof screenshots
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  lightbox.innerHTML = '<button class="lb-close" type="button">Close ✕</button><img alt="">';
+  document.body.appendChild(lightbox);
+  const lbImg = lightbox.querySelector('img');
+  function openLightbox(src, alt){ lbImg.src = src; lbImg.alt = alt || ''; lightbox.classList.add('open'); }
+  function closeLightbox(){ lightbox.classList.remove('open'); }
+  document.querySelectorAll('.case-visual.gallery img, .doc-shots img, .deck-evidence img').forEach(img=>{
+    img.addEventListener('click', ()=> openLightbox(img.src, img.alt));
+  });
+  lightbox.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeLightbox(); });
+
+  // Leasing case study - interactive slide deck
+  document.querySelectorAll('[data-deck]').forEach(deck=>{
+    const slides = Array.from(deck.querySelectorAll('.deck-slide'));
+    const tabs = Array.from(deck.querySelectorAll('.deck-tab'));
+    const prevBtn = deck.querySelector('.deck-prev');
+    const nextBtn = deck.querySelector('.deck-next');
+    const bar = deck.querySelector('.deck-progress-bar');
+    const count = deck.querySelector('.deck-count');
+    const total = slides.length;
+    let index = 0;
+
+    function render(){
+      slides.forEach((s,i)=> s.classList.toggle('active', i === index));
+      tabs.forEach((t,i)=> t.classList.toggle('active', i === index));
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === total - 1;
+      bar.style.width = ((index + 1) / total * 100) + '%';
+      count.textContent = String(index + 1).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
+    }
+
+    function goTo(i){
+      index = Math.max(0, Math.min(total - 1, i));
+      render();
+    }
+
+    tabs.forEach((t,i)=> t.addEventListener('click', ()=> goTo(i)));
+    prevBtn.addEventListener('click', ()=> goTo(index - 1));
+    nextBtn.addEventListener('click', ()=> goTo(index + 1));
+
+    // keyboard navigation, only while the deck is in view
+    let inView = false;
+    const deckIO = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ inView = e.isIntersecting; });
+    }, {threshold:0.3});
+    deckIO.observe(deck);
+    document.addEventListener('keydown', e=>{
+      if(!inView) return;
+      if(e.key === 'ArrowRight') goTo(index + 1);
+      if(e.key === 'ArrowLeft') goTo(index - 1);
+    });
+
+    // touch swipe
+    let touchX = null;
+    const viewport = deck.querySelector('.deck-viewport');
+    viewport.addEventListener('touchstart', e=>{ touchX = e.touches[0].clientX; }, {passive:true});
+    viewport.addEventListener('touchend', e=>{
+      if(touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if(Math.abs(dx) > 40){ dx < 0 ? goTo(index + 1) : goTo(index - 1); }
+      touchX = null;
+    }, {passive:true});
+
+    render();
+  });
 
   const items = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries)=>{
