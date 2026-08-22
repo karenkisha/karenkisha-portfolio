@@ -424,13 +424,14 @@
   .deck-checks{margin-top:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:9px 18px;list-style:none;padding:0;}
   .deck-checks li{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:rgba(246,242,234,.75);}
   .deck-checks li::before{content:"✓";color:var(--sage);font-family:'IBM Plex Mono',monospace;font-weight:600;flex:none;}
-  .deck-evidence{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .deck-evidence{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
   .deck-evidence .shot{display:flex;flex-direction:column;gap:7px;}
   .deck-evidence .frame{aspect-ratio:4/3;border-radius:8px;overflow:hidden;border:1px solid rgba(246,242,234,.16);background:rgba(246,242,234,.04);}
   .deck-evidence .frame img{width:100%;height:100%;object-fit:cover;object-position:top;cursor:zoom-in;}
   .deck-evidence .lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.03em;color:var(--taupe);}
   .deck-evidence .proves{font-size:11.5px;color:rgba(246,242,234,.65);line-height:1.5;}
   .deck-evidence .proves b{color:var(--ivory);font-weight:600;}
+  @media (max-width:900px){.deck-evidence{grid-template-columns:1fr 1fr 1fr;}}
   @media (max-width:760px){.deck-evidence{grid-template-columns:1fr 1fr;}}
   @media (max-width:480px){.deck-evidence{grid-template-columns:1fr;}}
   .deck-comm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
@@ -846,7 +847,7 @@
               <!-- 06 EVIDENCE -->
               <div class="deck-slide" data-slide-index="6">
                 <div class="deck-eyebrow">06 · AppFolio Evidence</div>
-                <h4 class="deck-title">Six pieces of evidence, one applicant scenario</h4>
+                <h4 class="deck-title">Eight pieces of evidence, one applicant scenario</h4>
                 <p class="deck-lede">Each screenshot shows a different stage of the leasing decision, from listing to the documented outcome. Tap any image to zoom in.</p>
                 <div class="deck-evidence">
                   <div class="shot">
@@ -855,9 +856,19 @@
                     <p class="proves"><b>What this proves:</b> Unit 104 correctly listed as vacant with accurate rent and availability, and correctly returned to active marketing after the screening decision.</p>
                   </div>
                   <div class="shot">
+                    <div class="frame"><img src="images/proof-vacancy-status-2.png" alt="Vacancy posting contact settings for Unit 104"></div>
+                    <span class="lbl">Vacancy &amp; Leasing Status (cont.)</span>
+                    <p class="proves"><b>What this proves:</b> Vacancy posting configured with the correct contact settings so leads reach the right channel.</p>
+                  </div>
+                  <div class="shot">
                     <div class="frame"><img src="images/proof-unit-marketing.png" alt="Unit 104 detail page with rent, fees, utilities, and appliances"></div>
                     <span class="lbl">Unit &amp; Marketing Setup</span>
                     <p class="proves"><b>What this proves:</b> Compliant listing setup, rent, fees, utilities, and appliances entered correctly.</p>
+                  </div>
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-unit-marketing-2.png" alt="Unit 104 marketing details continued"></div>
+                    <span class="lbl">Unit &amp; Marketing Setup (cont.)</span>
+                    <p class="proves"><b>What this proves:</b> Full marketing profile completed and consistent, supporting the listing shown on the vacancy page.</p>
                   </div>
                   <div class="shot">
                     <div class="frame"><img src="images/proof-guest-card.png" alt="Guest Card actions log for the applicant"></div>
