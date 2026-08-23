@@ -345,7 +345,7 @@
   .reveal.show{opacity:1;transform:translateY(0);}
 
   /* ---------- LEASING CASE STUDY · INTERACTIVE SLIDE DECK ---------- */
-  .leasing-deck{margin-top:32px;}
+  .leasing-deck,.decision-deck{margin-top:32px;}
   .deck-shell{
     background:var(--charcoal);color:var(--ivory);border-radius:18px;overflow:hidden;
     box-shadow:0 30px 60px -30px rgba(43,42,38,.55);
@@ -1406,20 +1406,681 @@ Contact: Property Management Office</div>
       <div class="case-item reveal">
         <div class="case-top">
           <h3>Property Manager Decision Brief</h3>
-          <span class="tag">Practice Project · Decision Support</span>
+          <span class="tag">Portfolio Simulation · Not Real Client Work · Maple Grove Apartments</span>
         </div>
-        <div class="case-visual">
-          <div class="ph">[ Decision brief document: applicant scenario, reasoning, and final call ]</div>
+
+        <div class="case-cols">
+          <div><b>Problem</b><p>An AC failing well before its expected lifespan forces a repair-replace-upgrade call, and an undocumented decision leaves no record of why one option was chosen over another.</p></div>
+          <div><b>Approach</b><p>A structured decision brief comparing repair, standard replacement, and inverter replacement, weighing cost against reliability and long-term operating value. Portfolio simulation, not real client work.</p></div>
+          <div><b>Workflow</b><p>Situation → Options → Criteria → Cost Comparison → Recommendation → Risk of Delay.</p></div>
+          <div><b>Outcome</b><p>A conditional recommendation: upgrade to the inverter system if the final quote justifies it, otherwise fall back to the standard replacement.</p></div>
+          <div><b>Value</b><p>You shouldn't have to dig through scattered information to weigh a repair-or-replace call — the reasoning and the recommendation are laid out clearly.</p></div>
         </div>
-        <div class="case-cols four">
-          <div><b>Situation</b><p>An applicant met most, but not all, of the standard leasing criteria, and needed a real decision, not just a policy lookup.</p></div>
-          <div><b>Reasoning</b><p>Weighing income ratio, screening flags, and risk against what the policy actually allows for a conditional approval.</p></div>
-          <div><b>Decision</b><p>Conditionally approved, with an increased security deposit to offset the added risk.</p></div>
-          <div><b>Value</b><p>You shouldn't have to dig through scattered information to understand what needs attention.</p></div>
+
+        <div class="decision-deck" data-deck>
+          <div class="deck-shell">
+            <div class="deck-tabs" role="tablist" aria-label="Decision brief case study sections">
+              <button class="deck-tab" type="button" role="tab" data-slide-target="0">Cover</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="1">Goal</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="2">Context</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="3">Problem</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="4">Framework</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="5">Workflow</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="6">Evidence</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="7">Comms</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="8">Tracking</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="9">Impact</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="10">Insights</button>
+            </div>
+
+            <div class="deck-viewport">
+
+              <!-- 00 COVER -->
+              <div class="deck-slide" data-slide-index="0">
+                <span class="deck-stamp">Replace<span>preferred: inverter · fallback: standard</span></span>
+                <div class="deck-eyebrow">Property Management Operations VA · Case File No. 003 · Portfolio Simulation</div>
+                <h4 class="deck-title" style="font-size:clamp(28px,4vw,40px);">Unit 104</h4>
+                <p class="deck-lede" style="font-style:italic;">Maple Grove Apartments, Sacramento CA · a simulated repair-vs-replace-vs-upgrade decision for an AC system failing well ahead of its expected lifespan. Portfolio simulation, not real client work.</p>
+                <div class="deck-meta-grid">
+                  <div><div class="label">Prepared by</div><div class="val">Karen Kisha Sabaiton</div></div>
+                  <div><div class="label">Format</div><div class="val">Written decision brief (simulation)</div></div>
+                  <div><div class="label">Issue type</div><div class="val">AC system, inconsistent cooling</div></div>
+                  <div><div class="label">Cost range</div><div class="val">$450 repair / $1,200 standard / $1,600 inverter</div></div>
+                  <div><div class="label">Recommendation</div><div class="val">Inverter (fallback: Standard)</div></div>
+                </div>
+              </div>
+
+              <!-- 01 GOAL -->
+              <div class="deck-slide" data-slide-index="1">
+                <div class="deck-eyebrow">01 · Business Goal</div>
+                <h4 class="deck-title">Why this call needed more than a quick yes</h4>
+                <p class="deck-lede">What "done well" looks like, defined up front.</p>
+                <div class="deck-card">
+                  <h5>Primary goal</h5>
+                  <p>Decide whether to repair the AC, replace it with a standard split system, or invest in an inverter system, weighing upfront cost against reliability and potential long-term operating value.</p>
+                  <h5>Secondary goal</h5>
+                  <p>Document the reasoning behind the recommendation clearly enough for a property manager to review, approve, or push back before money is spent.</p>
+                  <h5>Business value</h5>
+                  <p>A structured repair/replace/upgrade framework keeps larger equipment decisions from being made on price alone, and gives owners a paper trail justifying the higher-cost option when it's chosen.</p>
+                </div>
+              </div>
+
+              <!-- 02 CONTEXT -->
+              <div class="deck-slide" data-slide-index="2">
+                <div class="deck-eyebrow">02 · Business Context</div>
+                <h4 class="deck-title">The scenario snapshot</h4>
+                <p class="deck-lede">So the environment is clear before the decision is.</p>
+                <div class="deck-card">
+                  <table class="deck-table">
+                    <tr><td>Property</td><td>Maple Grove Apartments</td></tr>
+                    <tr><td>Location</td><td>Sacramento, CA</td></tr>
+                    <tr><td>Unit</td><td>104 · 2BD / 2BA</td></tr>
+                    <tr><td>Appliance</td><td>Split-type AC system, approximately 3 years old</td></tr>
+                    <tr><td>Reported issue</td><td>Inconsistent cooling</td></tr>
+                    <tr><td>Repair quote</td><td>$450</td></tr>
+                    <tr><td>Standard replacement quote</td><td>$1,200, installed</td></tr>
+                    <tr><td>Inverter replacement quote</td><td>$1,600, installed</td></tr>
+                    <tr><td>Procurement method</td><td>Simulated 3-quote procurement process per replacement option</td></tr>
+                    <tr><td>Platform / role</td><td>Written analysis (portfolio simulation) · Property Management Operations VA</td></tr>
+                  </table>
+                </div>
+              </div>
+
+              <!-- 03 PROBLEM -->
+              <div class="deck-slide" data-slide-index="3">
+                <div class="deck-eyebrow">03 · Problem Analysis</div>
+                <h4 class="deck-title">What was actually being decided</h4>
+                <p class="deck-lede">This wasn't a simple repair call, it was a three-way trade-off between price today, reliability, and operating cost over the system's life.</p>
+                <div class="deck-card">
+                  <h5>Root cause</h5>
+                  <p>The real question wasn't whether $450 was the cheapest fix, it was whether spending $1,150 more upfront on an inverter system was justified by savings and reliability gains that wouldn't show up until later, or whether the $750-cheaper standard replacement was the more defensible call.</p>
+                </div>
+                <p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,242,234,.5);margin-top:20px;">Risks if this process is managed poorly</p>
+                <ul class="deck-risks">
+                  <li>Repair fails again on a system that's already shown early problems</li>
+                  <li>Resident cooling complaints continue or worsen</li>
+                  <li>Emergency same-day replacement costs more than planned</li>
+                  <li>Inverter upgrade approved without evidence it pays off</li>
+                  <li>Standard replacement chosen without weighing efficiency trade-offs</li>
+                  <li>No documented reasoning if ownership questions the spend</li>
+                  <li>Inconsistent equipment decisions across similar units</li>
+                  <li>Delayed decision turns a planned expense into an urgent one</li>
+                </ul>
+              </div>
+
+              <!-- 04 FRAMEWORK -->
+              <div class="deck-slide" data-slide-index="4">
+                <div class="deck-eyebrow">04 · Decision Framework</div>
+                <h4 class="deck-title">How the repair/replace/upgrade call got made</h4>
+                <p class="deck-lede">Not just what it landed on.</p>
+                <div class="deck-steps">
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 1</div>
+                    <div><h5>Confirm the current repair quote</h5><p>What would it cost to fix the issue in front of us today? A simulated technician assessment quoted $450 for the current cooling problem.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 2</div>
+                    <div><h5>Verify warranty coverage before spending anything</h5><p>First verify whether the failed component is covered under the manufacturer's parts warranty, and whether any labor coverage remains, before approving a $450 out-of-pocket repair.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 3</div>
+                    <div><h5>Assume a 3-quote procurement process and price the replacement options</h5><p>Standard accounting/procurement practice on a purchase like this is to request quotes from at least three suppliers per option rather than settle for the first number offered. For this simulation, I assumed a three-quote procurement process and used simulated comparison figures: a representative price of $1,200 installed for the standard split AC, and $1,600 installed for the inverter split AC.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 4</div>
+                    <div><h5>Calculate the cost gaps</h5><div class="deck-calc">$1,200 − $450 = <span class="fail">$750 more to replace</span></div></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 5</div>
+                    <div><h5>Price the inverter premium</h5><div class="deck-calc">$1,600 − $1,200 = <span class="fail">$400 more for inverter</span> · $1,600 − $450 = <span class="fail">$1,150 more than repair</span></div></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 6</div>
+                    <div><h5>Weigh reliability and resident impact</h5><p>Repair keeps a system in service that's already failing well before its expected lifespan; AC units can develop early or recurring issues from installation quality, usage intensity, or component wear regardless of age. Either replacement removes that uncertainty and lowers the odds of another resident complaint.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 7</div>
+                    <div><h5>Weigh the inverter's extra $400</h5><p>Treated as a long-term value question, not an automatic upgrade — the premium must be justified by documented efficiency, warranty, and operating-cost evidence, not assumed.</p></div>
+                  </div>
+                  <div class="deck-step">
+                    <div class="deck-step-num">Step 8</div>
+                    <div><h5>Document and route the outcome</h5><p>Recommend the inverter only if the final quote and documented benefits justify the $400 premium; otherwise recommend the standard replacement. List what still needs confirming and route for approval.</p></div>
+                  </div>
+                </div>
+                <div class="deck-card" style="margin-top:18px;padding:0;overflow:hidden;">
+                  <table class="deck-table" style="padding:20px 22px;">
+                    <thead><tr><th style="padding-left:22px;">Criterion</th><th>Flag threshold</th><th>Unit 104 result</th><th style="padding-right:22px;">Outcome</th></tr></thead>
+                    <tbody>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Failure timing vs. expected lifespan</td><td>Failing well before 10-15 yr norm</td><td>3 years, already unreliable</td><td style="padding-right:22px;"><span class="badge fail">✕ Escalate</span></td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Warranty coverage remaining</td><td>Labor/install typically 1 yr</td><td>Labor warranty lapsed; parts warranty may still apply</td><td style="padding-right:22px;"><span class="badge fail">✕ Repair not free</span></td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Reported performance issue</td><td>None expected</td><td>Inconsistent cooling</td><td style="padding-right:22px;"><span class="badge fail">✕ Escalate</span></td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Repair cost vs. replacement range</td><td>Reference only</td><td>$450 of $1,200–$1,600</td><td style="padding-right:22px;"><span class="badge pass">✓ Informational</span></td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Supplier quotes assumed per option</td><td>≥ 3 suppliers (simulated)</td><td>3 per option (standard &amp; inverter)</td><td style="padding-right:22px;"><span class="badge pass">✓ Requirement met</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- 05 WORKFLOW -->
+              <div class="deck-slide" data-slide-index="5">
+                <div class="deck-eyebrow">05 · Decision Workflow</div>
+                <h4 class="deck-title">The repeatable path this decision followed</h4>
+                <p class="deck-lede">Built to run the same way on the next equipment-reliability call.</p>
+                <div class="deck-flow">
+                  <div class="flow-node">Issue reported</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Repair quote obtained</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Warranty coverage verified</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Replacement quotes assumed, 3-quote procurement (standard &amp; inverter)</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Criteria applied (age, cost, efficiency)</div><div class="flow-arrow"></div>
+                  <div class="flow-node branchpt">Does final quote + documented evidence justify the $400 inverter premium?</div>
+                  <div class="flow-branch">
+                    <div class="branch-col">
+                      <span class="branch-label yes">YES · pending final quote</span><div class="flow-arrow"></div>
+                      <div class="flow-node">Recommend inverter replacement</div><div class="flow-arrow"></div>
+                      <div class="flow-node">Final vendor quote &amp; budget approval requested</div>
+                    </div>
+                    <div class="branch-col">
+                      <span class="branch-label no">NO · fallback</span><div class="flow-arrow"></div>
+                      <div class="flow-node">Recommend standard replacement</div><div class="flow-arrow"></div>
+                      <div class="flow-node">Installation scheduled</div>
+                    </div>
+                  </div>
+                </div>
+                <p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,242,234,.5);margin-top:30px;">Accountability checkpoints</p>
+                <ul class="deck-checks">
+                  <li>Repair quote logged accurately</li>
+                  <li>Manufacturer parts/labor warranty status verified before approving repair</li>
+                  <li>3-quote procurement process assumed and documented as simulated</li>
+                  <li>System age and performance issue documented</li>
+                  <li>Reasoning documented before recommending</li>
+                  <li>Final vendor quote confirmed: equipment, install, removal, warranty, capacity, efficiency rating</li>
+                  <li>Budget approval requested before proceeding</li>
+                  <li>Resident informed of next steps</li>
+                  <li>Decision and rationale logged for owner / PM record</li>
+                </ul>
+              </div>
+
+              <!-- 06 EVIDENCE -->
+              <div class="deck-slide" data-slide-index="6">
+                <div class="deck-eyebrow">06 · Decision Evidence</div>
+                <h4 class="deck-title">The numbers behind the recommendation, and the full brief</h4>
+                <p class="deck-lede">No AppFolio screenshots for this one, it's a documentation exercise, so the evidence is the reasoning itself: the comparison below, and the full written brief.</p>
+                <div class="deck-card" style="padding:0;overflow:hidden;">
+                  <table class="deck-table" style="padding:20px 22px;">
+                    <thead><tr><th style="padding-left:22px;">Option</th><th>Simulated cost</th><th>Main advantage</th><th style="padding-right:22px;">Main trade-off</th></tr></thead>
+                    <tbody>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Repair</td><td>$450</td><td>Lowest upfront cost</td><td style="padding-right:22px;">Aging system remains in service</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Standard Split</td><td>$1,200</td><td>New system at lower replacement cost</td><td style="padding-right:22px;">Potentially less efficient than inverter</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Inverter Split</td><td>$1,600</td><td>Potential long-term efficiency and reliability benefits</td><td style="padding-right:22px;">$400 more than standard replacement</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <button class="doc-toggle" type="button" aria-expanded="false" style="margin-top:22px;">
+                  <span class="dot"></span><span class="label">View full documentation</span><span class="chevron">▾</span>
+                </button>
+                <div class="doc-panel">
+                  <p class="doc-intro">The full decision brief as written for this portfolio simulation — situation, options considered, trade-offs, recommendation, and risk of delay. Not real client work; all costs and outcomes are simulated.</p>
+                  <div class="doc-text">
+                    <p><b>Situation</b>The air conditioner in Unit 104 is approximately 3 years old and is no longer cooling the apartment effectively, a notable concern given how new the system still is. The unit's 1-year labor/installation warranty has already lapsed; only the manufacturer's parts warranty (typically 5 years) may still apply, which would cover replacement parts but not the technician's labor for a repair visit, so this should be verified before approving any repair spend. The resident has reported inconsistent cooling, creating a potential comfort issue and increasing the likelihood of additional maintenance requests during periods of high demand. A simulated technician assessment indicates that repairing the existing system would cost approximately $450. Because AC units can fail early or recur regardless of age, the property manager is also considering replacement. For this simulation, I assumed a three-quote procurement process and used simulated comparison figures for each replacement option: a standard split AC at approximately $1,200 including estimated installation, or an inverter split AC at approximately $1,600 including estimated installation.</p>
+                    <p><b>Option 1 — Repair for $450</b>Benefits: lowest immediate cost, avoids a larger replacement expense, may restore cooling performance if the repair resolves the underlying problem, and minimizes immediate impact on the property's maintenance budget. Trade-offs: the system is only about 3 years old, but its labor/installation warranty has already lapsed, so this repair isn't covered, and AC units can develop early or recurring problems from installation quality, usage intensity, or component wear well before typical end-of-life, so repairing one component doesn't eliminate the possibility of another failure, additional service calls could increase total maintenance cost, and continued performance problems could affect resident satisfaction.</p>
+                    <p><b>Option 2 — Standard split AC for approximately $1,200</b>Benefits: a new and more reliable cooling system, reduces the risk of repairing a system that's already showing early problems, a lower upfront cost than an inverter system, and a straightforward replacement solution. Trade-offs: about $750 more than repairing, operating efficiency may be lower than an inverter model, and requires installation coordination and removal of the existing equipment.</p>
+                    <p><b>Option 3 — Inverter split AC for approximately $1,600</b>Benefits: improved reliability, compressor output that adjusts to match cooling demand rather than running only at full capacity, potentially lower electricity use, more consistent temperature control, and a reduced likelihood of repeated repair requests. Trade-offs: the highest upfront cost, about $1,150 more than repairing and $400 more than the standard replacement, an additional investment that should be justified by expected long-term operating benefits.</p>
+                    <p><b>Criteria / Trade-offs</b>The decision is evaluated on five criteria: upfront cost (repair is lowest, inverter is highest), reliability (a new system is less likely to carry forward the same early-failure pattern as the existing 3-year-old unit, since AC systems can fail well before their expected lifespan due to usage intensity or installation issues), operating cost (an inverter system may use energy more efficiently under typical variable cooling demand), resident experience (reliable cooling matters for comfort, and repeated service calls create frustration), and long-term value (whether paying more upfront reasonably reduces future maintenance and operating costs, especially since the labor warranty on the current unit has already lapsed). The repair is cheapest short-term but keeps an unreliable, no-longer-warrantied system in service. The standard replacement provides a new system at a lower upfront cost than the inverter. The inverter requires an additional $400 over the standard replacement but may provide better long-term operating value.</p>
+                    <p><b>Recommendation</b>Recommend the $1,600 inverter split AC only if the final vendor quote and documented efficiency, warranty, and operating-cost evidence justify the additional $400 premium over the standard replacement; otherwise, proceed with the $1,200 standard replacement. The inverter is the stronger long-term case on paper because it removes the uncertainty of a system already failing well ahead of its expected lifespan, but that premium needs to be proven, not assumed. Before approval, confirm: manufacturer parts/labor warranty status on the existing unit, the winning supplier from the assumed 3-quote process, equipment price, installation cost, removal/disposal of the existing system, warranty coverage on the replacement, energy-efficiency rating, appropriate system capacity for Unit 104, expected operating cost or energy savings, and total project cost against the property's budget.</p>
+                    <p><b>Risk if Ignored or Delayed</b>If the decision is delayed, Unit 104 could continue experiencing inadequate cooling, resulting in additional resident complaints and maintenance requests. Another failure could require an emergency service call or replacement, creating greater disruption and reducing the property's ability to compare vendors and equipment options carefully. Continued cooling problems could also affect resident satisfaction and potentially influence the resident's future renewal decision.</p>
+                    <p><b>Bottom Line</b>Replace the AC rather than continue repairing a unit that's already failing well ahead of schedule. The preferred simulated option is the $1,600 inverter system, provided the final vendor quote and projected operating benefits justify the additional $400 over a standard replacement.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 07 COMMS -->
+              <div class="deck-slide" data-slide-index="7">
+                <div class="deck-eyebrow">07 · Communication Plan</div>
+                <h4 class="deck-title">Same decision, three audiences</h4>
+                <p class="deck-lede">The owner, the vendor, and the resident each need a different amount of detail.</p>
+                <div class="deck-comm-grid">
+                  <div class="deck-comm">
+                    <div class="to">To: Owner</div>
+                    <div class="msg mono">Subject: Unit 104 AC Replacement Recommendation
+
+Recommending replacement of the Unit 104 AC over further repair.
+
+System is approximately 3 years old but already reporting inconsistent cooling, well ahead of its expected lifespan. Labor/install warranty has lapsed; verifying whether the parts warranty still applies before approving repair spend.
+Repair quote: $450. Standard replacement: $1,200. Inverter replacement: $1,600 (+$400 over standard).
+
+Recommending the inverter system only if the final vendor quote and documented benefits justify the $400 premium. Standard replacement is the fallback if they don't.
+
+Requesting approval to proceed once the final quote is in.</div>
+                  </div>
+                  <div class="deck-comm">
+                    <div class="to">To: Suppliers (simulated 3-quote request)</div>
+                    <div class="msg mono">Request: Quote, standard &amp; inverter split AC, Unit 104
+Scope: Equipment, installation, and removal/disposal of existing unit
+Reason for replace: ~3-year-old system already showing inconsistent cooling, well ahead of expected lifespan, labor warranty lapsed
+Requested: Equipment price, install cost, warranty, energy-efficiency rating, correct capacity for Unit 104, estimated operating-cost savings
+Process (simulated): Same request modeled as sent to 3 suppliers per option, per standard procurement practice; quotes compared before a supplier is selected
+Access: Coordinate with property management office</div>
+                  </div>
+                  <div class="deck-comm">
+                    <div class="to">To: Resident</div>
+                    <div class="msg">"Thank you for reporting the cooling issue. We're reviewing replacement options for the AC system and will confirm the installation date as soon as it's scheduled. We appreciate your patience in the meantime."</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 08 TRACKING -->
+              <div class="deck-slide" data-slide-index="8">
+                <div class="deck-eyebrow">08 · Tracking &amp; KPIs</div>
+                <h4 class="deck-title">What a decision-support dashboard would watch</h4>
+                <p class="deck-lede">Across every equipment-reliability call, and where Unit 104's decision sits on it today.</p>
+                <div class="deck-card">
+                  <table class="deck-table">
+                    <thead><tr><th>KPI</th><th>Why it matters</th></tr></thead>
+                    <tbody>
+                      <tr><td style="text-transform:none;width:auto;">Repair cost as % of replacement cost</td><td>Spend efficiency</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">3-quote procurement process followed (simulated)</td><td>Procurement integrity, fair pricing</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">System age at replacement</td><td>Lifecycle planning</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Premium cost of efficiency upgrade vs. standard</td><td>Value justification</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Decision turnaround time</td><td>Resident experience</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Documented reasoning rate</td><td>Audit / owner trust</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Resident satisfaction after resolution</td><td>Retention risk</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="deck-status-grid">
+                  <div class="cell"><div class="label">Status</div><div class="val">Recommendation documented, pending final quote</div></div>
+                  <div class="cell"><div class="label">Recommendation</div><div class="val">Inverter, $1,600 (fallback: Standard, $1,200)</div></div>
+                  <div class="cell"><div class="label">Premium under evaluation</div><div class="val">+$400 vs. standard</div></div>
+                  <div class="cell"><div class="label">Next action</div><div class="val">Confirm final vendor quote, request budget approval</div></div>
+                </div>
+              </div>
+
+              <!-- 09 IMPACT -->
+              <div class="deck-slide" data-slide-index="9">
+                <div class="deck-eyebrow">09 · Expected Impact</div>
+                <h4 class="deck-title">What this would deliver at portfolio scale</h4>
+                <p class="deck-lede">This is a portfolio simulation, not a live client, so impact is framed as what the workflow would deliver if run consistently across a portfolio, not results already achieved.</p>
+                <div class="deck-card">
+                  <p>Run consistently across a portfolio, a structured repair/replace/upgrade framework gives a property manager a defensible way to decide when the cheaper option isn't actually the better one, and when a premium option needs to prove its value before it's approved.</p>
+                </div>
+                <ul class="deck-impact">
+                  <li>Fewer repeat repairs on unreliable equipment</li>
+                  <li>Clearer justification when a higher-cost option is chosen</li>
+                  <li>More consistent equipment decisions across similar units</li>
+                  <li>Faster, better-documented owner approvals</li>
+                  <li>Better resident comfort and communication during equipment issues</li>
+                  <li>An audit trail for every repair-vs-replace-vs-upgrade call</li>
+                </ul>
+              </div>
+
+              <!-- 10 INSIGHTS -->
+              <div class="deck-slide" data-slide-index="10">
+                <div class="deck-eyebrow">10 · Operational Insights</div>
+                <h4 class="deck-title">What I'd build next</h4>
+                <p class="deck-lede">If this were a live portfolio, not a simulation.</p>
+                <div class="deck-reflect-grid">
+                  <div class="deck-reflect-col">
+                    <h6>What I'd improve next</h6>
+                    <ul>
+                      <li>Standard age/performance threshold for triggering a replace review</li>
+                      <li>A required warranty-status check (parts &amp; labor) before approving any repair spend</li>
+                      <li>A formal 3-supplier quote requirement for any equipment purchase above a set threshold</li>
+                      <li>A simple efficiency-premium justification checklist</li>
+                      <li>Templated owner approval memo for multi-option decisions</li>
+                      <li>Track cost-per-system over its lifetime</li>
+                      <li>Standard resident notification for approved replacements</li>
+                      <li>Decision log for every repair/replace/upgrade call</li>
+                    </ul>
+                  </div>
+                  <div class="deck-reflect-col">
+                    <h6>What I'd automate</h6>
+                    <ul>
+                      <li>Flag equipment past a defined age threshold for review</li>
+                      <li>Auto-calculate cost deltas across all options</li>
+                      <li>Owner approval request trigger once quotes are in</li>
+                      <li>Resident notification once installation is scheduled</li>
+                      <li>Equipment age tracking tied to unit records</li>
+                    </ul>
+                  </div>
+                  <div class="deck-reflect-col">
+                    <h6>Future risks to monitor</h6>
+                    <ul>
+                      <li>Rising repeat-repair rate on equipment failing before its expected lifespan portfolio-wide</li>
+                      <li>Premium upgrades approved without a documented efficiency case</li>
+                      <li>Approvals delayed past the risk window</li>
+                      <li>Resident dissatisfaction during the decision delay</li>
+                      <li>Inconsistent thresholds applied unit to unit</li>
+                      <li>Budget impact from deferred equipment replacements</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="deck-foot">
+              <button class="deck-btn deck-prev" type="button">← Prev</button>
+              <div class="deck-progress-track"><div class="deck-progress-bar"></div></div>
+              <span class="deck-count">01 / 11</span>
+              <button class="deck-btn deck-next" type="button">Next →</button>
+            </div>
+          </div>
         </div>
+
+        <a class="walkthrough-link" href="#" style="margin-top:20px;"><span class="dot"></span>Walkthrough video coming soon</a>
       </div>
+
+      <div class="case-item reveal">
+        <div class="case-top">
+          <h3>Portfolio Operations Dashboard</h3>
+          <span class="tag">Practice Project · Reporting &amp; KPIs</span>
+        </div>
+
+        <div class="case-cols">
+          <div><b>Problem</b><p>Leasing, maintenance, renewals, and vendor status lived in six separate tabs, so nothing added up to one clear picture of where the portfolio actually stood.</p></div>
+          <div><b>Approach</b><p>An 8-tab operations workbook practiced in Excel, with a rollup Dashboard tab pulling live KPIs and priority actions from every tracker. Portfolio simulation, not real client work.</p></div>
+          <div><b>Workflow</b><p>Property Overview → Maintenance → Leasing → Renewals → Vendors → Action Items → Dashboard.</p></div>
+          <div><b>Outcome</b><p>One tab shows occupancy, open work orders, renewal risk, and today's ranked priority actions, no digging through six tabs required.</p></div>
+          <div><b>Value</b><p>You can see how I'd structure and maintain a reporting system that stays accurate, not just how I'd describe one.</p></div>
+        </div>
+
+        <div class="dashboard-deck" data-deck>
+          <div class="deck-shell">
+            <div class="deck-tabs" role="tablist" aria-label="Portfolio dashboard case study sections">
+              <button class="deck-tab" type="button" role="tab" data-slide-target="0">Cover</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="1">Goal</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="2">Context</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="3">Problem</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="4">Framework</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="5">Workflow</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="6">Evidence</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="7">Comms</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="8">Tracking</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="9">Impact</button>
+              <button class="deck-tab" type="button" role="tab" data-slide-target="10">Insights</button>
+            </div>
+
+            <div class="deck-viewport">
+
+              <!-- 00 COVER -->
+              <div class="deck-slide" data-slide-index="0">
+                <span class="deck-stamp">90% Occupied<span>18 of 20 units</span></span>
+                <div class="deck-eyebrow">Property Management Operations VA · Case File No. 004 · Portfolio Simulation</div>
+                <h4 class="deck-title" style="font-size:clamp(28px,4vw,40px);">Portfolio Operations Dashboard</h4>
+                <p class="deck-lede" style="font-style:italic;">Maple Grove Apartments, Sacramento CA · a simulated 8-tab reporting system pulling leasing, maintenance, renewals, and vendor status into one live dashboard. Portfolio simulation, not real client work.</p>
+                <div class="deck-meta-grid">
+                  <div><div class="label">Prepared by</div><div class="val">Karen Kisha Sabaiton</div></div>
+                  <div><div class="label">Format</div><div class="val">Interactive Excel workbook (simulation)</div></div>
+                  <div><div class="label">Portfolio size</div><div class="val">20 simulated units</div></div>
+                  <div><div class="label">Reporting date</div><div class="val">August 23, 2026</div></div>
+                  <div><div class="label">Snapshot</div><div class="val">9 open work orders · 2 renewals due &lt;30 days</div></div>
+                </div>
+              </div>
+
+              <!-- 01 GOAL -->
+              <div class="deck-slide" data-slide-index="1">
+                <div class="deck-eyebrow">01 · Business Goal</div>
+                <h4 class="deck-title">Why scattered tracking wasn't good enough</h4>
+                <p class="deck-lede">What "one clear picture" needed to mean, defined up front.</p>
+                <div class="deck-card">
+                  <h5>Primary goal</h5>
+                  <p>Build a single reporting system that pulls leasing, maintenance, renewals, and vendor status into one place, so nothing depends on remembering which tab or notebook it's in.</p>
+                  <h5>Secondary goal</h5>
+                  <p>Turn raw tracker rows into a short list of ranked priority actions, so a property manager knows what to do first without reading every row of every tab.</p>
+                  <h5>Business value</h5>
+                  <p>Less time spent hunting for status across separate tools, more time spent following up on what's actually urgent, and a documented structure the next reporting period can reuse without rebuilding it.</p>
+                </div>
+              </div>
+
+              <!-- 02 CONTEXT -->
+              <div class="deck-slide" data-slide-index="2">
+                <div class="deck-eyebrow">02 · Business Context</div>
+                <h4 class="deck-title">The scenario snapshot</h4>
+                <p class="deck-lede">So the environment is clear before the numbers are.</p>
+                <div class="deck-card">
+                  <table class="deck-table">
+                    <tr><td>Property</td><td>Maple Grove Apartments</td></tr>
+                    <tr><td>Location</td><td>Sacramento, CA</td></tr>
+                    <tr><td>Portfolio size</td><td>20 simulated units</td></tr>
+                    <tr><td>Reporting date</td><td>August 23, 2026, one shared cell every tab references</td></tr>
+                    <tr><td>Data sources</td><td>6 linked trackers plus a reference/settings tab, single workbook</td></tr>
+                    <tr><td>Occupancy at reporting date</td><td>90%, 18 occupied / 2 vacant</td></tr>
+                    <tr><td>Platform / role</td><td>Excel workbook (portfolio simulation) · Property Management Operations VA</td></tr>
+                  </table>
+                </div>
+              </div>
+
+              <!-- 03 PROBLEM -->
+              <div class="deck-slide" data-slide-index="3">
+                <div class="deck-eyebrow">03 · Problem Analysis</div>
+                <h4 class="deck-title">What scattered tracking actually costs</h4>
+                <p class="deck-lede">Six categories of status, spread across six tabs, is only useful if something forces them back into one view.</p>
+                <div class="deck-card">
+                  <h5>Root cause</h5>
+                  <p>Leasing, maintenance, renewals, and vendor status each have their own tracker, their own update cadence, and their own owner. Without a rollup layer, no single tab tells a property manager what needs attention today, only what's happening in that one category.</p>
+                </div>
+                <p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,242,234,.5);margin-top:20px;">Risks if tracking stays scattered</p>
+                <ul class="deck-risks">
+                  <li>A high-priority item sits unnoticed in one tab while attention goes elsewhere</li>
+                  <li>Renewal deadlines slip past the 30-day follow-up window unnoticed</li>
+                  <li>A vendor with no response logged looks the same as one on schedule</li>
+                  <li>Occupancy and vacancy numbers go stale between manual checks</li>
+                  <li>No single source of truth when an owner asks where things stand</li>
+                  <li>Conflicting status between trackers for the same unit</li>
+                  <li>Action items get worked in whatever order they're noticed, not by priority</li>
+                  <li>Reporting takes longer than the property management work itself</li>
+                </ul>
+              </div>
+
+              <!-- 04 FRAMEWORK -->
+              <div class="deck-slide" data-slide-index="4">
+                <div class="deck-eyebrow">04 · System Framework</div>
+                <h4 class="deck-title">The 8-tab structure, and why it's organized this way</h4>
+                <p class="deck-lede">One rollup tab, six category trackers, one reference tab keeping every formula consistent.</p>
+                <div class="deck-card" style="padding:0;overflow:hidden;">
+                  <table class="deck-table" style="padding:20px 22px;">
+                    <thead><tr><th style="padding-left:22px;">Tab</th><th style="padding-right:22px;">What it holds</th></tr></thead>
+                    <tbody>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Dashboard</td><td style="padding-right:22px;">Key metrics, priority actions, and category charts, pulled live from the other tabs</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Property Overview</td><td style="padding-right:22px;">Unit-level master record: status, resident, rent, lease dates for all 20 units</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Maintenance Tracker</td><td style="padding-right:22px;">Every work order, priority, vendor, status, and cost</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Leasing Tracker</td><td style="padding-right:22px;">Vacant units and their pipeline stage, from listing to move-in</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Renewal Tracker</td><td style="padding-right:22px;">Upcoming lease decisions, sorted by days remaining</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Vendor Tracker</td><td style="padding-right:22px;">Open work orders and response time by vendor</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Action Items</td><td style="padding-right:22px;">Cross-category to-do list, ranked by priority then due date</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Lists &amp; Settings</td><td style="padding-right:22px;">Dropdown source lists, and the single reporting-date cell every Days/Expiry formula references</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- 05 WORKFLOW -->
+              <div class="deck-slide" data-slide-index="5">
+                <div class="deck-eyebrow">05 · How the Dashboard Works</div>
+                <h4 class="deck-title">Category tabs roll up into one summary</h4>
+                <p class="deck-lede">Each tracker owns its own detail, and the dashboard reads it back, not the other way around.</p>
+                <div class="deck-flow">
+                  <div class="flow-node">Property Overview updated, unit status confirmed</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Maintenance Tracker logged, priority set</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Leasing Tracker moved to current pipeline stage</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Renewal Tracker recalculated against the reporting date</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Vendor Tracker checked for open follow-up</div><div class="flow-arrow"></div>
+                  <div class="flow-node">Action Items ranked, priority then due date</div><div class="flow-arrow"></div>
+                  <div class="flow-node branchpt">Dashboard pulls the above into key metrics, priority actions, and charts</div>
+                </div>
+                <p style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:rgba(246,242,234,.5);margin-top:30px;">Accountability checkpoints</p>
+                <ul class="deck-checks">
+                  <li>Reporting date updated once, every formula references that single cell</li>
+                  <li>Every unit's status in Property Overview matches its source tracker</li>
+                  <li>Maintenance priority reconciled between the tracker and Action Items</li>
+                  <li>Renewal windows (&lt;30 / 30-60 / 61-90 days) recalculated, not hand-typed</li>
+                  <li>Vendors with no logged response flagged for follow-up</li>
+                  <li>Dashboard KPIs spot-checked against source tabs before distribution</li>
+                </ul>
+              </div>
+
+              <!-- 06 EVIDENCE -->
+              <div class="deck-slide" data-slide-index="6">
+                <div class="deck-eyebrow">06 · Dashboard Evidence</div>
+                <h4 class="deck-title">The numbers behind the dashboard, and where they come from</h4>
+                <p class="deck-lede">Every metric below traces back to a real row in a tracker, not a typed-in guess. Tap any image to zoom in.</p>
+                <div class="deck-card" style="padding:0;overflow:hidden;">
+                  <table class="deck-table" style="padding:20px 22px;">
+                    <thead><tr><th style="padding-left:22px;">Metric</th><th style="padding-right:22px;">Value</th></tr></thead>
+                    <tbody>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Occupancy rate</td><td style="padding-right:22px;">90% · 18 of 20 units</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Open maintenance work orders</td><td style="padding-right:22px;">9, 3 high priority</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">High-priority items, combined</td><td style="padding-right:22px;">6 (3 maintenance + 3 action items)</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Renewals due &lt;30 days</td><td style="padding-right:22px;">2</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Pending leasing items</td><td style="padding-right:22px;">4</td></tr>
+                      <tr><td style="padding-left:22px;text-transform:none;width:auto;">Open vendor work orders</td><td style="padding-right:22px;">9, across 5 simulated vendors</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="deck-evidence" style="margin-top:18px;">
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-dashboard-kpi-overview.png" alt="Dashboard tab showing key metrics and top 5 priority actions"></div>
+                    <span class="lbl">Dashboard · Key Metrics &amp; Priority Actions</span>
+                    <p class="proves">Proves the rollup pulls a ranked, cross-category action list, not just static counts.</p>
+                  </div>
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-dashboard-property-overview.png" alt="Property Overview tab listing all 20 units with status and renewal flags"></div>
+                    <span class="lbl">Property Overview · 20-unit master table</span>
+                    <p class="proves">Proves every unit has one authoritative status record the other tabs point back to.</p>
+                  </div>
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-dashboard-maintenance-tracker.png" alt="Maintenance Tracker showing 12 work orders with priority, vendor, and status"></div>
+                    <span class="lbl">Maintenance Tracker · 12 work orders</span>
+                    <p class="proves">Proves priority and vendor assignment are logged per ticket, not just counted.</p>
+                  </div>
+                  <div class="shot">
+                    <div class="frame"><img src="images/proof-dashboard-renewal-vendor.png" alt="Renewal Watch and Vendor Follow-up sections with days remaining and response times"></div>
+                    <span class="lbl">Renewal Watch &amp; Vendor Follow-up</span>
+                    <p class="proves">Proves renewal windows and vendor follow-up are calculated, not eyeballed.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 07 COMMS -->
+              <div class="deck-slide" data-slide-index="7">
+                <div class="deck-eyebrow">07 · Reporting Cadence</div>
+                <h4 class="deck-title">Same dashboard, three different reads</h4>
+                <p class="deck-lede">No owner, vendor, or resident messages on this one, it's a reporting system, so this is who reads it, and how often.</p>
+                <div class="deck-comm-grid">
+                  <div class="deck-comm">
+                    <div class="to">Property Owner · weekly</div>
+                    <div class="msg mono">Reads: Dashboard tab only
+Gets: Occupancy, open maintenance, renewals due, and the top 5 priority actions
+Doesn't need: Row-level detail in any of the six trackers</div>
+                  </div>
+                  <div class="deck-comm">
+                    <div class="to">Property Manager / VA · daily</div>
+                    <div class="msg mono">Reads: Dashboard for triage, then the relevant tracker for detail
+Gets: The full working view, every open item, every status
+Uses: Action Items as the day's call list, ranked by priority then due date</div>
+                  </div>
+                  <div class="deck-comm">
+                    <div class="to">Next reporting period · ongoing</div>
+                    <div class="msg mono">Reads: Lists &amp; Settings tab first
+Gets: One reporting-date cell to update, every Days/Expiry formula recalculates from it
+Avoids: Manually re-typing dates across six tabs</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 08 TRACKING -->
+              <div class="deck-slide" data-slide-index="8">
+                <div class="deck-eyebrow">08 · Tracking &amp; KPIs</div>
+                <h4 class="deck-title">What this dashboard watches, and why</h4>
+                <p class="deck-lede">The KPI cards on the Dashboard tab, and where the portfolio sits on them today.</p>
+                <div class="deck-card">
+                  <table class="deck-table">
+                    <thead><tr><th>KPI</th><th>Why it matters</th></tr></thead>
+                    <tbody>
+                      <tr><td style="text-transform:none;width:auto;">Occupancy rate</td><td>Revenue health</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Open maintenance work orders, and high-priority count</td><td>Service load, urgency</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Renewals due &lt;30 / 30-60 / 61-90 days</td><td>Retention risk window</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Days on market, longest vacancy</td><td>Leasing velocity</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Vendor response time and open follow-up</td><td>Service reliability</td></tr>
+                      <tr><td style="text-transform:none;width:auto;">Pending leasing and action items</td><td>Follow-up backlog</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="deck-status-grid">
+                  <div class="cell"><div class="label">Occupancy</div><div class="val">90% · 18 of 20 units</div></div>
+                  <div class="cell"><div class="label">Longest vacancy</div><div class="val">Unit 103 · 44 days on market</div></div>
+                  <div class="cell"><div class="label">Renewals &lt;30 days</div><div class="val">2, both need direct follow-up</div></div>
+                  <div class="cell"><div class="label">Vendors needing follow-up</div><div class="val">3 of 5 active vendors</div></div>
+                </div>
+              </div>
+
+              <!-- 09 IMPACT -->
+              <div class="deck-slide" data-slide-index="9">
+                <div class="deck-eyebrow">09 · Expected Impact</div>
+                <h4 class="deck-title">What changes with one dashboard instead of six tabs</h4>
+                <p class="deck-lede">Simulation, not measured results, this is the outcome the structure is designed to produce.</p>
+                <ul class="deck-impact">
+                  <li>A property manager opens one tab to know what's urgent today, not six</li>
+                  <li>Renewal risk surfaces 30, 60, and 90 days out, instead of being noticed at lease-end</li>
+                  <li>A vendor with no logged response is visible, instead of assumed handled</li>
+                  <li>Every KPI on the dashboard traces back to a real row in a tracker</li>
+                  <li>Updating one reporting-date cell refreshes every date-based calculation portfolio-wide</li>
+                  <li>The next reporting period reuses the same structure instead of rebuilding it</li>
+                </ul>
+              </div>
+
+              <!-- 10 INSIGHTS -->
+              <div class="deck-slide" data-slide-index="10">
+                <div class="deck-eyebrow">10 · Reflection &amp; Next Steps</div>
+                <h4 class="deck-title">What I'd build on from here</h4>
+                <p class="deck-lede">This dashboard is a foundation, not a finished product.</p>
+                <div class="deck-reflect-grid">
+                  <div class="deck-reflect-col">
+                    <h6>What I'd build next</h6>
+                    <ul>
+                      <li>A financial tab, rent roll and delinquency, alongside occupancy</li>
+                      <li>An occupancy and maintenance trend chart across reporting periods</li>
+                      <li>An automated weekly export formatted for the owner read</li>
+                      <li>A resident satisfaction field tied to closed maintenance tickets</li>
+                    </ul>
+                  </div>
+                  <div class="deck-reflect-col">
+                    <h6>What I'd automate</h6>
+                    <ul>
+                      <li>Auto-flag renewals as they cross each 30/60/90-day threshold</li>
+                      <li>Auto-populate Action Items when tracker status changes</li>
+                      <li>Vendor response-time alerts past an agreed threshold</li>
+                      <li>A scheduled dashboard refresh and distribution email</li>
+                    </ul>
+                  </div>
+                  <div class="deck-reflect-col">
+                    <h6>Future risks to monitor</h6>
+                    <ul>
+                      <li>Manual entry drift between tabs if updates aren't disciplined</li>
+                      <li>The single reporting-date cell as a single point of failure if edited incorrectly</li>
+                      <li>Spreadsheet structure not scaling cleanly past a small portfolio</li>
+                      <li>A dashboard going stale if it isn't reviewed daily</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="deck-foot">
+              <button class="deck-btn deck-prev" type="button">← Prev</button>
+              <div class="deck-progress-track"><div class="deck-progress-bar"></div></div>
+              <span class="deck-count">01 / 11</span>
+              <button class="deck-btn deck-next" type="button">Next →</button>
+            </div>
+          </div>
+        </div>
+
+        <a class="walkthrough-link" href="#" style="margin-top:20px;"><span class="dot"></span>Walkthrough video coming soon</a>
+      </div>
+
     </div>
-    <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--charcoal-soft);margin-top:8px;">A short intro video is also in the works, more on who I am and how I work, once these three are complete.</p>
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--charcoal-soft);margin-top:8px;">A short intro video is also in the works, more on who I am and how I work, once these four are complete.</p>
   </div>
 </section>
 
