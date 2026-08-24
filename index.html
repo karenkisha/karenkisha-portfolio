@@ -346,6 +346,11 @@
 
   /* ---------- LEASING CASE STUDY · INTERACTIVE SLIDE DECK ---------- */
   .leasing-deck,.decision-deck{margin-top:32px;}
+  [data-deck].deck-collapsed{display:none;}
+  .deck-toggle{margin-top:24px;display:inline-flex;align-items:center;gap:8px;background:none;border:1px solid var(--taupe);color:var(--charcoal);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.03em;padding:10px 18px;border-radius:999px;cursor:pointer;transition:.15s;}
+  .deck-toggle:hover{background:var(--taupe);color:var(--ivory);}
+  .deck-toggle .arrow{transition:transform .2s;}
+  .deck-toggle.open .arrow{transform:rotate(90deg);}
   .deck-shell{
     background:var(--charcoal);color:var(--ivory);border-radius:18px;overflow:hidden;
     box-shadow:0 30px 60px -30px rgba(43,42,38,.55);
@@ -527,8 +532,8 @@
   <div class="wrap">
     <div class="sect-head reveal">
       <span class="eyebrow">What I take off your plate</span>
-      <h2>Two things, done well</h2>
-      <p>I'm not spreading thin across everything a property manager could outsource. I focus on the two areas that cause the most day-to-day friction, and do those with real ownership.</p>
+      <h2>Three things, done well</h2>
+      <p>I'm not spreading thin across everything a property manager could outsource. I focus on the three areas that cause the most day-to-day friction, and do those with real ownership.</p>
     </div>
     <div class="svc-row reveal">
       <div class="svc-name">Tenant Communication<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--taupe);display:block;margin-top:4px;">Your tenants get answers. You get fewer interruptions.</span></div>
@@ -542,6 +547,7 @@
       <div class="svc-name">Property Operations Support<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--taupe);display:block;margin-top:4px;">Know what's happening without managing every detail.</span></div>
       <div class="svc-desc">Operational tracking, documentation, follow-ups, and status visibility. Outcome: clearer visibility and fewer loose ends. Value: less mental load, more capacity for higher-value work.</div>
     </div>
+    <p class="disclosure reveal" style="margin-top:24px;max-width:640px;">Across all three, the same habit applies: one event, told three ways. A tenant update, an owner update, and an internal note for the record, every time, so nothing gets lost in translation between who needs what.</p>
   </div>
 </section>
 
@@ -661,7 +667,8 @@
           <div><b>Value</b><p>You can see how I approach leasing workflows inside the software, not just how I talk about them.</p></div>
         </div>
 
-        <div class="leasing-deck" data-deck>
+        <button class="deck-toggle" type="button" data-deck-toggle="leasing">View full case study <span class="arrow">→</span></button>
+        <div class="leasing-deck deck-collapsed" data-deck>
           <div class="deck-shell">
             <div class="deck-tabs" role="tablist" aria-label="Leasing case study sections">
               <button class="deck-tab" type="button" role="tab" data-slide-target="0">Cover</button>
@@ -685,6 +692,7 @@
                 <div class="deck-eyebrow">Property Management Operations VA · Case File No. 001</div>
                 <h4 class="deck-title" style="font-size:clamp(28px,4vw,40px);">Unit 104</h4>
                 <p class="deck-lede" style="font-style:italic;">Maple Grove Apartments, Sacramento CA · leasing decision worked end to end in AppFolio.</p>
+                <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--taupe);margin-top:6px;">1 of 3 · Unit 104's story: leasing → maintenance → repair decision</p>
                 <div class="deck-meta-grid">
                   <div><div class="label">Prepared by</div><div class="val">Karen Kisha Sabaiton</div></div>
                   <div><div class="label">Platform</div><div class="val">AppFolio</div></div>
@@ -1055,7 +1063,8 @@ Next: Notify applicant · continue leasing activity</div>
           <div><b>Value</b><p>The goal isn't just logging a request, it's keeping the issue moving and people informed.</p></div>
         </div>
 
-        <div class="maintenance-deck" data-deck>
+        <button class="deck-toggle" type="button" data-deck-toggle="maintenance">View full case study <span class="arrow">→</span></button>
+        <div class="maintenance-deck deck-collapsed" data-deck>
           <div class="deck-shell">
             <div class="deck-tabs" role="tablist" aria-label="Maintenance case study sections">
               <button class="deck-tab" type="button" role="tab" data-slide-target="0">Cover</button>
@@ -1079,6 +1088,7 @@ Next: Notify applicant · continue leasing activity</div>
                 <div class="deck-eyebrow">Property Management Operations VA · Case File No. 002</div>
                 <h4 class="deck-title" style="font-size:clamp(28px,4vw,40px);">Unit 104</h4>
                 <p class="deck-lede" style="font-style:italic;">Maple Grove Apartments, Sacramento CA · a recurring maintenance issue triaged and closed out end to end in AppFolio.</p>
+                <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--taupe);margin-top:6px;">2 of 3 · Unit 104's story: leasing → maintenance → repair decision</p>
                 <div class="deck-meta-grid">
                   <div><div class="label">Prepared by</div><div class="val">Karen Kisha Sabaiton</div></div>
                   <div><div class="label">Platform</div><div class="val">AppFolio</div></div>
@@ -1417,7 +1427,8 @@ Contact: Property Management Office</div>
           <div><b>Value</b><p>You shouldn't have to dig through scattered information to weigh a repair-or-replace call — the reasoning and the recommendation are laid out clearly.</p></div>
         </div>
 
-        <div class="decision-deck" data-deck>
+        <button class="deck-toggle" type="button" data-deck-toggle="decision">View full case study <span class="arrow">→</span></button>
+        <div class="decision-deck deck-collapsed" data-deck>
           <div class="deck-shell">
             <div class="deck-tabs" role="tablist" aria-label="Decision brief case study sections">
               <button class="deck-tab" type="button" role="tab" data-slide-target="0">Cover</button>
@@ -1441,6 +1452,7 @@ Contact: Property Management Office</div>
                 <div class="deck-eyebrow">Property Management Operations VA · Case File No. 003 · Portfolio Simulation</div>
                 <h4 class="deck-title" style="font-size:clamp(28px,4vw,40px);">Unit 104</h4>
                 <p class="deck-lede" style="font-style:italic;">Maple Grove Apartments, Sacramento CA · a simulated repair-vs-replace-vs-upgrade decision for an AC system failing well ahead of its expected lifespan. Portfolio simulation, not real client work.</p>
+                <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--taupe);margin-top:6px;">3 of 3 · Unit 104's story: leasing → maintenance → repair decision</p>
                 <div class="deck-meta-grid">
                   <div><div class="label">Prepared by</div><div class="val">Karen Kisha Sabaiton</div></div>
                   <div><div class="label">Format</div><div class="val">Written decision brief (simulation)</div></div>
@@ -1784,7 +1796,8 @@ Access: Coordinate with property management office</div>
           <div><b>Value</b><p>You can see how I'd structure and maintain a reporting system that stays accurate, not just how I'd describe one.</p></div>
         </div>
 
-        <div class="dashboard-deck" data-deck>
+        <button class="deck-toggle" type="button" data-deck-toggle="dashboard">View full case study <span class="arrow">→</span></button>
+        <div class="dashboard-deck deck-collapsed" data-deck>
           <div class="deck-shell">
             <div class="deck-tabs" role="tablist" aria-label="Portfolio dashboard case study sections">
               <button class="deck-tab" type="button" role="tab" data-slide-target="0">Cover</button>
@@ -2102,6 +2115,14 @@ Avoids: Manually re-typing dates across six tabs</div>
         <span class="tag">AppFolio Trained</span>
         <span class="tag">Available now</span>
       </div>
+      <!-- TODO(Karen): add 1-2 short testimonial/reference lines here from a hospitality manager or colleague,
+           e.g. a quote about reliability, accuracy, or follow-through. This is the site's biggest remaining
+           credibility gap per the audit — real third-party proof, even from hospitality, outweighs anything
+           self-written. Suggested markup once you have a quote:
+      <blockquote style="border-left:2px solid var(--taupe);padding-left:16px;margin:20px 0;font-style:italic;color:var(--charcoal-soft);">
+        "Quote here." <span style="display:block;font-style:normal;font-size:12px;margin-top:6px;color:var(--taupe);">— Name, Role, Company</span>
+      </blockquote>
+      -->
     </div>
   </div>
 </section>
@@ -2149,6 +2170,11 @@ Avoids: Manually re-typing dates across six tabs</div>
       <p style="font-size:14px;color:var(--charcoal-soft);line-height:1.7;margin:0;">Yes, you'll need to show me how your operation works. Every property manager has different systems, SOPs, and approval processes. But I don't expect you to repeatedly teach me the same thing. I'll learn your workflow, document what matters, clarify questions, and work toward handling recurring responsibilities with less guidance over time. My goal isn't to make you my trainer. My goal is to learn your operation well enough to become useful within it.</p>
       <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--sage-deep);margin-top:16px;">I'll ask questions. I'll take notes. I'll clarify. I'll document. I'll learn. And I'll work toward needing less guidance over time.</p>
     </div>
+
+    <div style="margin-top:36px;padding-top:36px;border-top:1px solid var(--line);max-width:680px;">
+      <h3 style="font-size:18px;margin:0 0 12px;">"What happens if you get something wrong?"</h3>
+      <p style="font-size:14px;color:var(--charcoal-soft);line-height:1.7;margin:0;">I flag it as soon as I catch it, tell you what happened, what I've already done to contain it, and what I'd recommend next. No burying a mistake in a status update and hoping it doesn't come up. I'd rather you hear it from me first than notice it yourself later.</p>
+    </div>
   </div>
 </section>
 
@@ -2191,6 +2217,10 @@ Avoids: Manually re-typing dates across six tabs</div>
       <div class="pilot-right">
         <div class="price">$75</div>
         <p class="price-note">Flat, up to 8 units, 2 weeks. This is a low-risk way to test working together, not a discount rate. It's priced to cover setup and testing. No long contract, no big commitment.</p>
+        <!-- TODO(Karen): the audit flagged that there's no stated weekly hours/availability commitment near this
+             pricing, so a PM can't size the offer. Add a line here once you've decided, e.g.:
+        <p class="price-note" style="margin-top:8px;">Up to X hours/week during the pilot.</p>
+        -->
       </div>
     </div>
   </div>
@@ -2326,6 +2356,22 @@ Avoids: Manually re-typing dates across six tabs</div>
   });
   lightbox.addEventListener('click', closeLightbox);
   document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeLightbox(); });
+
+  // Collapsible case study decks, so the page isn't one long scroll by default
+  document.querySelectorAll('.deck-toggle').forEach(btn=>{
+    const key = btn.getAttribute('data-deck-toggle');
+    const deck = document.querySelector('.' + key + '-deck');
+    if(!deck) return;
+    btn.addEventListener('click', ()=>{
+      const isOpen = !deck.classList.contains('deck-collapsed');
+      deck.classList.toggle('deck-collapsed', isOpen);
+      btn.classList.toggle('open', !isOpen);
+      btn.innerHTML = isOpen
+        ? 'View full case study <span class="arrow">→</span>'
+        : 'Hide case study <span class="arrow">→</span>';
+      if(!isOpen){ deck.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
 
   // Leasing case study - interactive slide deck
   document.querySelectorAll('[data-deck]').forEach(deck=>{
